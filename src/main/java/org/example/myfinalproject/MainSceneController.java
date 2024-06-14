@@ -141,6 +141,7 @@ public class MainSceneController implements Initializable {
     @FXML
     void onAddManagerButton(ActionEvent event) {
         baseSalaryReadFromFile();
+        refreshDepartmentComboBox();
         addDepartmentPane.setVisible(false);
         addEmployeePane.setVisible(false);
         addManagerPane.setVisible(true);
@@ -278,5 +279,10 @@ public class MainSceneController implements Initializable {
             alert.setContentText("Something went wrong while trying to write in Base Salary file ...");
             alert.showAndWait();
         }
+    }
+
+    private void refreshDepartmentComboBox(){
+        departmentReadFromFile();
+        managerPickDepartmentCombo.setItems(departmentObservableList);
     }
 }
