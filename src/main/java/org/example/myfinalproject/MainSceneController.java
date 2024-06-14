@@ -34,7 +34,7 @@ public class MainSceneController implements Initializable {
     private TableColumn<Department,String> sinceColumn;
 
     @FXML
-    private TextField nameOfDepartmentFiled;
+    private TextField nameOfDepartmentField;
 
     @FXML
     private DatePicker departmentDatePicker;
@@ -46,31 +46,31 @@ public class MainSceneController implements Initializable {
     // upside variables used for department.
 
     @FXML
-    private TextField mangerBaseSalaryFiled;
+    private TextField managerBaseSalaryField;
 
     @FXML
-    private DatePicker mangerBirthDatePicker;
+    private DatePicker managerBirthDatePicker;
 
     @FXML
-    private TextField mangerBonusFiled;
+    private TextField managerBonusField;
 
     @FXML
-    private TextField mangerFamilyNameFiled;
+    private TextField managerFamilyNameField;
 
     @FXML
-    private TextField mangerNameFiled;
+    private TextField managerNameField;
 
     @FXML
-    private TextField mangerNationalIdFiled;
+    private TextField managerNationalIdField;
 
     @FXML
-    private TextField mangerPhoneFiled;
+    private TextField managerPhoneField;
 
     @FXML
-    private ComboBox<Department> mangerPickDepartmentCombo;
+    private ComboBox<Department> managerPickDepartmentCombo;
 
     @FXML
-    private ComboBox<String> mangerPickTypeCombo;
+    private ComboBox<String> managerPickTypeCombo;
 
     ObservableList<String> typeOfEmployee = FXCollections.observableArrayList("base-salaried","hourly-salaried",
             "commission-salaried","base-commission salaried");
@@ -117,12 +117,12 @@ public class MainSceneController implements Initializable {
     private AnchorPane addManagerPane;
 
     File baseSalariedFile = new File("BaseSalaried.txt");
-    ArrayList<BaseSalariedEmployee> baseSalariedArrayList = new ArrayList<>();
     ObservableList<BaseSalariedEmployee> baseSalariedEmployeeObservableList;
+    ArrayList<BaseSalariedEmployee> baseSalariedArrayList = new ArrayList<>();
 
-    //upside variables used for pane.
-    ObjectInputStream ois;
-    ObjectOutputStream oos;
+//    upside variables used for pane.
+//    ObjectInputStream ois;
+//    ObjectOutputStream oos;
 
     @FXML
     void onAddDepartmentButton(ActionEvent event) {
@@ -140,6 +140,7 @@ public class MainSceneController implements Initializable {
 
     @FXML
     void onAddManagerButton(ActionEvent event) {
+        baseSalaryReadFromFile();
         addDepartmentPane.setVisible(false);
         addEmployeePane.setVisible(false);
         addManagerPane.setVisible(true);
@@ -148,38 +149,51 @@ public class MainSceneController implements Initializable {
     @FXML
     void onAddDepartmentButton2(ActionEvent event) {
         departmentReadFromFile();
-        var department = new Department(nameOfDepartmentFiled.getText(),departmentDatePicker.getValue());
+        var department = new Department(nameOfDepartmentField.getText(),departmentDatePicker.getValue());
         departmentArrayList.add(department);
         departmentObservableList = departmentTable.getItems();
         departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
         departmentTable.setItems(departmentObservableList);
-        nameOfDepartmentFiled.setText("");
+        nameOfDepartmentField.setText("");//
         departmentWriteToFile();
     }
 
     @FXML
     void onAddManagerButton2(ActionEvent event) {
-        String type = (String) mangerPickTypeCombo.getSelectionModel().getSelectedItem();
-        switch (type) {
-            case "base-salaried":
-                var department = (Department) mangerPickDepartmentCombo.getSelectionModel().getSelectedItem();
-                if (!department.isHasManager()) {
-                    baseSalaryReadFromFile();
-                    var baseSalariedEmp = new BaseSalariedEmployee(mangerNameFiled.getText(),mangerFamilyNameFiled.getText(),
-                            mangerNationalIdFiled.getText(),mangerPhoneFiled.getText(),Double.parseDouble(mangerBonusFiled.getText()),
-                            LocalDate.now(),mangerBirthDatePicker.getValue(),department,Double.parseDouble(mangerBaseSalaryFiled.getText()));
-                    baseSalariedArrayList.add(baseSalariedEmp);
-                    baseSalariedEmployeeObservableList = managerBaseSalaryTable.getItems();
-                    baseSalariedEmployeeObservableList = FXCollections.observableArrayList(baseSalariedArrayList);
-                    managerBaseSalaryTable.setItems(baseSalariedEmployeeObservableList);
-                    baseSalaryWriteToFile();
+        baseSalaryReadFromFile();
+        String type = (String) managerPickTypeCombo.getSelectionModel().getSelectedItem();
+        try {
 
-                } else{
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("This Department has Manger!");
-                    alert.showAndWait();
-                }
-                break;
+            switch (type) {
+                case "base-salaried":
+                    var department = (Department) managerPickDepartmentCombo.getSelectionModel().getSelectedItem();
+                    if (!department.isHasManager()) {
+
+                        var baseSalariedEmp = new BaseSalariedEmployee(managerNameField.getText(), managerFamilyNameField.getText(),
+                                managerNationalIdField.getText(), managerPhoneField.getText(), Double.parseDouble(managerBonusField.getText()),
+                                LocalDate.now(), managerBirthDatePicker.getValue(), department, Double.parseDouble(managerBaseSalaryField.getText()));
+
+                        baseSalariedArrayList.add(baseSalariedEmp);
+                        baseSalaryWriteToFile(baseSalariedEmp);
+                        baseSalariedEmployeeObservableList = managerBaseSalaryTable.getItems();
+                        baseSalariedEmployeeObservableList = FXCollections.observableArrayList(baseSalariedArrayList);
+                        managerBaseSalaryTable.setItems(baseSalariedEmployeeObservableList);
+
+
+                    } else {
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("ERROR!");
+                        alert.setContentText("This Department already has a manager");
+                        alert.showAndWait();
+                    }
+                    break;
+            }
+        }
+        catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("SELECTION ERROR!");
+            alert.setContentText("Select a Salary Type and a Department for the Employee ...");
+            alert.showAndWait();
         }
     }
 
@@ -198,14 +212,14 @@ public class MainSceneController implements Initializable {
         managerBaseSalariedNationalColumn.setCellValueFactory(new PropertyValueFactory<>("nationalID"));
         managerBaseSalariedPhoneColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         managerBaseSalariedDepartmentColumn.setCellValueFactory(new PropertyValueFactory<>("department"));
-        mangerPickTypeCombo.setItems(typeOfEmployee);
-        mangerPickDepartmentCombo.setItems(departmentObservableList);
-        baseSalaryReadFromFile();
+        managerPickTypeCombo.setItems(typeOfEmployee);
+        managerPickDepartmentCombo.setItems(departmentObservableList);
     }
 
     private void departmentReadFromFile(){
         if(departmentFile.isFile()) {
             try {
+                ObjectInputStream ois;
                 ois = new ObjectInputStream(new FileInputStream(departmentFile));
                 departmentArrayList = (ArrayList<Department>) ois.readObject();
                 ois.close();
@@ -214,7 +228,8 @@ public class MainSceneController implements Initializable {
                 departmentTable.setItems(departmentObservableList);
             } catch (IOException | ClassNotFoundException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("There is no department to Show");
+                alert.setTitle("Nothing to show !");
+                alert.setContentText("There is no department to show ...");
                 alert.showAndWait();
             }
         }
@@ -222,19 +237,23 @@ public class MainSceneController implements Initializable {
 
     private void departmentWriteToFile(){
         try {
+            ObjectOutputStream oos;
             oos = new ObjectOutputStream(new FileOutputStream(departmentFile));
             oos.writeObject(departmentArrayList);
             oos.close();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Something went wrong");
+            alert.setTitle("ERROR !");
+            alert.setContentText("Something went wrong while trying to write in Department file ...");
             alert.showAndWait();
         }
     }
 
     private void baseSalaryReadFromFile(){
+
         if(baseSalariedFile.isFile()) {
             try {
+                ObjectInputStream ois;
                 ois = new ObjectInputStream(new FileInputStream(baseSalariedFile));
                 baseSalariedArrayList = (ArrayList<BaseSalariedEmployee>) ois.readObject();
                 ois.close();
@@ -243,20 +262,23 @@ public class MainSceneController implements Initializable {
                 managerBaseSalaryTable.setItems(baseSalariedEmployeeObservableList);
             } catch (IOException | ClassNotFoundException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("There is no base Salaried Employee to Show");
+                alert.setTitle("Nothing to show !");
+                alert.setContentText("There is no base Salaried Employee in this department ...");
                 alert.showAndWait();
             }
         }
     }
 
-    private void baseSalaryWriteToFile(){
+    private void baseSalaryWriteToFile(BaseSalariedEmployee baseEmp){
         try {
+            ObjectOutputStream oos;
             oos = new ObjectOutputStream(new FileOutputStream(baseSalariedFile));
-            oos.writeObject(baseSalariedArrayList);
+            oos.writeObject(baseEmp);
             oos.close();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Something went wrong");
+            alert.setTitle("ERROR !");
+            alert.setContentText("Something went wrong while trying to write in Base Salary file ...");
             alert.showAndWait();
         }
     }

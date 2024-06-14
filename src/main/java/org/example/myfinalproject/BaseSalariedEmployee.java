@@ -3,6 +3,8 @@ package org.example.myfinalproject;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import static java.time.LocalDate.now;
+
 public class BaseSalariedEmployee extends Employee implements Serializable {
     private double baseSalary;
 

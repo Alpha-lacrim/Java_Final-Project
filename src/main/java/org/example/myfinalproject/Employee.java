@@ -44,6 +44,8 @@ public abstract class Employee {
         department.numberOfEmployees++;
     }
 
+
+
     public abstract double calculateSalary();
     public abstract double calculateMonthlySalary();
 
