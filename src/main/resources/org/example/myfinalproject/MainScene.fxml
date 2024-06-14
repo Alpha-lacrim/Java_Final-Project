@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.myfinalproject.MainSceneController">
+    <children>
+        <AnchorPane layoutY="15.2" prefHeight="678.0" prefWidth="195.0" style="-fx-background-color: #fdcb6e;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="795.0" AnchorPane.topAnchor="15.0">
+            <children>
+                <Label alignment="CENTER" layoutX="13.0" layoutY="72.0" prefHeight="18.0" prefWidth="173.0" text="Welcome Admin" textFill="#2c3e50">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Button layoutX="20.0" layoutY="198.0" mnemonicParsing="false" onAction="#onAddManagerButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="add manager" textFill="#fdcb6e">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Button>
+                <Button layoutX="20.0" layoutY="248.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="add employee" textFill="#fdcb6e">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Button>
+                <Button layoutX="20.0" layoutY="150.0" mnemonicParsing="false" onAction="#onAddDepartmentButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="add department" textFill="#fdcb6e">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                    <effect>
+                        <Blend />
+                    </effect>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="addDepartmentPane" layoutX="211.2" layoutY="11.0" prefHeight="578.0" prefWidth="678.0" style="-fx-background-color: #ecf0f1;" visible="false" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <TableView fx:id="departmentTable" layoutX="386.0" layoutY="14.0" prefHeight="658.0" prefWidth="377.0" style="-fx-background-color: #fdcb6e;" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+              <columns>
+                <TableColumn fx:id="departmentColumn" prefWidth="127.19995421171188" text="department" />
+                <TableColumn fx:id="numberOfEmployeesColumn" prefWidth="135.1999969482422" text="number of employees" />
+                  <TableColumn fx:id="sinceColumn" prefWidth="115.20001220703125" text="Since" />
+              </columns>
+            </TableView>
+            <TextField fx:id="nameOfDepartmentFiled" layoutX="43.0" layoutY="34.0" prefHeight="26.0" prefWidth="230.0" promptText="Enter name of department" />
+            <DatePicker fx:id="departmentDatePicker" editable="false" layoutX="43.0" layoutY="83.0" prefHeight="26.0" prefWidth="230.0" promptText="Enter Date" />
+            <Button layoutX="44.0" layoutY="141.0" mnemonicParsing="false" onAction="#onAddDepartmentButton2" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #2c3e50;" text="Add Department" textFill="#fdcb6e">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+         </children>
+        </AnchorPane>
+        <AnchorPane fx:id="addManagerPane" layoutX="211.0" layoutY="11.0" prefHeight="578.0" prefWidth="678.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <TextField fx:id="mangerNameFiled" layoutX="33.0" layoutY="491.0" promptText="Enter Name" />
+            <TextField fx:id="mangerBonusFiled" layoutX="209.0" layoutY="452.0" promptText="Enter Manger-Bonus" />
+            <TextField fx:id="mangerPhoneFiled" layoutX="33.0" layoutY="617.0" promptText="Enter Phone-Number" />
+            <TextField fx:id="mangerNationalIdFiled" layoutX="33.0" layoutY="575.0" promptText="Enter Nationl-ID" />
+            <TextField fx:id="mangerFamilyNameFiled" layoutX="33.0" layoutY="530.0" promptText="Enter Family Name" />
+            <DatePicker fx:id="mangerBirthDatePicker" layoutX="209.0" layoutY="490.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Birth-Date" />
+            <TableView fx:id="mangerBaseSalaryTable" layoutX="7.0" layoutY="5.0" prefHeight="334.0" prefWidth="765.0">
+              <columns>
+                <TableColumn fx:id="mangerBaseSalariedIDColumn" prefWidth="52.000014305114746" text="ID" />
+                <TableColumn fx:id="mangerBaseSalariedNameColumn" prefWidth="73.59997940063477" text="Name" />
+                  <TableColumn fx:id="mangerBaseSalariedFamilyColumn" prefWidth="95.199951171875" text="FamilyName" />
+                  <TableColumn fx:id="mangerBaseSalariedNationalColumn" prefWidth="105.59996032714844" text="National-ID" />
+                  <TableColumn fx:id="mangerBaseSalariedPhoneColumn" prefWidth="73.59991455078125" text="Phone" />
+                  <TableColumn fx:id="mangerBaseSalariedBonusColumn" prefWidth="92.79998779296875" text="Manger-Bonus" />
+                  <TableColumn fx:id="mangerBaseSalariedBirthDateColumn" prefWidth="72.0" text="Birth-Date" />
+                  <TableColumn fx:id="mangerBaseSalariedDepartmentColumn" prefWidth="81.5999755859375" text="department" />
+                  <TableColumn fx:id="mangerBaseSalariedBaseColumn" prefWidth="118.4000244140625" text="base-Salary" />
+              </columns>
+            </TableView>
+            <ComboBox fx:id="mangerPickDepartmentCombo" layoutX="208.0" layoutY="530.0" prefWidth="150.0" promptText="Pick Department" />
+            <ComboBox fx:id="mangerPickTypeCombo" layoutX="32.0" layoutY="452.0" prefWidth="150.0" promptText="Pick Type" />
+            <TextField fx:id="mangerBaseSalaryFiled" layoutX="209.0" layoutY="575.0" promptText="Enter Base-Salary" />
+            <Button layoutX="502.0" layoutY="452.0" mnemonicParsing="false" onAction="#onAddManagerButton2" text="Add Manger" />
+         </children>
+        </AnchorPane>
+        <AnchorPane fx:id="addEmployeePane" layoutX="211.0" layoutY="14.0" prefHeight="578.0" prefWidth="678.0" style="-fx-background-color: #ecf0f1;" visible="false" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="14.0">
+            <children>
+                <Label layoutX="249.0" layoutY="139.0" prefHeight="30.0" prefWidth="180.0" text="addEmployeePane">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
