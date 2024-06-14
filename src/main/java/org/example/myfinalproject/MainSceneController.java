@@ -160,7 +160,6 @@ public class MainSceneController implements Initializable {
 
     @FXML
     void onAddManagerButton2(ActionEvent event) {
-        baseSalaryReadFromFile();
         String type = (String) managerPickTypeCombo.getSelectionModel().getSelectedItem();
         try {
 
@@ -168,18 +167,16 @@ public class MainSceneController implements Initializable {
                 case "base-salaried":
                     var department = (Department) managerPickDepartmentCombo.getSelectionModel().getSelectedItem();
                     if (!department.isHasManager()) {
-
+                        baseSalaryReadFromFile();
                         var baseSalariedEmp = new BaseSalariedEmployee(managerNameField.getText(), managerFamilyNameField.getText(),
                                 managerNationalIdField.getText(), managerPhoneField.getText(), Double.parseDouble(managerBonusField.getText()),
                                 LocalDate.now(), managerBirthDatePicker.getValue(), department, Double.parseDouble(managerBaseSalaryField.getText()));
-
+                        departmentWriteToFile();
                         baseSalariedArrayList.add(baseSalariedEmp);
-                        baseSalaryWriteToFile(baseSalariedEmp);
                         baseSalariedEmployeeObservableList = managerBaseSalaryTable.getItems();
                         baseSalariedEmployeeObservableList = FXCollections.observableArrayList(baseSalariedArrayList);
                         managerBaseSalaryTable.setItems(baseSalariedEmployeeObservableList);
-
-
+                        baseSalaryWriteToFile();
                     } else {
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setTitle("ERROR!");
@@ -214,6 +211,7 @@ public class MainSceneController implements Initializable {
         managerBaseSalariedDepartmentColumn.setCellValueFactory(new PropertyValueFactory<>("department"));
         managerPickTypeCombo.setItems(typeOfEmployee);
         managerPickDepartmentCombo.setItems(departmentObservableList);
+        baseSalaryReadFromFile();
     }
 
     private void departmentReadFromFile(){
@@ -250,7 +248,6 @@ public class MainSceneController implements Initializable {
     }
 
     private void baseSalaryReadFromFile(){
-
         if(baseSalariedFile.isFile()) {
             try {
                 ObjectInputStream ois;
@@ -269,11 +266,11 @@ public class MainSceneController implements Initializable {
         }
     }
 
-    private void baseSalaryWriteToFile(BaseSalariedEmployee baseEmp){
+    private void baseSalaryWriteToFile(){
         try {
             ObjectOutputStream oos;
             oos = new ObjectOutputStream(new FileOutputStream(baseSalariedFile));
-            oos.writeObject(baseEmp);
+            oos.writeObject(baseSalariedArrayList);
             oos.close();
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -1,8 +1,8 @@
 package org.example.myfinalproject;
-
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public abstract class Employee {
+public abstract class Employee implements Serializable {
     private final String firstName;
     private final String lastName;
     private int ID;
