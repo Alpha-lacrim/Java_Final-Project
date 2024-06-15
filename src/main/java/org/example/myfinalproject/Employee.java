@@ -8,7 +8,7 @@ public abstract class Employee implements Serializable {
     private int ID;
     private final String nationalID;
     private String phoneNumber;
-    private boolean isManger;
+    private boolean isManager;
     private double managerBonus;
     private double earning;
     private final String startDate;
@@ -22,7 +22,7 @@ public abstract class Employee implements Serializable {
         this.ID = department.numberOfEmployees + 1;
         this.nationalID = nationalID;
         this.phoneNumber = phoneNumber;
-        this.isManger = true;
+        this.isManager = true;
         this.managerBonus = managerBonus;
         this.department = department;
         this.startDate = startDate.toString();
@@ -60,12 +60,12 @@ public abstract class Employee implements Serializable {
         this.ID = ID;
     }
 
-    public boolean isManger() {
-        return isManger;
+    public boolean isManager() {
+        return isManager;
     }
 
-    public void setManger(boolean manger) {
-        isManger = manger;
+    public void setManger(boolean manager) {
+        isManager = manager;
     }
 
     public Department getDepartment() {

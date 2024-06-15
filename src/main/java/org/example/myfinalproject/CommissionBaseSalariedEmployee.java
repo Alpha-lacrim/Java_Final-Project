@@ -6,16 +6,23 @@ import java.time.LocalDate;
 public class CommissionBaseSalariedEmployee extends CommissionSalariedEmployee implements Serializable, CalculateSalary, MonthlyEarning {
     private double baseSalary;
     private double CommissionRate;
-    private double numberOfSales;
+    private int numberOfSales;
 
-    public CommissionBaseSalariedEmployee(String firstName, String lastName, String nationalID, String phoneNumber, double managerBonus, LocalDate startDate, LocalDate birthdate, Department department, double baseSalary, double commissionRate, double numberOfSales) {
+    public CommissionBaseSalariedEmployee(String firstName, String lastName, String nationalID,
+                                          String phoneNumber, double managerBonus, LocalDate startDate,
+                                          LocalDate birthdate, Department department, double baseSalary,
+                                          double commissionRate, int numberOfSales) {
+
         super(firstName, lastName, nationalID, phoneNumber, managerBonus, startDate, birthdate, department, commissionRate, numberOfSales);
         this.baseSalary = baseSalary;
         CommissionRate = commissionRate;
         this.numberOfSales = numberOfSales;
     }
 
-    public CommissionBaseSalariedEmployee(String firstName, String lastName, String nationalID, String phoneNumber, LocalDate startDate, LocalDate birthdate, Department department, double baseSalary, double commissionRate, double numberOfSales) {
+    public CommissionBaseSalariedEmployee(String firstName, String lastName, String nationalID,
+                                          String phoneNumber, LocalDate startDate, LocalDate birthdate,
+                                          Department department, double baseSalary, double commissionRate, int numberOfSales) {
+
         super(firstName, lastName, nationalID, phoneNumber, startDate, birthdate, department, commissionRate, numberOfSales);
         this.baseSalary = baseSalary;
         CommissionRate = commissionRate;
@@ -38,11 +45,11 @@ public class CommissionBaseSalariedEmployee extends CommissionSalariedEmployee i
         CommissionRate = commissionRate;
     }
 
-    public double getNumberOfSales() {
+    public int getNumberOfSales() {
         return numberOfSales;
     }
 
-    public void setNumberOfSales(double numberOfSales) {
+    public void setNumberOfSales(int numberOfSales) {
         this.numberOfSales = numberOfSales;
     }
 
