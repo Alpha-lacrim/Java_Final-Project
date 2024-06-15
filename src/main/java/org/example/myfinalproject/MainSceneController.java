@@ -142,7 +142,6 @@ public class MainSceneController implements Initializable {
 
     @FXML
     void onAddManagerButton(ActionEvent event) {
-        //baseSalaryReadFromFile();
         refreshDepartmentComboBox();
         addDepartmentPane.setVisible(false);
         addEmployeePane.setVisible(false);
