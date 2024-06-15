@@ -250,19 +250,27 @@ public class MainSceneController implements Initializable {
     }
 
     private void baseSalaryReadFromFile(){
+
+        int sameManagerQuantity = 0;
         if(baseSalariedFile.isFile()) {
             try {
-                ObjectInputStream ois;
-                ois = new ObjectInputStream(new FileInputStream(baseSalariedFile));
-                ArrayList<BaseSalariedEmployee> employees;
-                employees = (ArrayList<BaseSalariedEmployee>) ois.readObject();
-                Iterator iterator = employees.iterator();
-                while(iterator.hasNext()){
-                    BaseSalariedEmployee emp = (BaseSalariedEmployee) iterator.next();
-                    if(emp.isManger() && !managerBaseSalariedArrayList.contains(emp)){
-                        managerBaseSalariedArrayList.add(emp);
+                    ObjectInputStream ois;
+                    ois = new ObjectInputStream(new FileInputStream(baseSalariedFile));
+                    ArrayList<BaseSalariedEmployee> allEmployees = (ArrayList<BaseSalariedEmployee>) ois.readObject();
+                    Iterator iterator = allEmployees.iterator();
+                    while (iterator.hasNext()) {
+                        BaseSalariedEmployee emp = (BaseSalariedEmployee) iterator.next();
+                        if(emp.isManger()) {
+                            for (BaseSalariedEmployee curEmp : managerBaseSalariedArrayList) {
+                                if (emp.getID() == curEmp.getID()) {
+                                    sameManagerQuantity += 1;
+                                }
+                                if (sameManagerQuantity == 0) {
+                                    managerBaseSalariedArrayList.add(curEmp);
+                                }
+                            }
+                        }
                     }
-                }
                 ois.close();
                 managerBaseSalariedEmployeeObservableList = managerBaseSalaryTable.getItems();
                 managerBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(managerBaseSalariedArrayList);
