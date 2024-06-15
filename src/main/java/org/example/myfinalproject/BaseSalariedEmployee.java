@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 import static java.time.LocalDate.now;
 
-public class BaseSalariedEmployee extends Employee implements Serializable {
+public class BaseSalariedEmployee extends Employee implements Serializable, Salary {
     private double baseSalary;
 
     public BaseSalariedEmployee(String firstName, String lastName, String nationalID, String phoneNumber, double managerBonus, LocalDate startDate, LocalDate birthdate, Department department, double baseSalary) {
@@ -24,7 +24,7 @@ public class BaseSalariedEmployee extends Employee implements Serializable {
     }
 
     @Override
-    public double calculateMonthlySalary() {
+    public double monthlyEarning() {
         return calculateSalary();
     }
 

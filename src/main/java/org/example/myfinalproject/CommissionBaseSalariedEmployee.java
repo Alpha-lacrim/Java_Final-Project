@@ -3,20 +3,20 @@ package org.example.myfinalproject;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class CommissionBaseSalariedEmployee extends Employee implements Serializable {
+public class CommissionBaseSalariedEmployee extends CommissionSalariedEmployee implements Serializable, Salary {
     private double baseSalary;
     private double CommissionRate;
     private double numberOfSales;
 
     public CommissionBaseSalariedEmployee(String firstName, String lastName, String nationalID, String phoneNumber, double managerBonus, LocalDate startDate, LocalDate birthdate, Department department, double baseSalary, double commissionRate, double numberOfSales) {
-        super(firstName, lastName, nationalID, phoneNumber, managerBonus, startDate, birthdate, department);
+        super(firstName, lastName, nationalID, phoneNumber, managerBonus, startDate, birthdate, department, commissionRate, numberOfSales);
         this.baseSalary = baseSalary;
         CommissionRate = commissionRate;
         this.numberOfSales = numberOfSales;
     }
 
     public CommissionBaseSalariedEmployee(String firstName, String lastName, String nationalID, String phoneNumber, LocalDate startDate, LocalDate birthdate, Department department, double baseSalary, double commissionRate, double numberOfSales) {
-        super(firstName, lastName, nationalID, phoneNumber, startDate, birthdate, department);
+        super(firstName, lastName, nationalID, phoneNumber, startDate, birthdate, department, commissionRate, numberOfSales);
         this.baseSalary = baseSalary;
         CommissionRate = commissionRate;
         this.numberOfSales = numberOfSales;
@@ -52,7 +52,7 @@ public class CommissionBaseSalariedEmployee extends Employee implements Serializ
     }
 
     @Override
-    public double calculateMonthlySalary() {
+    public double monthlyEarning() {
         return calculateSalary() * 30;
     }
 }

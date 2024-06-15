@@ -3,7 +3,7 @@ package org.example.myfinalproject;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class HourlySalariedEmployee extends Employee implements Serializable {
+public class HourlySalariedEmployee extends Employee implements Serializable, Salary {
     private double payPerHour;
     private double amountOfHours;
 
@@ -37,11 +37,11 @@ public class HourlySalariedEmployee extends Employee implements Serializable {
 
     @Override
     public double calculateSalary() {
-        return getManagerBonus() + (getAmountOfHours() * getPayPerHour());
+        return getManagerBonus() + (amountOfHours * payPerHour);
     }
 
     @Override
-    public double calculateMonthlySalary() {
+    public double monthlyEarning() {
         return calculateSalary() * 30;
     }
 }

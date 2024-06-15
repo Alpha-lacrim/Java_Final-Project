@@ -45,10 +45,6 @@ public abstract class Employee implements Serializable {
     }
 
 
-
-    public abstract double calculateSalary();
-    public abstract double calculateMonthlySalary();
-
     public String getFirstName() {
         return firstName;
     }

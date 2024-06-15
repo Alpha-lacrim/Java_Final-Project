@@ -3,7 +3,7 @@ package org.example.myfinalproject;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class CommissionSalariedEmployee extends Employee implements Serializable {
+public class CommissionSalariedEmployee extends Employee implements Serializable, Salary {
     private double commissionRate;
     private double numberOfSales;
 
@@ -42,7 +42,7 @@ public class CommissionSalariedEmployee extends Employee implements Serializable
     }
 
     @Override
-    public double calculateMonthlySalary() {
+    public double monthlyEarning() {
         return calculateSalary() * 30;
     }
 }
