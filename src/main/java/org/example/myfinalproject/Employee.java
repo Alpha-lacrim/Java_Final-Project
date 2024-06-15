@@ -10,6 +10,7 @@ public abstract class Employee implements Serializable {
     private String phoneNumber;
     private boolean isManger;
     private double managerBonus;
+    private double earning;
     private final String startDate;
     private String endDate;
     private final String birthDate;
@@ -109,5 +110,13 @@ public abstract class Employee implements Serializable {
 
     public String getBirthDate() {
         return birthDate;
+    }
+
+    public double getEarning() {
+        return earning;
+    }
+
+    public void setEarning(double earning) {
+        this.earning = earning;
     }
 }

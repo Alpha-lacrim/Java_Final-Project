@@ -1,6 +1,5 @@
 package org.example.myfinalproject;
 
-public interface Salary {
+public interface CalculateSalary {
     public double calculateSalary();
-    public double monthlyEarning();
 }

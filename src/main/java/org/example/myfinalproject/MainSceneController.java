@@ -18,6 +18,7 @@ import java.io.*;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 
 public class MainSceneController implements Initializable {
@@ -75,6 +76,7 @@ public class MainSceneController implements Initializable {
     ObservableList<String> typeOfEmployee = FXCollections.observableArrayList("base-salaried","hourly-salaried",
             "commission-salaried","base-commission salaried");
 
+    // Base Salaried managers Arraylists
     @FXML
     private TableView<BaseSalariedEmployee> managerBaseSalaryTable;
 
@@ -105,6 +107,38 @@ public class MainSceneController implements Initializable {
     @FXML
     private TableColumn<BaseSalariedEmployee,Department> managerBaseSalariedDepartmentColumn;
 
+
+    // Commission Base Salaried managers Arraylists
+    @FXML
+    private TableView<CommissionBaseSalariedEmployee> managerCommissionBaseSalariedTable;
+
+    @FXML
+    private TableColumn<CommissionBaseSalariedEmployee,Double> managerCommissionBaseColumn;
+
+    @FXML
+    private TableColumn<CommissionBaseSalariedEmployee,String> managerCommissionBaseBirthDateColumn;
+
+    @FXML
+    private TableColumn<CommissionBaseSalariedEmployee,Double> managerCommissionBaseBonusColumn;
+
+    @FXML
+    private TableColumn<CommissionBaseSalariedEmployee,String> managerCommissionBaseFamilyColumn;
+
+    @FXML
+    private TableColumn<CommissionBaseSalariedEmployee,Integer> managerCommissionBaseIDColumn;
+
+    @FXML
+    private TableColumn<CommissionBaseSalariedEmployee,String> managerCommissionBaseNameColumn;
+
+    @FXML
+    private TableColumn<CommissionBaseSalariedEmployee,String> managerCommissionBaseNationalColumn;
+
+    @FXML
+    private TableColumn<CommissionBaseSalariedEmployee,String> managerCommissionBasePhoneColumn;
+
+    @FXML
+    private TableColumn<CommissionBaseSalariedEmployee,Department> managerCommissionBaseDepartmentColumn;
+
     //upside variables for manger.
 
     @FXML
@@ -116,11 +150,21 @@ public class MainSceneController implements Initializable {
     @FXML
     private AnchorPane addManagerPane;
 
+    // Creating observable list, array list and file for baseSalary employees
     File baseSalariedFile = new File("BaseSalaried.txt");
-    ObservableList<BaseSalariedEmployee> baseSalariedEmployeeObservableList;
+    ObservableList<BaseSalariedEmployee> managerBaseSalariedEmployeeObservableList;
     ArrayList<BaseSalariedEmployee> baseSalariedArrayList = new ArrayList<>();
+    ArrayList<BaseSalariedEmployee> managerBaseSalariedArrayList = new ArrayList<>();
+
+
+    // Creating observable list, array list and file for baseSalary employees
+    File commissionBaseFile = new File("CommissionBaseSalaried.txt");
+    ObservableList<CommissionBaseSalariedEmployee> commissionBaseEmployeeObservableList;
+    ArrayList<CommissionBaseSalariedEmployee> commissionBaseArrayList = new ArrayList<>();
+
 
 //    upside variables used for pane.
+
 //    ObjectInputStream ois;
 //    ObjectOutputStream oos;
 
@@ -140,7 +184,6 @@ public class MainSceneController implements Initializable {
 
     @FXML
     void onAddManagerButton(ActionEvent event) {
-        baseSalaryReadFromFile();
         refreshDepartmentComboBox();
         addDepartmentPane.setVisible(false);
         addEmployeePane.setVisible(false);
@@ -174,9 +217,9 @@ public class MainSceneController implements Initializable {
                                 LocalDate.now(), managerBirthDatePicker.getValue(), department, Double.parseDouble(managerBaseSalaryField.getText()));
                         departmentWriteToFile();
                         baseSalariedArrayList.add(baseSalariedEmp);
-                        baseSalariedEmployeeObservableList = managerBaseSalaryTable.getItems();
-                        baseSalariedEmployeeObservableList = FXCollections.observableArrayList(baseSalariedArrayList);
-                        managerBaseSalaryTable.setItems(baseSalariedEmployeeObservableList);
+                        managerBaseSalariedEmployeeObservableList = managerBaseSalaryTable.getItems();
+                        managerBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(baseSalariedArrayList);
+                        managerBaseSalaryTable.setItems(managerBaseSalariedEmployeeObservableList);
                         baseSalaryWriteToFile();
                     } else {
                         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -185,6 +228,26 @@ public class MainSceneController implements Initializable {
                         alert.showAndWait();
                     }
                     break;
+//                case "base-commission salaried":
+//                    if (!department.isHasManager()) {
+//                        baseSalaryReadFromFile();
+//                        var baseSalariedEmp = new BaseSalariedEmployee(managerNameField.getText(), managerFamilyNameField.getText(),
+//                                managerNationalIdField.getText(), managerPhoneField.getText(), Double.parseDouble(managerBonusField.getText()),
+//                                LocalDate.now(), managerBirthDatePicker.getValue(), department, Double.parseDouble(managerBaseSalaryField.getText()));
+//                        departmentWriteToFile();
+//                        baseSalariedArrayList.add(baseSalariedEmp);
+//                        baseSalariedEmployeeObservableList = managerBaseSalaryTable.getItems();
+//                        baseSalariedEmployeeObservableList = FXCollections.observableArrayList(baseSalariedArrayList);
+//                        managerBaseSalaryTable.setItems(baseSalariedEmployeeObservableList);
+//                        baseSalaryWriteToFile();
+//                    } else {
+//                        Alert alert = new Alert(Alert.AlertType.ERROR);
+//                        alert.setTitle("ERROR!");
+//                        alert.setContentText("This Department already has a manager");
+//                        alert.showAndWait();
+//                    }
+//                    break;
+
             }
         }
         catch (Exception e) {
@@ -249,15 +312,30 @@ public class MainSceneController implements Initializable {
     }
 
     private void baseSalaryReadFromFile(){
+        int sameManagerQuantity = 0;
         if(baseSalariedFile.isFile()) {
             try {
                 ObjectInputStream ois;
                 ois = new ObjectInputStream(new FileInputStream(baseSalariedFile));
                 baseSalariedArrayList = (ArrayList<BaseSalariedEmployee>) ois.readObject();
+                for (BaseSalariedEmployee emp : baseSalariedArrayList) {
+                    if (emp.isManger()) {
+                        for (BaseSalariedEmployee manager : managerBaseSalariedArrayList) {
+                            if (manager.getID() == emp.getID()) {
+                                sameManagerQuantity += 1;
+                                break;
+                            }
+                        }
+
+                        if (sameManagerQuantity == 1) {
+                            managerBaseSalariedArrayList.add(emp);
+                        }
+                    }
+                }
                 ois.close();
-                baseSalariedEmployeeObservableList = managerBaseSalaryTable.getItems();
-                baseSalariedEmployeeObservableList = FXCollections.observableArrayList(baseSalariedArrayList);
-                managerBaseSalaryTable.setItems(baseSalariedEmployeeObservableList);
+                managerBaseSalariedEmployeeObservableList = managerBaseSalaryTable.getItems();
+                managerBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(baseSalariedArrayList);
+                managerBaseSalaryTable.setItems(managerBaseSalariedEmployeeObservableList);
             } catch (IOException | ClassNotFoundException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Nothing to show !");

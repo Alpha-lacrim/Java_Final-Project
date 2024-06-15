@@ -3,7 +3,7 @@ package org.example.myfinalproject;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class CommissionSalariedEmployee extends Employee implements Serializable, Salary {
+public class CommissionSalariedEmployee extends Employee implements Serializable, CalculateSalary, MonthlyEarning {
     private double commissionRate;
     private double numberOfSales;
 
