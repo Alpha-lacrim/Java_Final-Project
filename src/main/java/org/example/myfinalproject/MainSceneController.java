@@ -170,6 +170,7 @@ public class MainSceneController implements Initializable {
 
     @FXML
     void onAddDepartmentButton(ActionEvent event) {
+        departmentReadFromFile();
         addDepartmentPane.setVisible(true);
         addEmployeePane.setVisible(false);
         addManagerPane.setVisible(false);
