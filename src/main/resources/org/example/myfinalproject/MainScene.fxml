@@ -40,7 +40,7 @@
                 </Button>
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="addDepartmentPane" layoutX="211.2" layoutY="11.0" prefHeight="578.0" prefWidth="678.0" style="-fx-background-color: #ecf0f1;" visible="false" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="14.0">
+        <AnchorPane fx:id="addDepartmentPane" layoutX="211.2" layoutY="11.0" prefHeight="578.0" prefWidth="678.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="14.0">
          <children>
             <TableView fx:id="departmentTable" layoutX="386.0" layoutY="14.0" prefHeight="658.0" prefWidth="377.0" style="-fx-background-color: #fdcb6e;" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
               <columns>
@@ -57,7 +57,7 @@
                </font></Button>
          </children>
         </AnchorPane>
-        <AnchorPane fx:id="addManagerPane" layoutX="211.0" layoutY="14.0" prefHeight="578.0" prefWidth="678.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="14.0">
+        <AnchorPane fx:id="addManagerPane" layoutX="211.0" layoutY="14.0" prefHeight="578.0" prefWidth="678.0" style="-fx-background-color: #ecf0f1;" visible="false" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="14.0">
          <children>
             <TextField fx:id="managerNameField" layoutX="33.0" layoutY="491.0" promptText="Enter Name" />
             <TextField fx:id="managerBonusField" layoutX="209.0" layoutY="452.0" promptText="Enter Manger-Bonus" />
@@ -84,7 +84,7 @@
             <Button layoutX="389.0" layoutY="500.0" mnemonicParsing="false" onAction="#onAddManagerButton2" prefHeight="61.0" prefWidth="149.0" text="Add Manger" />
             <TextField fx:id="managerCommissionRateField" layoutX="210.0" layoutY="575.0" promptText="Enter Commission Rate" />
             <TextField fx:id="managerNumberOfSalesField" layoutX="210.0" layoutY="617.0" promptText="Enter Number of Sales" />
-            <TableView fx:id="managerCommissionBaseTable" layoutX="8.0" layoutY="4.0" prefHeight="334.0" prefWidth="765.0">
+            <TableView fx:id="managerCommissionBaseTable" layoutX="8.0" layoutY="4.0" prefHeight="334.0" prefWidth="765.0" visible="false">
               <columns>
                 <TableColumn fx:id="managerCommissionBaseIDColumn" prefWidth="29.0" text="ID" />
                 <TableColumn fx:id="managerCommissionBaseNameColumn" prefWidth="40.0" text="Name" />

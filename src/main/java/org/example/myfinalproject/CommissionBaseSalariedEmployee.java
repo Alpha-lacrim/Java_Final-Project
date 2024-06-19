@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 public class CommissionBaseSalariedEmployee extends CommissionSalariedEmployee implements Serializable, CalculateSalary, MonthlyEarning {
     private double baseSalary;
+    private double earning;
 
     public CommissionBaseSalariedEmployee(String firstName, String lastName, String nationalID,
                                           String phoneNumber, double managerBonus, LocalDate startDate,
@@ -13,6 +14,7 @@ public class CommissionBaseSalariedEmployee extends CommissionSalariedEmployee i
 
         super(firstName, lastName, nationalID, phoneNumber, managerBonus, startDate, birthdate, department, commissionRate, numberOfSales);
         this.baseSalary = baseSalary;
+        this.earning = monthlyEarning();
     }
 
     public CommissionBaseSalariedEmployee(String firstName, String lastName, String nationalID,
@@ -21,6 +23,7 @@ public class CommissionBaseSalariedEmployee extends CommissionSalariedEmployee i
 
         super(firstName, lastName, nationalID, phoneNumber, startDate, birthdate, department, commissionRate, numberOfSales);
         this.baseSalary = baseSalary;
+        this.earning = monthlyEarning();
     }
 
     public double getBaseSalary() {

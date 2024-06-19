@@ -6,6 +6,7 @@ import java.time.LocalDate;
 public class CommissionSalariedEmployee extends Employee implements Serializable, CalculateSalary, MonthlyEarning {
     private double commissionRate;
     private int numberOfSales;
+    private double earning;
 
     public CommissionSalariedEmployee(String firstName, String lastName, String nationalID,
                                       String phoneNumber, double managerBonus, LocalDate startDate,
@@ -14,6 +15,7 @@ public class CommissionSalariedEmployee extends Employee implements Serializable
         super(firstName, lastName, nationalID, phoneNumber, managerBonus, startDate, birthdate, department);
         this.commissionRate = commissionRate;
         this.numberOfSales = numberOfSales;
+        this.earning = monthlyEarning();
     }
 
     public CommissionSalariedEmployee(String firstName, String lastName, String nationalID,
@@ -23,6 +25,7 @@ public class CommissionSalariedEmployee extends Employee implements Serializable
         super(firstName, lastName, nationalID, phoneNumber, startDate, birthdate, department);
         this.commissionRate = commissionRate;
         this.numberOfSales = numberOfSales;
+        this.earning = monthlyEarning();
     }
 
     //set and get methods.
@@ -42,6 +45,14 @@ public class CommissionSalariedEmployee extends Employee implements Serializable
         this.numberOfSales = numberOfSales;
     }
 
+    public double getEarning() {
+        return earning;
+    }
+
+    public void setEarning(double earning) {
+        this.earning = earning;
+    }
+
     @Override
     public double calculateSalary() {
         return getManagerBonus() + (getNumberOfSales() * getCommissionRate());
@@ -51,4 +62,5 @@ public class CommissionSalariedEmployee extends Employee implements Serializable
     public double monthlyEarning() {
         return calculateSalary() * 30;
     }
+
 }

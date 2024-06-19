@@ -1,10 +1,8 @@
 package org.example.myfinalproject;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,12 +12,11 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.util.converter.BooleanStringConverter;
+
 import java.io.*;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.ResourceBundle;
 
 public class MainSceneController implements Initializable {
@@ -193,11 +190,15 @@ public class MainSceneController implements Initializable {
     }
 
     @FXML
-    void onAddManagerButton(ActionEvent event) {
-        refreshDepartmentComboBox();
-        addDepartmentPane.setVisible(false);
-        addEmployeePane.setVisible(false);
-        addManagerPane.setVisible(true);
+    void onAddManagerButton(ActionEvent event) throws IOException {
+        Stage stage;
+        Scene scene;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("addManagerScene.fxml"));
+        scene = new Scene(fxmlLoader.load());
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
     }
 
     @FXML
@@ -209,6 +210,7 @@ public class MainSceneController implements Initializable {
         departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
         departmentTable.setItems(departmentObservableList);
         nameOfDepartmentField.setText("");
+        departmentDatePicker.setValue(null);
         departmentWriteToFile();
     }
 
@@ -305,8 +307,8 @@ public class MainSceneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        departmentColumn.setCellValueFactory(new PropertyValueFactory<Department,String>("name"));
-        numberOfEmployeesColumn.setCellValueFactory(new PropertyValueFactory<Department,Integer>("numberOfEmployees"));
+        departmentColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        numberOfEmployeesColumn.setCellValueFactory(new PropertyValueFactory<>("numberOfEmployees"));
         sinceColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         departmentReadFromFile();
         managerBaseSalariedBaseColumn.setCellValueFactory(new PropertyValueFactory<>("baseSalary"));
