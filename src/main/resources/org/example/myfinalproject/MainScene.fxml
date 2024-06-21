@@ -15,43 +15,47 @@
     <children>
         <AnchorPane layoutY="15.2" prefHeight="678.0" prefWidth="195.0" style="-fx-background-color: #fdcb6e;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="795.0" AnchorPane.topAnchor="15.0">
             <children>
-                <Label alignment="CENTER" layoutX="13.0" layoutY="72.0" prefHeight="18.0" prefWidth="173.0" text="Welcome Admin" textFill="#2c3e50">
+                <Label alignment="CENTER" layoutX="13.0" layoutY="61.0" prefHeight="71.0" prefWidth="173.0" text="Welcome Admin" textFill="#2c3e50">
                     <font>
                         <Font name="System Bold" size="20.0" />
                     </font>
                 </Label>
-                <Button layoutX="20.0" layoutY="198.0" mnemonicParsing="false" onAction="#onAddManagerButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="add manager" textFill="#fdcb6e">
+                <Button layoutX="19.0" layoutY="214.0" mnemonicParsing="false" onAction="#onAddManagerButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="Add manager" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>
                 </Button>
-                <Button layoutX="20.0" layoutY="248.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="add employee" textFill="#fdcb6e">
+                <Button layoutX="19.0" layoutY="272.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="Add employee" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>
                 </Button>
-                <Button layoutX="20.0" layoutY="150.0" mnemonicParsing="false" onAction="#onAddDepartmentButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="add department" textFill="#fdcb6e">
+                <Button layoutX="19.0" layoutY="158.0" mnemonicParsing="false" onAction="#onAddDepartmentButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="Add department" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>
                     <effect>
-                        <Blend />
+                  <Blend />
                     </effect>
                 </Button>
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="addDepartmentPane" layoutX="211.2" layoutY="11.0" prefHeight="578.0" prefWidth="678.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="14.0">
+        <AnchorPane fx:id="addDepartmentPane" layoutX="211.0" layoutY="15.0" prefHeight="578.0" prefWidth="678.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="15.0">
          <children>
-            <TableView fx:id="departmentTable" layoutX="386.0" layoutY="14.0" prefHeight="658.0" prefWidth="377.0" style="-fx-background-color: #fdcb6e;" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <TableView fx:id="departmentTable" layoutX="386.0" layoutY="1.0" prefHeight="678.0" prefWidth="483.0" style="-fx-background-color: #fdcb6e;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
               <columns>
-                <TableColumn fx:id="departmentColumn" prefWidth="127.19995421171188" text="department" />
-                <TableColumn fx:id="numberOfEmployeesColumn" prefWidth="135.1999969482422" text="number of employees" />
-                  <TableColumn fx:id="sinceColumn" prefWidth="115.20001220703125" text="Since" />
+                <TableColumn fx:id="numberOfEmployeesColumn" prefWidth="144.0" text="Number of Employees" />
+                  <TableColumn prefWidth="108.0" text="Has Manager" />
+                  <TableColumn fx:id="sinceColumn" prefWidth="112.0" text="Creation Date" />
+                <TableColumn fx:id="departmentColumn" prefWidth="118.0" text="Department" />
               </columns>
+               <effect>
+                  <Blend />
+               </effect>
             </TableView>
-            <TextField fx:id="nameOfDepartmentField" layoutX="43.0" layoutY="34.0" prefHeight="26.0" prefWidth="230.0" promptText="Enter name of department" />
-            <DatePicker fx:id="departmentDatePicker" editable="false" layoutX="43.0" layoutY="83.0" prefHeight="26.0" prefWidth="230.0" promptText="Enter Date" />
-            <Button layoutX="44.0" layoutY="141.0" mnemonicParsing="false" onAction="#onAddDepartmentButton2" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #2c3e50;" text="Add Department" textFill="#fdcb6e">
+            <TextField fx:id="nameOfDepartmentField" layoutX="30.0" layoutY="59.0" prefHeight="30.0" prefWidth="230.0" promptText="Enter the name of department" />
+            <DatePicker fx:id="departmentDatePicker" editable="false" layoutX="30.0" layoutY="97.0" prefHeight="30.0" prefWidth="230.0" promptText="Select the date" />
+            <Button layoutX="88.0" layoutY="150.0" mnemonicParsing="false" onAction="#onAddDepartmentButton2" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #2c3e50;" text="Add" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>

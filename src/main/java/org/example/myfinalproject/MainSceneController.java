@@ -183,17 +183,26 @@ public class MainSceneController implements Initializable {
     }
 
     @FXML
-    void onAddEmployeeButton(ActionEvent event) {
+    void onAddEmployeeButton(ActionEvent event) throws IOException{
         addDepartmentPane.setVisible(false);
         addEmployeePane.setVisible(true);
         addManagerPane.setVisible(false);
+
+        Stage stage;
+        Scene scene;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddEmployeeScene.fxml"));
+        scene = new Scene(fxmlLoader.load());
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
     }
 
     @FXML
     void onAddManagerButton(ActionEvent event) throws IOException {
         Stage stage;
         Scene scene;
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("addManagerScene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddManagerScene.fxml"));
         scene = new Scene(fxmlLoader.load());
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
