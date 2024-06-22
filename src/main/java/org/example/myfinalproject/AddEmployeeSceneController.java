@@ -23,15 +23,17 @@ public class AddEmployeeSceneController implements Initializable {
     ObservableList<Department> departmentObservableList;
     ArrayList<Department> departmentArrayList = new ArrayList<>();
 
-    // manager base salary variables.
+    // Status combobox
+    ObservableList<Status> statusObservableList;
+    ArrayList<Status> statusArrayList = new ArrayList<>();
+
+
+    // Employee base salary variables.
     @FXML
     private TableView<BaseSalariedEmployee> employeeBaseSalaryTable;
 
     @FXML
     private TableColumn<BaseSalariedEmployee,String> employeeBaseSalaryBirthColumn;
-
-    @FXML
-    private TableColumn<BaseSalariedEmployee,Double> employeeBaseSalaryBonusColumn;
 
     @FXML
     private TableColumn<BaseSalariedEmployee,Double> employeeBaseSalaryColumn;
@@ -62,15 +64,12 @@ public class AddEmployeeSceneController implements Initializable {
     ArrayList<BaseSalariedEmployee> baseSalariedArrayList = new ArrayList<>();
     ArrayList<BaseSalariedEmployee> employeeBaseSalariedArrayList = new ArrayList<>();
 
-    //manager hourly salaried variables.
+    // Employee hourly salaried variables.
     @FXML
     private TableColumn<HourlySalariedEmployee, Double> employeeHourlySalaryAmountOfHoursColumn;
 
     @FXML
     private TableColumn<HourlySalariedEmployee, String> employeeHourlySalaryBirthColumn;
-
-    @FXML
-    private TableColumn<HourlySalariedEmployee, Double> employeeHourlySalaryBonusColumn;
 
     @FXML
     private TableColumn<HourlySalariedEmployee, Department> employeeHourlySalaryDepartmentColumn;
@@ -104,15 +103,12 @@ public class AddEmployeeSceneController implements Initializable {
     ArrayList<HourlySalariedEmployee> hourlySalariedArrayList = new ArrayList<>();
     ArrayList<HourlySalariedEmployee> employeeHourlySalariedArrayList = new ArrayList<>();
 
-    //manager commission salaried variables.
+    // Employee commission salaried variables.
     @FXML
     private TableView<CommissionSalariedEmployee> employeeCommissionSalaryTable;
 
     @FXML
     private TableColumn<CommissionSalariedEmployee,String> employeeCommissionSalaryBirthColumn;
-
-    @FXML
-    private TableColumn<CommissionSalariedEmployee,Double> employeeCommissionSalaryBonusColumn;
 
     @FXML
     private TableColumn<CommissionSalariedEmployee,Department> employeeCommissionSalaryDepartmentColumn;
@@ -146,15 +142,12 @@ public class AddEmployeeSceneController implements Initializable {
     ArrayList<CommissionSalariedEmployee> commissionSalariedArrayList = new ArrayList<>();
     ArrayList<CommissionSalariedEmployee> employeeCommissionSalariedArrayList = new ArrayList<>();
 
-    //manager commission base salaried variables.
+    // Employee commission base salaried variables.
     @FXML
     private TableView<CommissionBaseSalariedEmployee> employeeCommissionBaseTable;
 
     @FXML
     private TableColumn<CommissionBaseSalariedEmployee,String> employeeCommissionBaseBirthColumn;
-
-    @FXML
-    private TableColumn<CommissionBaseSalariedEmployee,Double> employeeCommissionBaseBonusColumn;
 
     @FXML
     private TableColumn<CommissionBaseSalariedEmployee,Department> employeeCommissionBaseDepartmentColumn;
@@ -191,7 +184,7 @@ public class AddEmployeeSceneController implements Initializable {
     ArrayList<CommissionBaseSalariedEmployee> commissionBaseSalariedArrayList = new ArrayList<>();
     ArrayList<CommissionBaseSalariedEmployee> employeeCommissionBaseSalariedArrayList = new ArrayList<>();
 
-    //constant textFields in add manager Scene.
+    // constant textFields in add employee Scene.
 
     @FXML
     private TextField nameField;
@@ -215,6 +208,9 @@ public class AddEmployeeSceneController implements Initializable {
     private ComboBox<Department> DepartmentCombo;
 
     @FXML
+    private ComboBox<Status> statusCombo;
+
+    @FXML
     private TextField PayPerHourField;
 
     @FXML
@@ -234,6 +230,11 @@ public class AddEmployeeSceneController implements Initializable {
 
     @FXML
     private ComboBox<String> employeePickTypeCombo;
+
+    @FXML
+    private Button employeeApplyButton;
+
+
 
     ObservableList<String> typeOfEmployee = FXCollections.observableArrayList("base-salaried","hourly-salaried",
             "commission-salaried","base-commission salaried");
@@ -382,6 +383,12 @@ public class AddEmployeeSceneController implements Initializable {
     }
 
     @FXML
+    void onEditButton(ActionEvent event) throws IOException {
+        statusCombo.setVisible(true);
+        employeeApplyButton.setVisible(true);
+    }
+
+    @FXML
     void onEmployeePickTypeCombo(ActionEvent event) {
         switch (employeePickTypeCombo.getValue()) {
             case "base-salaried":
@@ -500,6 +507,18 @@ public class AddEmployeeSceneController implements Initializable {
         departmentReadFromFile();
         employeePickTypeCombo.setItems(typeOfEmployee);
         DepartmentCombo.setItems(departmentObservableList);
+
+        // Initializing Status Combobox
+        statusArrayList.add(Status.NO_PAY_DISMISSAL);
+        statusArrayList.add(Status.FIRED);
+        statusArrayList.add(Status.RETIRED);
+        statusArrayList.add(Status.END_OF_CONTRACT);
+        statusArrayList.add(Status.HAS_CHANGED);
+        statusObservableList = FXCollections.observableArrayList(statusArrayList);
+        statusCombo.setItems(statusObservableList);
+
+        statusCombo.setVisible(false);
+        employeeApplyButton.setVisible(false);
     }
 
     // Department read and write to file methods.

@@ -14,6 +14,8 @@ public abstract class Employee implements Serializable {
     private String endDate;
     private final String birthDate;
     private Department department;
+    private boolean isActive;
+    private Status status;
 
     public Employee(String firstName,String lastName,String nationalID,String phoneNumber,double managerBonus,LocalDate startDate,LocalDate birthdate,Department department){
         this.firstName = firstName;
@@ -27,6 +29,7 @@ public abstract class Employee implements Serializable {
         this.startDate = startDate.toString();
         this.endDate = null;
         this.birthDate = birthdate.toString();
+        this.isActive = true;
         department.hasManager = true;
         department.numberOfEmployees++;
     }
@@ -41,6 +44,7 @@ public abstract class Employee implements Serializable {
         this.startDate = startDate.toString();
         this.endDate = null;
         this.birthDate = birthdate.toString();
+        this.isActive = true;
         department.numberOfEmployees++;
     }
 
@@ -111,4 +115,19 @@ public abstract class Employee implements Serializable {
         return birthDate;
     }
 
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }
