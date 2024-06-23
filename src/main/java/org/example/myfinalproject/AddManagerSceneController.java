@@ -24,8 +24,11 @@ public class AddManagerSceneController implements Initializable {
     ObservableList<Department> departmentObservableList;
     ArrayList<Department> departmentArrayList = new ArrayList<>();
 
-    // manager base salary variables.
+    // Status combobox
+    ObservableList<Status> statusObservableList;
+    ArrayList<Status> statusArrayList = new ArrayList<>();
 
+    // manager base salary variables.
     @FXML
     private TableView<BaseSalariedEmployee> managerBaseSalaryTable;
 
@@ -220,6 +223,9 @@ public class AddManagerSceneController implements Initializable {
     private ComboBox<Department> DepartmentCombo;
 
     @FXML
+    private ComboBox<Status> statusCombo;
+
+    @FXML
     private TextField PayPerHourField;
 
     @FXML
@@ -240,8 +246,25 @@ public class AddManagerSceneController implements Initializable {
     @FXML
     private ComboBox<String> managerPickTypeCombo;
 
+    @FXML
+    private Button applyButton;
+
+    @FXML
+    private Button cancelButton;
+
+    @FXML
+    private Button editButton;
+
+    @FXML
+    private RadioButton employeeRadioButton;
+
+    @FXML
+    private RadioButton managerRadioButton;
+
     ObservableList<String> typeOfEmployee = FXCollections.observableArrayList("base-salaried","hourly-salaried",
             "commission-salaried","base-commission salaried");
+
+
 
     @FXML
     void onAddManagerButton(ActionEvent event) {
@@ -395,6 +418,49 @@ public class AddManagerSceneController implements Initializable {
     }
 
     @FXML
+    void onEditButton(ActionEvent event) throws IOException {
+        statusCombo.setVisible(true);
+        applyButton.setVisible(true);
+        cancelButton.setVisible(true);
+        employeeRadioButton.setVisible(true);
+        managerRadioButton.setVisible(true);
+    }
+
+    @FXML
+    void onCancelButton(ActionEvent event) throws  IOException {
+        statusCombo.setVisible(false);
+        applyButton.setVisible(false);
+        cancelButton.setVisible(false);
+        employeeRadioButton.setVisible(false);
+        managerRadioButton.setVisible(false);
+    }
+
+    @FXML
+    void onApplyButton(ActionEvent event) throws IOException {
+        // Define this button
+    }
+
+    @FXML
+    void onEmployeeRadio(ActionEvent event) throws  IOException {
+        if (employeeRadioButton.isSelected()) {
+            managerRadioButton.setDisable(true);
+        }
+        else {
+            managerRadioButton.setDisable(false);
+        }
+    }
+
+    @FXML
+    void onManagerRadio(ActionEvent event) throws  IOException {
+        if (managerRadioButton.isSelected()) {
+            employeeRadioButton.setDisable(true);
+        }
+        else {
+            employeeRadioButton.setDisable(false);
+        }
+    }
+
+    @FXML
     void onManagerPickTypeCombo(ActionEvent event) {
         switch (managerPickTypeCombo.getValue()) {
             case "base-salaried":
@@ -513,6 +579,28 @@ public class AddManagerSceneController implements Initializable {
         departmentReadFromFile();
         managerPickTypeCombo.setItems(typeOfEmployee);
         DepartmentCombo.setItems(departmentObservableList);
+
+        // Initializing Status Combobox
+        statusArrayList.add(Status.NO_PAY_DISMISSAL);
+        statusArrayList.add(Status.FIRED);
+        statusArrayList.add(Status.RETIRED);
+        statusArrayList.add(Status.END_OF_CONTRACT);
+        statusObservableList = FXCollections.observableArrayList(statusArrayList);
+        statusCombo.setItems(statusObservableList);
+
+        statusCombo.setVisible(false);
+        applyButton.setVisible(false);
+        cancelButton.setVisible(false);
+        employeeRadioButton.setVisible(false);
+        managerRadioButton.setVisible(false);
+
+//        Remember to add these lines later:
+//        if (managerRadioButton.isSelected()) {
+//            managerBonusTextField.setVisible(true);
+//        }
+//        else {
+//            managerBonusTextField.setVisible(false);
+//        }
     }
 
     // department read and write to file method.

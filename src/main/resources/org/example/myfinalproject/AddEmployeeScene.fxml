@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -87,17 +86,13 @@
         </TableView>
         <TextField fx:id="commissionRateField2" layoutX="504.0" layoutY="461.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter commission rate" visible="false" />
         <TextField fx:id="numberOfSalesField2" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter number of sales" visible="false" />
-      <ButtonBar layoutX="704.0" layoutY="550.0" prefHeight="26.0" prefWidth="194.0">
-        <buttons>
-          <Button fx:id="employeeApplyButton" minWidth="70.0" mnemonicParsing="false" prefHeight="0.0" text="Apply" />
-            <Button fx:id="employeeEditButton" minWidth="56.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" text="Edit">
-               <graphic>
-                  <FontAwesomeIcon glyphName="EDIT" size="20" />
-               </graphic></Button>
-              <Button minWidth="64.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="89.0" text="Back" />
-        </buttons>
-      </ButtonBar>
-      <ComboBox fx:id="statusCombo" layoutX="500.0" layoutY="550.0" minWidth="53.0" prefHeight="26.0" prefWidth="143.0" promptText="End Reason" />
-      <FontAwesomeIcon glyphName="USER" layoutX="757.0" layoutY="516.0" size="25" />
+      <ComboBox fx:id="statusCombo" layoutX="500.0" layoutY="560.0" minWidth="53.0" prefHeight="25.0" prefWidth="191.0" promptText="End Reason" />
+      <Button layoutX="-161.0" layoutY="2.0" mnemonicParsing="false" text="Button" />
+        <Button fx:id="cancelButton" layoutX="783.0" layoutY="560.0" minWidth="56.0" mnemonicParsing="false" onAction="#onCancelButton" prefHeight="25.0" prefWidth="61.0" text="Cancel" />
+      <Button fx:id="editButton" layoutX="852.0" layoutY="560.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" prefWidth="61.0" text="Edit" />
+    <Button fx:id="applyButton" layoutX="712.0" layoutY="560.0" minWidth="61.0" mnemonicParsing="false" onAction="#onApplyButton" prefHeight="25.0" prefWidth="61.0" text="Apply" />
+      <Button fx:id="backButton" layoutX="925.0" layoutY="560.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="25.0" prefWidth="61.0" text="Back" />
+      <RadioButton fx:id="managerRadioButton" layoutX="504.0" layoutY="534.0" mnemonicParsing="false" onAction="#onManagerRadio" prefHeight="17.0" prefWidth="83.0" text="Manager" />
+      <RadioButton fx:id="employeeRadioButton" layoutX="596.0" layoutY="534.0" mnemonicParsing="false" onAction="#onEmployeeRadio" text="Employee" />
     </children>
 </AnchorPane>

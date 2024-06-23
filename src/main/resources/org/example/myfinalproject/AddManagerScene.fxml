@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -34,11 +35,11 @@
       <ComboBox fx:id="DepartmentCombo" layoutX="160.0" layoutY="550.0" prefHeight="26.0" prefWidth="158.0" promptText="Select a Department" />
       <TextField fx:id="baseSalaryField" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="130.0" promptText="Enter base" />
       <DatePicker fx:id="birthDatePicker" editable="false" layoutX="160.0" layoutY="507.0" prefHeight="26.0" prefWidth="158.0" promptText="Select the birth date" />
-      <Button layoutX="708.0" layoutY="465.0" mnemonicParsing="false" onAction="#onAddManagerButton" prefHeight="51.0" prefWidth="264.0" text="Add Manager" textAlignment="CENTER">
+      <Button layoutX="726.0" layoutY="482.0" mnemonicParsing="false" onAction="#onAddManagerButton" prefHeight="51.0" prefWidth="264.0" text="Add Manager" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Button layoutX="849.0" layoutY="551.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="123.0" text="Back" />
+      <Button fx:id="backButton" layoutX="933.0" layoutY="555.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="64.0" text="Back" />
       <TableView fx:id="managerHourlySalaryTable" layoutX="3.0" layoutY="6.0" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
         <columns>
           <TableColumn fx:id="managerHourlySalaryIdColumn" prefWidth="44.0" text="ID" />
@@ -72,7 +73,7 @@
          </columns>
       </TableView>
       <TextField fx:id="commissionRateField" layoutX="487.0" layoutY="461.0" prefHeight="26.0" prefWidth="147.0" promptText="Enter commission rate" visible="false" />
-      <TextField fx:id="numberOfSalesField" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="130.0" promptText="Enter number of sales" />
+      <TextField fx:id="numberOfSalesField" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="130.0" promptText="Enter number of sales" visible="false" />
       <TableView fx:id="managerCommissionBaseTable" layoutX="13.0" layoutY="16.0" prefHeight="445.0" prefWidth="994.0" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
          <columns>
             <TableColumn fx:id="managerCommissionBaseIdColumn" prefWidth="43.200013637542725" text="ID" />
@@ -91,5 +92,11 @@
       </TableView>
       <TextField fx:id="commissionRateField2" layoutX="487.0" layoutY="507.0" prefHeight="26.0" prefWidth="147.0" promptText="Enter commission rate" visible="false" />
       <TextField fx:id="numberOfSalesField2" layoutX="487.0" layoutY="461.0" prefHeight="26.0" prefWidth="147.0" promptText="Enter number of sales" visible="false" />
+      <Button fx:id="editButton" layoutX="858.0" layoutY="556.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" prefWidth="64.0" text="Edit" />
+      <Button fx:id="cancelButton" layoutX="787.0" layoutY="555.0" mnemonicParsing="false" onAction="#onCancelButton" prefHeight="25.0" prefWidth="64.0" text="Cancel" />
+      <Button fx:id="applyButton" layoutX="712.0" layoutY="554.0" mnemonicParsing="false" onAction="#onApplyButton" prefHeight="25.0" prefWidth="64.0" text="Apply" />
+      <RadioButton fx:id="managerRadioButton" layoutX="486.0" layoutY="546.0" mnemonicParsing="false" onAction="#onManagerRadio" text="Manager" />
+      <RadioButton fx:id="employeeRadioButton" layoutX="561.0" layoutY="546.0" mnemonicParsing="false" onAction="#onEmployeeRadio" text="Employee" />
+      <ComboBox fx:id="statusCombo" layoutX="486.0" layoutY="564.0" prefWidth="150.0" promptText="End Reason" />
    </children>
 </AnchorPane>

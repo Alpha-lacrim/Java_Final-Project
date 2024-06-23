@@ -232,8 +232,19 @@ public class AddEmployeeSceneController implements Initializable {
     private ComboBox<String> employeePickTypeCombo;
 
     @FXML
-    private Button employeeApplyButton;
+    private Button applyButton;
 
+    @FXML
+    private Button cancelButton;
+
+    @FXML
+    private Button editButton;
+
+    @FXML
+    private RadioButton employeeRadioButton;
+
+    @FXML
+    private RadioButton managerRadioButton;
 
 
     ObservableList<String> typeOfEmployee = FXCollections.observableArrayList("base-salaried","hourly-salaried",
@@ -385,7 +396,44 @@ public class AddEmployeeSceneController implements Initializable {
     @FXML
     void onEditButton(ActionEvent event) throws IOException {
         statusCombo.setVisible(true);
-        employeeApplyButton.setVisible(true);
+        applyButton.setVisible(true);
+        cancelButton.setVisible(true);
+        employeeRadioButton.setVisible(true);
+        managerRadioButton.setVisible(true);
+    }
+
+    @FXML
+    void onCancelButton(ActionEvent event) throws  IOException {
+        statusCombo.setVisible(false);
+        applyButton.setVisible(false);
+        cancelButton.setVisible(false);
+        employeeRadioButton.setVisible(false);
+        managerRadioButton.setVisible(false);
+    }
+
+    @FXML
+    void onApplyButton(ActionEvent event) throws IOException {
+        // Define this button
+    }
+
+    @FXML
+    void onEmployeeRadio(ActionEvent event) throws  IOException {
+        if (employeeRadioButton.isSelected()) {
+            managerRadioButton.setDisable(true);
+        }
+        else {
+            managerRadioButton.setDisable(false);
+        }
+    }
+
+    @FXML
+    void onManagerRadio(ActionEvent event) throws  IOException {
+        if (managerRadioButton.isSelected()) {
+            employeeRadioButton.setDisable(true);
+        }
+        else {
+            employeeRadioButton.setDisable(false);
+        }
     }
 
     @FXML
@@ -517,7 +565,18 @@ public class AddEmployeeSceneController implements Initializable {
         statusCombo.setItems(statusObservableList);
 
         statusCombo.setVisible(false);
-        employeeApplyButton.setVisible(false);
+        applyButton.setVisible(false);
+        cancelButton.setVisible(false);
+        employeeRadioButton.setVisible(false);
+        managerRadioButton.setVisible(false);
+
+//        Remember to add these lines later:
+//        if (managerRadioButton.isSelected()) {
+//            managerBonusTextField.setVisible(true);
+//        }
+//        else {
+//            managerBonusTextField.setVisible(false);
+//        }
     }
 
     // Department read and write to file methods.
