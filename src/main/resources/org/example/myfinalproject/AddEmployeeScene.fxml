@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ComboBox?>
@@ -89,10 +90,14 @@
       <ButtonBar layoutX="704.0" layoutY="550.0" prefHeight="26.0" prefWidth="194.0">
         <buttons>
           <Button fx:id="employeeApplyButton" minWidth="70.0" mnemonicParsing="false" prefHeight="0.0" text="Apply" />
-            <Button fx:id="employeeEditButton" minWidth="56.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" text="Edit" />
+            <Button fx:id="employeeEditButton" minWidth="56.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" text="Edit">
+               <graphic>
+                  <FontAwesomeIcon glyphName="EDIT" size="20" />
+               </graphic></Button>
               <Button minWidth="64.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="89.0" text="Back" />
         </buttons>
       </ButtonBar>
       <ComboBox fx:id="statusCombo" layoutX="500.0" layoutY="550.0" minWidth="53.0" prefHeight="26.0" prefWidth="143.0" promptText="End Reason" />
+      <FontAwesomeIcon glyphName="USER" layoutX="757.0" layoutY="516.0" size="25" />
     </children>
 </AnchorPane>
