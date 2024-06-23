@@ -513,7 +513,6 @@ public class AddEmployeeSceneController implements Initializable {
         statusArrayList.add(Status.FIRED);
         statusArrayList.add(Status.RETIRED);
         statusArrayList.add(Status.END_OF_CONTRACT);
-        statusArrayList.add(Status.HAS_CHANGED);
         statusObservableList = FXCollections.observableArrayList(statusArrayList);
         statusCombo.setItems(statusObservableList);
 
