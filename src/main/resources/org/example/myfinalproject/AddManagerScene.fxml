@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.myfinalproject.AddManagerSceneController">
    <children>
-      <TableView fx:id="managerBaseSalaryTable" layoutX="7.0" layoutY="2.0" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
+      <TableView fx:id="managerBaseSalaryTable" layoutX="7.0" layoutY="2.0" prefHeight="445.0" prefWidth="994.0" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
         <columns>
           <TableColumn fx:id="managerBaseSalaryIdColumn" prefWidth="43.200013637542725" text="ID" />
           <TableColumn fx:id="managerBaseSalaryNameColumn" prefWidth="72.80001831054688" text="Name" />
@@ -74,7 +74,7 @@
       </TableView>
       <TextField fx:id="commissionRateField" layoutX="487.0" layoutY="461.0" prefHeight="26.0" prefWidth="147.0" promptText="Enter commission rate" visible="false" />
       <TextField fx:id="numberOfSalesField" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="130.0" promptText="Enter number of sales" visible="false" />
-      <TableView fx:id="managerCommissionBaseTable" layoutX="13.0" layoutY="16.0" prefHeight="445.0" prefWidth="994.0" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
+      <TableView fx:id="managerCommissionBaseTable" layoutX="13.0" layoutY="16.0" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
          <columns>
             <TableColumn fx:id="managerCommissionBaseIdColumn" prefWidth="43.200013637542725" text="ID" />
             <TableColumn fx:id="managerCommissionBaseNameColumn" prefWidth="53.0" text="Name" />
