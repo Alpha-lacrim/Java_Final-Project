@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.myfinalproject.AddManagerSceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#unlockFields" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.myfinalproject.AddManagerSceneController">
    <children>
-      <TableView fx:id="managerBaseSalaryTable" layoutX="7.0" layoutY="2.0" prefHeight="445.0" prefWidth="994.0" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
+      <TableView fx:id="managerBaseSalaryTable" layoutX="7.0" layoutY="2.0" onMouseClicked="#managerBaseSalaryTableGetItem" prefHeight="445.0" prefWidth="994.0" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
         <columns>
           <TableColumn fx:id="managerBaseSalaryIdColumn" prefWidth="43.200013637542725" text="ID" />
           <TableColumn fx:id="managerBaseSalaryNameColumn" prefWidth="72.80001831054688" text="Name" />
@@ -40,7 +40,7 @@
             <Font name="System Bold" size="18.0" />
          </font></Button>
       <Button fx:id="backButton" layoutX="933.0" layoutY="555.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="64.0" text="Back" />
-      <TableView fx:id="managerHourlySalaryTable" layoutX="3.0" layoutY="6.0" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
+      <TableView fx:id="managerHourlySalaryTable" layoutX="3.0" layoutY="6.0" onMouseClicked="#managerHourlySalaryTableGetItem" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
         <columns>
           <TableColumn fx:id="managerHourlySalaryIdColumn" prefWidth="44.0" text="ID" />
           <TableColumn fx:id="managerHourlySalaryNameColumn" prefWidth="58.0" text="Name" />
@@ -57,7 +57,7 @@
       </TableView>
       <TextField fx:id="PayPerHourField" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="130.0" promptText="Enter hourly rate" visible="false" />
       <TextField fx:id="amountOfHoursField" layoutX="487.0" layoutY="461.0" prefHeight="26.0" prefWidth="147.0" promptText="Enter amount of hours" visible="false" />
-      <TableView fx:id="managerCommissionSalaryTable" layoutX="13.0" layoutY="16.0" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
+      <TableView fx:id="managerCommissionSalaryTable" layoutX="13.0" layoutY="16.0" onMouseClicked="#managerCommissionSalaryTableGetItem" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
          <columns>
             <TableColumn fx:id="managerCommissionSalaryIdColumn" prefWidth="38.39999455213547" text="ID" />
             <TableColumn fx:id="managerCommissionSalaryNameColumn" prefWidth="56.0" text="Name" />
@@ -74,7 +74,7 @@
       </TableView>
       <TextField fx:id="commissionRateField" layoutX="487.0" layoutY="461.0" prefHeight="26.0" prefWidth="147.0" promptText="Enter commission rate" visible="false" />
       <TextField fx:id="numberOfSalesField" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="130.0" promptText="Enter number of sales" visible="false" />
-      <TableView fx:id="managerCommissionBaseTable" layoutX="13.0" layoutY="16.0" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
+      <TableView fx:id="managerCommissionBaseTable" layoutX="13.0" layoutY="16.0" onMouseClicked="#managerCommissionBaseSalaryTableGetItem" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
          <columns>
             <TableColumn fx:id="managerCommissionBaseIdColumn" prefWidth="43.200013637542725" text="ID" />
             <TableColumn fx:id="managerCommissionBaseNameColumn" prefWidth="53.0" text="Name" />
