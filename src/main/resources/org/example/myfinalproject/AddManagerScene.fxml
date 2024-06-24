@@ -93,10 +93,10 @@
       <TextField fx:id="commissionRateField2" layoutX="487.0" layoutY="507.0" prefHeight="26.0" prefWidth="147.0" promptText="Enter commission rate" visible="false" />
       <TextField fx:id="numberOfSalesField2" layoutX="487.0" layoutY="461.0" prefHeight="26.0" prefWidth="147.0" promptText="Enter number of sales" visible="false" />
       <Button fx:id="editButton" layoutX="858.0" layoutY="556.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" prefWidth="64.0" text="Edit" />
-      <Button fx:id="cancelButton" layoutX="787.0" layoutY="555.0" mnemonicParsing="false" onAction="#onCancelButton" prefHeight="25.0" prefWidth="64.0" text="Cancel" />
-      <Button fx:id="applyButton" layoutX="712.0" layoutY="554.0" mnemonicParsing="false" onAction="#onApplyButton" prefHeight="25.0" prefWidth="64.0" text="Apply" />
-      <RadioButton fx:id="managerRadioButton" layoutX="486.0" layoutY="546.0" mnemonicParsing="false" onAction="#onManagerRadio" text="Manager" />
-      <RadioButton fx:id="employeeRadioButton" layoutX="561.0" layoutY="546.0" mnemonicParsing="false" onAction="#onEmployeeRadio" text="Employee" />
-      <ComboBox fx:id="statusCombo" layoutX="486.0" layoutY="564.0" prefWidth="150.0" promptText="End Reason" />
+      <Button fx:id="cancelButton" layoutX="787.0" layoutY="555.0" mnemonicParsing="false" onAction="#onCancelButton" prefHeight="25.0" prefWidth="64.0" text="Cancel" visible="false" />
+      <Button fx:id="applyButton" layoutX="712.0" layoutY="554.0" mnemonicParsing="false" onAction="#onApplyButton" prefHeight="25.0" prefWidth="64.0" text="Apply" visible="false" />
+      <RadioButton fx:id="managerRadioButton" layoutX="486.0" layoutY="546.0" mnemonicParsing="false" onAction="#onManagerRadio" text="Manager" visible="false" />
+      <RadioButton fx:id="employeeRadioButton" layoutX="561.0" layoutY="546.0" mnemonicParsing="false" onAction="#onEmployeeRadio" text="Employee" visible="false" />
+      <ComboBox fx:id="statusCombo" layoutX="486.0" layoutY="564.0" prefWidth="150.0" promptText="End Reason" visible="false" />
    </children>
 </AnchorPane>

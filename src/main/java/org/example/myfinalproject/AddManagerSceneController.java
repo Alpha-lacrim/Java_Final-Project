@@ -588,11 +588,6 @@ public class AddManagerSceneController implements Initializable {
         statusObservableList = FXCollections.observableArrayList(statusArrayList);
         statusCombo.setItems(statusObservableList);
 
-        statusCombo.setVisible(false);
-        applyButton.setVisible(false);
-        cancelButton.setVisible(false);
-        employeeRadioButton.setVisible(false);
-        managerRadioButton.setVisible(false);
 
 //        Remember to add these lines later:
 //        if (managerRadioButton.isSelected()) {
