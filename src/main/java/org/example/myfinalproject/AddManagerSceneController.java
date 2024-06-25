@@ -724,6 +724,11 @@ public class AddManagerSceneController implements Initializable {
     @FXML
     void unlockFields(MouseEvent event) {
         if(event.getClickCount() == 2) {
+            statusCombo.setVisible(false);
+            applyButton.setVisible(false);
+            cancelButton.setVisible(false);
+            employeeRadioButton.setVisible(false);
+            managerRadioButton.setVisible(false);
             switch (managerPickTypeCombo.getValue()) {
                 case "base-salaried":
                     managerPickTypeCombo.setEditable(false);
