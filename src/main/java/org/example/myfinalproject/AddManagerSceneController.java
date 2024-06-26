@@ -573,14 +573,20 @@ public class AddManagerSceneController implements Initializable {
         switch (managerPickTypeCombo.getValue()) {
             case "base-salaried":
                 BaseSalariedEmployee emp = managerBaseSalaryTable.getSelectionModel().getSelectedItem();
-                departmentArrayList.remove(emp.getDepartment());
+                String departmentName = emp.getDepartment().getName();
+                int index=0;
+                for(Department department : departmentArrayList){
+                    if(department.getName().equals(departmentName)){
+                        index = departmentArrayList.indexOf(department);
+                    }
+                }
                 emp.setActive(false);
                 emp.setEndDate(LocalDate.now().toString());
                 emp.setStatus(statusCombo.getValue());
                 Department department = emp.getDepartment();
                 department.setHasManager(false);
                 department.setNumberOfActiveEmployees(department.getNumberOfActiveEmployees()-1);
-                departmentArrayList.add(department);
+                departmentArrayList.set(index,department);
                 baseSalaryWriteToFile();
                 departmentWriteToFile();
                 managerBaseSalaryTable.getItems().remove(emp);
