@@ -32,6 +32,7 @@ public abstract class Employee implements Serializable {
         this.isActive = true;
         department.hasManager = true;
         department.numberOfEmployees++;
+        department.numberOfActiveEmployees++;
     }
     public Employee(String firstName,String lastName,String nationalID,String phoneNumber,LocalDate startDate,LocalDate birthdate,Department department){
         this.firstName = firstName;
@@ -46,6 +47,7 @@ public abstract class Employee implements Serializable {
         this.birthDate = birthdate.toString();
         this.isActive = true;
         department.numberOfEmployees++;
+        department.numberOfActiveEmployees++;
     }
 
 

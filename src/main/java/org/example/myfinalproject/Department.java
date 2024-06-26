@@ -7,6 +7,7 @@ public class Department implements Serializable {
     private String name;
     private final String date;
     protected int numberOfEmployees;
+    protected int numberOfActiveEmployees;
     protected boolean hasManager;
 
 
@@ -42,6 +43,14 @@ public class Department implements Serializable {
     }
     public String getDate() {
         return date;
+    }
+
+    public int getNumberOfActiveEmployees() {
+        return numberOfActiveEmployees;
+    }
+
+    public void setNumberOfActiveEmployees(int numberOfActiveEmployees) {
+        this.numberOfActiveEmployees = numberOfActiveEmployees;
     }
 
     @Override

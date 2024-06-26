@@ -317,7 +317,7 @@ public class MainSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         departmentColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        numberOfEmployeesColumn.setCellValueFactory(new PropertyValueFactory<>("numberOfEmployees"));
+        numberOfEmployeesColumn.setCellValueFactory(new PropertyValueFactory<>("numberOfActiveEmployees"));
         sinceColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         departmentReadFromFile();
         managerBaseSalariedBaseColumn.setCellValueFactory(new PropertyValueFactory<>("baseSalary"));
