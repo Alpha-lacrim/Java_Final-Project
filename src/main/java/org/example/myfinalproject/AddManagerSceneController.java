@@ -567,6 +567,40 @@ public class AddManagerSceneController implements Initializable {
     }
 
     @FXML
+    void onDeActiveButton(ActionEvent event) {
+        statusCombo.setVisible(true);
+
+        switch (managerPickTypeCombo.getValue()) {
+            case "base-salaried":
+                BaseSalariedEmployee emp = managerBaseSalaryTable.getSelectionModel().getSelectedItem();
+                departmentArrayList.remove(emp.getDepartment());
+                emp.setActive(false);
+                emp.setEndDate(LocalDate.now().toString());
+                emp.setStatus(statusCombo.getValue());
+                Department department = emp.getDepartment();
+                department.setHasManager(false);
+                department.setNumberOfActiveEmployees(department.getNumberOfActiveEmployees()-1);
+                departmentArrayList.add(department);
+                baseSalaryWriteToFile();
+                departmentWriteToFile();
+                managerBaseSalaryTable.getItems().remove(emp);
+                break;
+
+            case "base-commission salaried":
+
+                break;
+
+            case "hourly-salaried":
+
+                break;
+
+            case "commission-salaried":
+
+                break;
+        }
+    }
+
+    @FXML
     void onEmployeeRadio(ActionEvent event) throws  IOException {
         if (employeeRadioButton.isSelected()) {
             managerRadioButton.setDisable(true);
@@ -1014,7 +1048,7 @@ public class AddManagerSceneController implements Initializable {
                 ois = new ObjectInputStream(new FileInputStream(baseSalariedFile));
                 baseSalariedArrayList = (ArrayList<BaseSalariedEmployee>) ois.readObject();
                 for (BaseSalariedEmployee emp : baseSalariedArrayList) {
-                    if (emp.isManager() && !managerBaseSalariedArrayList.contains(emp)) {
+                    if (emp.isManager() && emp.isActive() && !managerBaseSalariedArrayList.contains(emp)) {
                         managerBaseSalariedArrayList.add(emp);
                     }
                 }

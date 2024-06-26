@@ -35,7 +35,7 @@
       <ComboBox fx:id="DepartmentCombo" layoutX="160.0" layoutY="550.0" prefHeight="26.0" prefWidth="158.0" promptText="Select a Department" />
       <TextField fx:id="baseSalaryField" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="130.0" promptText="Enter base" />
       <DatePicker fx:id="birthDatePicker" editable="false" layoutX="160.0" layoutY="507.0" prefHeight="26.0" prefWidth="158.0" promptText="Select the birth date" />
-      <Button layoutX="726.0" layoutY="482.0" mnemonicParsing="false" onAction="#onAddManagerButton" prefHeight="51.0" prefWidth="264.0" text="Add Manager" textAlignment="CENTER">
+      <Button layoutX="726.0" layoutY="461.0" mnemonicParsing="false" onAction="#onAddManagerButton" prefHeight="51.0" prefWidth="270.0" text="Add Manager" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
@@ -97,6 +97,7 @@
       <Button fx:id="applyButton" layoutX="712.0" layoutY="554.0" mnemonicParsing="false" onAction="#onApplyButton" prefHeight="25.0" prefWidth="64.0" text="Apply" visible="false" />
       <RadioButton fx:id="managerRadioButton" layoutX="486.0" layoutY="546.0" mnemonicParsing="false" onAction="#onManagerRadio" text="Manager" visible="false" />
       <RadioButton fx:id="employeeRadioButton" layoutX="561.0" layoutY="546.0" mnemonicParsing="false" onAction="#onEmployeeRadio" text="Employee" visible="false" />
-      <ComboBox fx:id="statusCombo" layoutX="486.0" layoutY="564.0" prefWidth="150.0" promptText="End Reason" visible="false" />
+      <ComboBox fx:id="statusCombo" layoutX="486.0" layoutY="564.0" prefWidth="150.0" promptText="End Reason" />
+      <Button layoutX="859.0" layoutY="521.0" mnemonicParsing="false" onAction="#onDeActiveButton" prefHeight="26.0" prefWidth="138.0" text="Deactivate" />
    </children>
 </AnchorPane>
