@@ -252,7 +252,13 @@ public class AddManagerSceneController implements Initializable {
     private Button applyButton;
 
     @FXML
+    private Button applyButton2;
+
+    @FXML
     private Button cancelButton;
+
+    @FXML
+    private Button cancelButton2;
 
     @FXML
     private Button editButton;
@@ -427,8 +433,9 @@ public class AddManagerSceneController implements Initializable {
             employeeRadioButton.setVisible(true);
             managerRadioButton.setVisible(true);
 
+
             switch (managerPickTypeCombo.getValue()) {
-                case "base-salaried":
+                    case "base-salaried":
                         managerPickTypeCombo.setEditable(false);
                         nameField.setEditable(false);
                         familyField.setEditable(false);
@@ -440,9 +447,9 @@ public class AddManagerSceneController implements Initializable {
                         managerBonusField.setEditable(true);
                         DepartmentCombo.setEditable(false);
                         DepartmentCombo.setDisable(false);
-                    break;
+                        break;
 
-                case "base-commission salaried":
+                    case "base-commission salaried":
                         managerPickTypeCombo.setEditable(false);
                         nameField.setEditable(false);
                         familyField.setEditable(false);
@@ -456,9 +463,9 @@ public class AddManagerSceneController implements Initializable {
                         managerBonusField.setEditable(true);
                         DepartmentCombo.setEditable(false);
                         DepartmentCombo.setDisable(false);
-                    break;
+                        break;
 
-                case "hourly-salaried":
+                    case "hourly-salaried":
                         managerPickTypeCombo.setEditable(false);
                         nameField.setEditable(false);
                         familyField.setEditable(false);
@@ -471,9 +478,9 @@ public class AddManagerSceneController implements Initializable {
                         managerBonusField.setEditable(true);
                         DepartmentCombo.setEditable(false);
                         DepartmentCombo.setDisable(false);
-                    break;
+                        break;
 
-                case "commission-salaried":
+                    case "commission-salaried":
                         managerPickTypeCombo.setEditable(false);
                         nameField.setEditable(false);
                         familyField.setEditable(false);
@@ -486,7 +493,7 @@ public class AddManagerSceneController implements Initializable {
                         managerBonusField.setEditable(true);
                         DepartmentCombo.setEditable(false);
                         DepartmentCombo.setDisable(false);
-                    break;
+                        break;
             }
     }
 
@@ -498,67 +505,68 @@ public class AddManagerSceneController implements Initializable {
         employeeRadioButton.setVisible(false);
         managerRadioButton.setVisible(false);
 
-        switch (managerPickTypeCombo.getValue()) {
-            case "base-salaried":
-                managerPickTypeCombo.setEditable(false);
-                nameField.setEditable(false);
-                familyField.setEditable(false);
-                nationalIdField.setEditable(false);
-                phoneField.setEditable(false);
-                birthDatePicker.setEditable(false);
-                birthDatePicker.setDisable(true);
-                baseSalaryField.setEditable(false);
-                managerBonusField.setEditable(false);
-                DepartmentCombo.setEditable(false);
-                DepartmentCombo.setDisable(true);
-                break;
 
-            case "base-commission salaried":
-                managerPickTypeCombo.setEditable(false);
-                nameField.setEditable(false);
-                familyField.setEditable(false);
-                nationalIdField.setEditable(false);
-                phoneField.setEditable(false);
-                birthDatePicker.setEditable(false);
-                birthDatePicker.setDisable(true);
-                baseSalaryField.setEditable(false);
-                managerBonusField.setEditable(false);
-                numberOfSalesField2.setEditable(false);
-                commissionRateField2.setEditable(false);
-                DepartmentCombo.setEditable(false);
-                DepartmentCombo.setDisable(true);
-                break;
+            switch (managerPickTypeCombo.getValue()) {
+                case "base-salaried":
+                    managerPickTypeCombo.setEditable(false);
+                    nameField.setEditable(false);
+                    familyField.setEditable(false);
+                    nationalIdField.setEditable(false);
+                    phoneField.setEditable(false);
+                    birthDatePicker.setEditable(false);
+                    birthDatePicker.setDisable(true);
+                    baseSalaryField.setEditable(false);
+                    managerBonusField.setEditable(false);
+                    DepartmentCombo.setEditable(false);
+                    DepartmentCombo.setDisable(true);
+                    break;
 
-            case "hourly-salaried":
-                managerPickTypeCombo.setEditable(false);
-                nameField.setEditable(false);
-                familyField.setEditable(false);
-                nationalIdField.setEditable(false);
-                phoneField.setEditable(false);
-                birthDatePicker.setEditable(false);
-                birthDatePicker.setDisable(true);
-                managerBonusField.setEditable(false);
-                PayPerHourField.setEditable(false);
-                amountOfHoursField.setEditable(false);
-                DepartmentCombo.setEditable(false);
-                DepartmentCombo.setDisable(true);
-                break;
+                case "base-commission salaried":
+                    managerPickTypeCombo.setEditable(false);
+                    nameField.setEditable(false);
+                    familyField.setEditable(false);
+                    nationalIdField.setEditable(false);
+                    phoneField.setEditable(false);
+                    birthDatePicker.setEditable(false);
+                    birthDatePicker.setDisable(true);
+                    baseSalaryField.setEditable(false);
+                    managerBonusField.setEditable(false);
+                    numberOfSalesField2.setEditable(false);
+                    commissionRateField2.setEditable(false);
+                    DepartmentCombo.setEditable(false);
+                    DepartmentCombo.setDisable(true);
+                    break;
 
-            case "commission-salaried":
-                managerPickTypeCombo.setEditable(false);
-                nameField.setEditable(false);
-                familyField.setEditable(false);
-                nationalIdField.setEditable(false);
-                phoneField.setEditable(false);
-                birthDatePicker.setEditable(false);
-                birthDatePicker.setDisable(true);
-                managerBonusField.setEditable(false);
-                numberOfSalesField.setEditable(false);
-                commissionRateField.setEditable(false);
-                DepartmentCombo.setEditable(false);
-                DepartmentCombo.setDisable(true);
-                break;
-        }
+                case "hourly-salaried":
+                    managerPickTypeCombo.setEditable(false);
+                    nameField.setEditable(false);
+                    familyField.setEditable(false);
+                    nationalIdField.setEditable(false);
+                    phoneField.setEditable(false);
+                    birthDatePicker.setEditable(false);
+                    birthDatePicker.setDisable(true);
+                    managerBonusField.setEditable(false);
+                    PayPerHourField.setEditable(false);
+                    amountOfHoursField.setEditable(false);
+                    DepartmentCombo.setEditable(false);
+                    DepartmentCombo.setDisable(true);
+                    break;
+
+                case "commission-salaried":
+                    managerPickTypeCombo.setEditable(false);
+                    nameField.setEditable(false);
+                    familyField.setEditable(false);
+                    nationalIdField.setEditable(false);
+                    phoneField.setEditable(false);
+                    birthDatePicker.setEditable(false);
+                    birthDatePicker.setDisable(true);
+                    managerBonusField.setEditable(false);
+                    numberOfSalesField.setEditable(false);
+                    commissionRateField.setEditable(false);
+                    DepartmentCombo.setEditable(false);
+                    DepartmentCombo.setDisable(true);
+                    break;
+            }
     }
 
     @FXML
@@ -567,15 +575,15 @@ public class AddManagerSceneController implements Initializable {
     }
 
     @FXML
-    void onDeActiveButton(ActionEvent event) {
-        statusCombo.setVisible(true);
-
+    void onApplyButton2(ActionEvent event) {
+        int index=0;
+        String departmentName;
         switch (managerPickTypeCombo.getValue()) {
             case "base-salaried":
                 BaseSalariedEmployee emp = managerBaseSalaryTable.getSelectionModel().getSelectedItem();
-                String departmentName = emp.getDepartment().getName();
-                int index=0;
-                for(Department department : departmentArrayList){
+                departmentName= emp.getDepartment().getName();
+
+                for( Department department : departmentArrayList){
                     if(department.getName().equals(departmentName)){
                         index = departmentArrayList.indexOf(department);
                     }
@@ -593,17 +601,184 @@ public class AddManagerSceneController implements Initializable {
                 break;
 
             case "base-commission salaried":
+                CommissionBaseSalariedEmployee emp1 = managerCommissionBaseTable.getSelectionModel().getSelectedItem();
+                departmentName = emp1.getDepartment().getName();
 
+                for(Department department1 : departmentArrayList){
+                    if(department1.getName().equals(departmentName)){
+                        index = departmentArrayList.indexOf(department1);
+                    }
+                }
+                emp1.setActive(false);
+                emp1.setEndDate(LocalDate.now().toString());
+                emp1.setStatus(statusCombo.getValue());
+                Department department1 = emp1.getDepartment();
+                department1.setHasManager(false);
+                department1.setNumberOfActiveEmployees(department1.getNumberOfActiveEmployees()-1);
+                departmentArrayList.set(index,department1);
+                commissionBaseSalaryWriteToFile();
+                departmentWriteToFile();
+                managerCommissionBaseTable.getItems().remove(emp1);
                 break;
 
             case "hourly-salaried":
+                HourlySalariedEmployee emp2 = managerHourlySalaryTable.getSelectionModel().getSelectedItem();
+                departmentName = emp2.getDepartment().getName();
 
+                for(Department department2 : departmentArrayList){
+                    if(department2.getName().equals(departmentName)){
+                        index = departmentArrayList.indexOf(department2);
+                    }
+                }
+                emp2.setActive(false);
+                emp2.setEndDate(LocalDate.now().toString());
+                emp2.setStatus(statusCombo.getValue());
+                Department department2 = emp2.getDepartment();
+                department2.setHasManager(false);
+                department2.setNumberOfActiveEmployees(department2.getNumberOfActiveEmployees()-1);
+                departmentArrayList.set(index,department2);
+                hourlySalaryWriteToFile();
+                departmentWriteToFile();
+                managerHourlySalaryTable.getItems().remove(emp2);
                 break;
 
             case "commission-salaried":
+                CommissionSalariedEmployee emp3 = managerCommissionSalaryTable.getSelectionModel().getSelectedItem();
+                departmentName = emp3.getDepartment().getName();
 
+                for(Department department3 : departmentArrayList){
+                    if(department3.getName().equals(departmentName)){
+                        index = departmentArrayList.indexOf(department3);
+                    }
+                }
+                emp3.setActive(false);
+                emp3.setEndDate(LocalDate.now().toString());
+                emp3.setStatus(statusCombo.getValue());
+                Department department3 = emp3.getDepartment();
+                department3.setHasManager(false);
+                department3.setNumberOfActiveEmployees(department3.getNumberOfActiveEmployees()-1);
+                departmentArrayList.set(index,department3);
+                commissionSalaryWriteToFile();
+                departmentWriteToFile();
+                managerCommissionSalaryTable.getItems().remove(emp3);
                 break;
         }
+        statusCombo.setVisible(false);
+        applyButton2.setVisible(false);
+        cancelButton2.setVisible(false);
+        switch (managerPickTypeCombo.getValue()) {
+            case "base-salaried":
+                managerPickTypeCombo.setEditable(false);
+                nameField.setEditable(true);
+                familyField.setEditable(true);
+                nationalIdField.setEditable(true);
+                phoneField.setEditable(true);
+                birthDatePicker.setEditable(false);
+                birthDatePicker.setDisable(false);
+                baseSalaryField.setEditable(true);
+                managerBonusField.setEditable(true);
+                DepartmentCombo.setDisable(false);
+
+                nameField.setText("");
+                familyField.setText("");
+                nationalIdField.setText("");
+                phoneField.setText("");
+                managerBonusField.setText("");
+                birthDatePicker.setValue(null);
+                DepartmentCombo.setValue(null);
+                baseSalaryField.setText("");
+
+                break;
+
+            case "base-commission salaried":
+                managerPickTypeCombo.setEditable(false);
+                nameField.setEditable(true);
+                familyField.setEditable(true);
+                nationalIdField.setEditable(true);
+                phoneField.setEditable(true);
+                birthDatePicker.setEditable(false);
+                birthDatePicker.setDisable(false);
+                numberOfSalesField2.setEditable(true);
+                baseSalaryField.setEditable(true);
+                commissionRateField2.setEditable(true);
+                managerBonusField.setEditable(true);
+                DepartmentCombo.setDisable(false);
+
+                nameField.setText("");
+                familyField.setText("");
+                nationalIdField.setText("");
+                phoneField.setText("");
+                managerBonusField.setText("");
+                birthDatePicker.setValue(null);
+                DepartmentCombo.setValue(null);
+                baseSalaryField.setText("");
+                commissionRateField2.setText("");
+                numberOfSalesField2.setText("");
+                break;
+
+            case "hourly-salaried":
+                managerPickTypeCombo.setEditable(false);
+                nameField.setEditable(true);
+                familyField.setEditable(true);
+                nationalIdField.setEditable(true);
+                phoneField.setEditable(true);
+                birthDatePicker.setEditable(false);
+                birthDatePicker.setDisable(false);
+                PayPerHourField.setEditable(true);
+                amountOfHoursField.setEditable(true);
+                managerBonusField.setEditable(true);
+                DepartmentCombo.setDisable(false);
+
+                nameField.setText("");
+                familyField.setText("");
+                nationalIdField.setText("");
+                phoneField.setText("");
+                managerBonusField.setText("");
+                birthDatePicker.setValue(null);
+                DepartmentCombo.setValue(null);
+                PayPerHourField.setText("");
+                amountOfHoursField.setText("");
+                break;
+
+            case "commission-salaried":
+                managerPickTypeCombo.setEditable(false);
+                nameField.setEditable(true);
+                familyField.setEditable(true);
+                nationalIdField.setEditable(true);
+                phoneField.setEditable(true);
+                birthDatePicker.setEditable(false);
+                birthDatePicker.setDisable(false);
+                numberOfSalesField.setEditable(true);
+                commissionRateField.setEditable(true);
+                managerBonusField.setEditable(true);
+                DepartmentCombo.setDisable(false);
+
+                nameField.setText("");
+                familyField.setText("");
+                nationalIdField.setText("");
+                phoneField.setText("");
+                managerBonusField.setText("");
+                birthDatePicker.setValue(null);
+                DepartmentCombo.setValue(null);
+                baseSalaryField.setText("");
+                commissionRateField.setText("");
+                numberOfSalesField.setText("");
+                break;
+        }
+    }
+
+    @FXML
+    void onCancelButton2(ActionEvent event) {
+        statusCombo.setVisible(false);
+        applyButton2.setVisible(false);
+        cancelButton2.setVisible(false);
+    }
+
+    @FXML
+    void onDeActiveButton(ActionEvent event) {
+        statusCombo.setVisible(true);
+        applyButton2.setVisible(true);
+        cancelButton2.setVisible(true);
     }
 
     @FXML
@@ -1094,7 +1269,7 @@ public class AddManagerSceneController implements Initializable {
                 ois = new ObjectInputStream(new FileInputStream(hourlySalaryFile));
                 hourlySalariedArrayList = (ArrayList<HourlySalariedEmployee>) ois.readObject();
                 for (HourlySalariedEmployee emp : hourlySalariedArrayList) {
-                    if (emp.isManager() && !managerHourlySalariedArrayList.contains(emp)) {
+                    if (emp.isManager() && emp.isActive() && !managerHourlySalariedArrayList.contains(emp)) {
                         managerHourlySalariedArrayList.add(emp);
                     }
                 }
@@ -1135,7 +1310,7 @@ public class AddManagerSceneController implements Initializable {
                 ois = new ObjectInputStream(new FileInputStream(commissionSalaryFile));
                 commissionSalariedArrayList = (ArrayList<CommissionSalariedEmployee>) ois.readObject();
                 for (CommissionSalariedEmployee emp : commissionSalariedArrayList) {
-                    if (emp.isManager() && !managerCommissionSalariedArrayList.contains(emp)) {
+                    if (emp.isManager() && emp.isActive() && !managerCommissionSalariedArrayList.contains(emp)) {
                         managerCommissionSalariedArrayList.add(emp);
                     }
                 }
@@ -1175,7 +1350,7 @@ public class AddManagerSceneController implements Initializable {
                 ois = new ObjectInputStream(new FileInputStream(commissionBaseSalaryFile));
                 commissionBaseSalariedArrayList = (ArrayList<CommissionBaseSalariedEmployee>) ois.readObject();
                 for (CommissionBaseSalariedEmployee emp : commissionBaseSalariedArrayList) {
-                    if (emp.isManager() && !managerCommissionBaseSalariedArrayList.contains(emp)) {
+                    if (emp.isManager() && emp.isActive() && !managerCommissionBaseSalariedArrayList.contains(emp)) {
                         managerCommissionBaseSalariedArrayList.add(emp);
                     }
                 }
