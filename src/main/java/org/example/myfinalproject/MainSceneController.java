@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
@@ -20,17 +22,21 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MainSceneController implements Initializable {
+
+    @FXML
+    private BarChart<String, Integer> departmentEmployeesBarChart;
+
     @FXML
     private TableView<Department> departmentTable;
 
     @FXML
-    private TableColumn<Department,String> departmentColumn;
+    private TableColumn<Department, String> departmentColumn;
 
     @FXML
-    private TableColumn<Department,Integer> numberOfEmployeesColumn;
+    private TableColumn<Department, Integer> numberOfEmployeesColumn;
 
     @FXML
-    private TableColumn<Department,String> sinceColumn;
+    private TableColumn<Department, String> sinceColumn;
 
     @FXML
     private TextField nameOfDepartmentField;
@@ -177,6 +183,8 @@ public class MainSceneController implements Initializable {
     @FXML
     void onAddDepartmentButton(ActionEvent event) {
         departmentReadFromFile();
+        refreshBarChart();
+
         addDepartmentPane.setVisible(true);
         addEmployeePane.setVisible(false);
         addManagerPane.setVisible(false);
@@ -213,6 +221,7 @@ public class MainSceneController implements Initializable {
     @FXML
     void onAddDepartmentButton2(ActionEvent event) {
         departmentReadFromFile();
+
         var department = new Department(nameOfDepartmentField.getText(), departmentDatePicker.getValue());
         departmentArrayList.add(department);
         departmentObservableList = departmentTable.getItems();
@@ -221,6 +230,7 @@ public class MainSceneController implements Initializable {
         nameOfDepartmentField.setText("");
         departmentDatePicker.setValue(null);
         departmentWriteToFile();
+        refreshBarChart();
     }
 
     @FXML
@@ -314,12 +324,23 @@ public class MainSceneController implements Initializable {
         }
     }
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         departmentColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         numberOfEmployeesColumn.setCellValueFactory(new PropertyValueFactory<>("numberOfActiveEmployees"));
         sinceColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+
         departmentReadFromFile();
+
+        XYChart.Series<String, Integer> series1 = new XYChart.Series();
+        series1.setName("Employees");
+        for (int i = 0; i < departmentArrayList.size(); i++) {
+            series1.getData().add(new XYChart.Data(departmentArrayList.get(i).getName(), departmentArrayList.get(i).getNumberOfEmployees()));
+        }
+        departmentEmployeesBarChart.getData().addAll(series1);
+
+
         managerBaseSalariedBaseColumn.setCellValueFactory(new PropertyValueFactory<>("baseSalary"));
         managerBaseSalariedBirthDateColumn.setCellValueFactory(new PropertyValueFactory<>("birthDate"));
         managerBaseSalariedBonusColumn.setCellValueFactory(new PropertyValueFactory<>("managerBonus"));
@@ -486,6 +507,20 @@ public class MainSceneController implements Initializable {
     private void refreshDepartmentComboBox(){
         departmentReadFromFile();
         managerPickDepartmentCombo.setItems(departmentObservableList);
+    }
+
+    private void refreshBarChart() {
+        departmentEmployeesBarChart.getData().clear();
+        departmentEmployeesBarChart.setAnimated(false);
+
+        XYChart.Series<String, Integer> series1 = new XYChart.Series();
+
+        for (int i = 0; i < departmentArrayList.size(); i++) {
+            series1.getData().add(new XYChart.Data(departmentArrayList.get(i).getName(), departmentArrayList.get(i).getNumberOfEmployees()));
+        }
+        series1.setName("Employees");
+
+        departmentEmployeesBarChart.getData().addAll(series1);
     }
 
 }

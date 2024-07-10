@@ -12,6 +12,13 @@ target/
 *.iml
 *.ipr
 
+### Files ###
+Department.txt
+BaseSalaried.txt
+HourlySalaried.txt
+CommissionSalaried.txt
+CommissionBaseSalaried.txt
+
 ### Eclipse ###
 .apt_generated
 .classpath

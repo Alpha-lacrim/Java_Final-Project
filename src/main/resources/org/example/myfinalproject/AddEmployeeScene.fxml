@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#unlockFields" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.myfinalproject.AddEmployeeSceneController">
     <children>
-        <TableView fx:id="employeeBaseSalaryTable" layoutX="7.0" layoutY="2.0" onMouseClicked="#employeeBaseSalaryTableGetItem" prefHeight="445.0" prefWidth="994.0" AnchorPane.bottomAnchor="153.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
+        <TableView fx:id="employeeBaseSalaryTable" layoutX="7.0" layoutY="2.0" onMouseClicked="#employeeBaseSalaryTableGetItem" prefHeight="423.0" prefWidth="994.0" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
             <columns>
                 <TableColumn fx:id="employeeBaseSalaryIdColumn" prefWidth="43.200013637542725" text="ID" />
                 <TableColumn fx:id="employeeBaseSalaryNameColumn" prefWidth="72.80001831054688" text="Name" />
@@ -33,11 +33,11 @@
         <ComboBox fx:id="DepartmentCombo" layoutX="160.0" layoutY="550.0" prefHeight="26.0" prefWidth="158.0" promptText="Select a Department" />
         <TextField fx:id="baseSalaryField" layoutX="340.0" layoutY="507.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter base" />
         <DatePicker fx:id="birthDatePicker" editable="false" layoutX="160.0" layoutY="507.0" prefHeight="26.0" prefWidth="158.0" promptText="Select the birth date" />
-        <Button layoutX="712.0" layoutY="482.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="51.0" prefWidth="264.0" text="Add Employee" textAlignment="CENTER">
+        <Button layoutX="724.0" layoutY="451.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="51.0" prefWidth="264.0" text="Add Employee" textAlignment="CENTER">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font></Button>
-        <TableView fx:id="employeeHourlySalaryTable" layoutX="3.0" layoutY="6.0" onMouseClicked="#employeeHourlySalaryTableGetItem" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
+        <TableView fx:id="employeeHourlySalaryTable" layoutX="3.0" layoutY="6.0" onMouseClicked="#employeeHourlySalaryTableGetItem" prefHeight="423.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="171.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
             <columns>
                 <TableColumn fx:id="employeeHourlySalaryIdColumn" prefWidth="44.0" text="ID" />
                 <TableColumn fx:id="employeeHourlySalaryNameColumn" prefWidth="58.0" text="Name" />
@@ -53,7 +53,7 @@
         </TableView>
         <TextField fx:id="PayPerHourField" layoutX="340.0" layoutY="507.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter hourly rate" visible="false" />
         <TextField fx:id="amountOfHoursField" layoutX="340.0" layoutY="550.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter amount of hours" visible="false" />
-        <TableView fx:id="employeeCommissionSalaryTable" layoutX="13.0" layoutY="16.0" onMouseClicked="#employeeCommissionSalaryTableGetItem" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
+        <TableView fx:id="employeeCommissionSalaryTable" layoutX="13.0" layoutY="16.0" onMouseClicked="#employeeCommissionSalaryTableGetItem" prefHeight="423.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="171.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
             <columns>
                 <TableColumn fx:id="employeeCommissionSalaryIdColumn" prefWidth="38.39999455213547" text="ID" />
                 <TableColumn fx:id="employeeCommissionSalaryNameColumn" prefWidth="56.0" text="Name" />
@@ -69,7 +69,7 @@
         </TableView>
         <TextField fx:id="commissionRateField" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter commission rate" visible="false" />
         <TextField fx:id="numberOfSalesField" layoutX="340.0" layoutY="507.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter number of sales" visible="false" />
-        <TableView fx:id="employeeCommissionBaseTable" layoutX="13.0" layoutY="16.0" onMouseClicked="#employeeCommissionBaseSalaryTableGetItem" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
+        <TableView fx:id="employeeCommissionBaseTable" layoutX="13.0" layoutY="16.0" onMouseClicked="#employeeCommissionBaseSalaryTableGetItem" prefHeight="423.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="171.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
             <columns>
                 <TableColumn fx:id="employeeCommissionBaseIdColumn" prefWidth="38.0" text="ID" />
                 <TableColumn fx:id="employeeCommissionBaseNameColumn" minWidth="5.0" prefWidth="59.0" text="Name" />
@@ -88,11 +88,14 @@
         <TextField fx:id="numberOfSalesField2" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter number of sales" visible="false" />
       <ComboBox fx:id="statusCombo" layoutX="500.0" layoutY="560.0" minWidth="53.0" prefHeight="25.0" prefWidth="191.0" promptText="End Reason" visible="false" />
       <Button layoutX="-161.0" layoutY="2.0" mnemonicParsing="false" text="Button" />
-        <Button fx:id="cancelButton" layoutX="783.0" layoutY="560.0" minWidth="56.0" mnemonicParsing="false" onAction="#onCancelButton" prefHeight="25.0" prefWidth="61.0" text="Cancel" visible="false" />
-      <Button fx:id="editButton" layoutX="852.0" layoutY="560.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" prefWidth="61.0" text="Edit" />
-    <Button fx:id="applyButton" layoutX="712.0" layoutY="560.0" minWidth="61.0" mnemonicParsing="false" onAction="#onApplyButton" prefHeight="25.0" prefWidth="61.0" text="Apply" visible="false" />
+        <Button fx:id="cancelButton" layoutX="785.0" layoutY="560.0" minWidth="56.0" mnemonicParsing="false" onAction="#onCancelButton" prefHeight="25.0" prefWidth="61.0" text="Cancel" visible="false" />
+      <Button fx:id="editButton" layoutX="856.0" layoutY="560.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" prefWidth="61.0" text="Edit" />
+    <Button fx:id="applyButton" layoutX="715.0" layoutY="560.0" minWidth="61.0" mnemonicParsing="false" onAction="#onApplyButton" prefHeight="25.0" prefWidth="61.0" text="Apply" visible="false" />
       <Button fx:id="backButton" layoutX="925.0" layoutY="560.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="25.0" prefWidth="61.0" text="Back" />
-      <RadioButton fx:id="managerRadioButton" layoutX="504.0" layoutY="534.0" mnemonicParsing="false" onAction="#onManagerRadio" prefHeight="17.0" prefWidth="83.0" text="Manager" visible="false" />
-      <RadioButton fx:id="employeeRadioButton" layoutX="596.0" layoutY="534.0" mnemonicParsing="false" onAction="#onEmployeeRadio" text="Employee" visible="false" />
+      <RadioButton fx:id="managerRadioButton" layoutX="13.0" layoutY="434.0" mnemonicParsing="false" onAction="#onManagerRadio" prefHeight="17.0" prefWidth="83.0" text="Manager" visible="false" />
+      <RadioButton fx:id="employeeRadioButton" layoutX="96.0" layoutY="434.0" mnemonicParsing="false" onAction="#onEmployeeRadio" text="Employee" visible="false" />
+      <Button fx:id="cancelButton2" layoutX="785.0" layoutY="560.0" mnemonicParsing="false" onAction="#onCancelButton2" prefHeight="25.0" prefWidth="61.0" text="Cancel" visible="false" />
+      <Button fx:id="EmployeeDeactiveButton" layoutX="853.0" layoutY="521.0" mnemonicParsing="false" onAction="#onDeActiveButton" prefHeight="25.0" prefWidth="137.0" text="Deactivate" />
+      <Button fx:id="applyButton2" layoutX="715.0" layoutY="560.0" mnemonicParsing="false" onAction="#onApplyButton2" prefHeight="25.0" prefWidth="61.0" text="Apply" visible="false" />
     </children>
 </AnchorPane>
