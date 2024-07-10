@@ -336,7 +336,7 @@ public class MainSceneController implements Initializable {
         XYChart.Series<String, Integer> series1 = new XYChart.Series();
         series1.setName("Employees");
         for (int i = 0; i < departmentArrayList.size(); i++) {
-            series1.getData().add(new XYChart.Data(departmentArrayList.get(i).getName(), departmentArrayList.get(i).getNumberOfEmployees()));
+            series1.getData().add(new XYChart.Data(departmentArrayList.get(i).getName(), departmentArrayList.get(i).getNumberOfActiveEmployees()));
         }
         departmentEmployeesBarChart.getData().addAll(series1);
 
@@ -516,7 +516,7 @@ public class MainSceneController implements Initializable {
         XYChart.Series<String, Integer> series1 = new XYChart.Series();
 
         for (int i = 0; i < departmentArrayList.size(); i++) {
-            series1.getData().add(new XYChart.Data(departmentArrayList.get(i).getName(), departmentArrayList.get(i).getNumberOfEmployees()));
+            series1.getData().add(new XYChart.Data(departmentArrayList.get(i).getName(), departmentArrayList.get(i).getNumberOfActiveEmployees()));
         }
         series1.setName("Employees");
 

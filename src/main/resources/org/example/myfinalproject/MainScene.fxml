@@ -47,7 +47,7 @@
          <children>
             <TableView fx:id="departmentTable" layoutX="386.0" layoutY="1.0" prefHeight="678.0" prefWidth="281.0" style="-fx-background-color: #fdcb6e;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
               <columns>
-                <TableColumn fx:id="numberOfEmployeesColumn" prefWidth="79.0" text="Number of Employees" visible="false" />
+                <TableColumn fx:id="numberOfEmployeesColumn" prefWidth="79.0" text="Number of Employees" />
                   <TableColumn prefWidth="82.0" text="Has Manager" visible="false" />
                   <TableColumn fx:id="sinceColumn" prefWidth="140.0" text="Creation Date" />
                 <TableColumn fx:id="departmentColumn" prefWidth="158.0" text="Department" />
