@@ -14,6 +14,7 @@ public class StartApplication extends Application {
         stage.setTitle("PayRoll System");
         stage.setResizable(false);
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
     }
 

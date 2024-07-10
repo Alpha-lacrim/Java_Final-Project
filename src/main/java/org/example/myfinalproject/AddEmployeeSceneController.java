@@ -16,6 +16,8 @@ import java.io.*;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Optional;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class AddEmployeeSceneController implements Initializable {
@@ -383,6 +385,97 @@ public class AddEmployeeSceneController implements Initializable {
     }
 
     @FXML
+    void onAddRandomEmployeeButton(ActionEvent event) {
+        TextInputDialog tid = new TextInputDialog();
+        tid.setTitle("number of random employees");
+        tid.setHeaderText("Input Confirmation");
+        tid.setContentText("Input number of employees");
+        Optional<String> result = tid.showAndWait();
+        if(result.isPresent()) {
+            Random random = new Random();
+            //int numberOfRandomEmployees = Integer.parseInt(tid.getEditor().getText());
+            for(int i=0;i<Integer.parseInt(result.get());i++) {
+                int randForTypeOfEmployee = random.nextInt(4) + 1;
+                switch (randForTypeOfEmployee) {
+                    case 1:
+                        var baseSalariedEmp = new BaseSalariedEmployee(
+                                RandomEmployeeStorage.name[random.nextInt(10)], RandomEmployeeStorage.family[random.nextInt(10)],
+                                RandomEmployeeStorage.nationalId[random.nextInt(10)], RandomEmployeeStorage.phone[random.nextInt(10)],
+                                LocalDate.now(), RandomEmployeeStorage.birthDate[random.nextInt(10)],
+                                departmentArrayList.get(random.nextInt(departmentArrayList.size())), RandomEmployeeStorage.baseSalary[random.nextInt(10)]);
+
+                        departmentWriteToFile();
+                        baseSalariedArrayList.add(baseSalariedEmp);
+                        employeeBaseSalariedArrayList.add(baseSalariedEmp);
+                        employeeBaseSalariedEmployeeObservableList = employeeBaseSalaryTable.getItems();
+                        employeeBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(employeeBaseSalariedArrayList);
+                        employeeBaseSalaryTable.setItems(employeeBaseSalariedEmployeeObservableList);
+                        baseSalaryWriteToFile();
+
+                        break;
+                    case 2:
+                        var hourlySalariedEmp = new HourlySalariedEmployee(
+                                RandomEmployeeStorage.name[random.nextInt(10)], RandomEmployeeStorage.family[random.nextInt(10)],
+                                RandomEmployeeStorage.nationalId[random.nextInt(10)], RandomEmployeeStorage.phone[random.nextInt(10)],
+                                LocalDate.now(), RandomEmployeeStorage.birthDate[random.nextInt(10)],
+                                departmentArrayList.get(random.nextInt(departmentArrayList.size())),
+                                RandomEmployeeStorage.hourlyRate[random.nextInt(10)],
+                                RandomEmployeeStorage.amountOfHours[random.nextInt(10)]
+                        );
+                        departmentWriteToFile();
+                        hourlySalariedArrayList.add(hourlySalariedEmp);
+                        employeeHourlySalariedArrayList.add(hourlySalariedEmp);
+                        employeeHourlySalariedEmployeeObservableList = employeeHourlySalaryTable.getItems();
+                        employeeHourlySalariedEmployeeObservableList = FXCollections.observableArrayList(employeeHourlySalariedArrayList);
+                        employeeHourlySalaryTable.setItems(employeeHourlySalariedEmployeeObservableList);
+                        hourlySalaryWriteToFile();
+
+                        break;
+                    case 3:
+                        var commissionSalariedEmp = new CommissionSalariedEmployee(
+                                RandomEmployeeStorage.name[random.nextInt(10)], RandomEmployeeStorage.family[random.nextInt(10)],
+                                RandomEmployeeStorage.nationalId[random.nextInt(10)],
+                                RandomEmployeeStorage.phone[random.nextInt(10)], LocalDate.now(),
+                                RandomEmployeeStorage.birthDate[random.nextInt(10)],
+                                departmentArrayList.get(random.nextInt(departmentArrayList.size())),
+                                RandomEmployeeStorage.commissionRate[random.nextInt(10)],
+                                RandomEmployeeStorage.numberOfSales[random.nextInt(10)]
+                        );
+                        departmentWriteToFile();
+                        commissionSalariedArrayList.add(commissionSalariedEmp);
+                        employeeCommissionSalariedArrayList.add(commissionSalariedEmp);
+                        employeeCommissionSalariedEmployeeObservableList = employeeCommissionSalaryTable.getItems();
+                        employeeCommissionSalariedEmployeeObservableList = FXCollections.observableArrayList(employeeCommissionSalariedArrayList);
+                        employeeCommissionSalaryTable.setItems(employeeCommissionSalariedEmployeeObservableList);
+                        commissionSalaryWriteToFile();
+
+                        break;
+                    case 4:
+                        var commissionBaseSalariedEmp = new CommissionBaseSalariedEmployee(
+                                RandomEmployeeStorage.name[random.nextInt(10)], RandomEmployeeStorage.family[random.nextInt(10)],
+                                RandomEmployeeStorage.nationalId[random.nextInt(10)],
+                                RandomEmployeeStorage.phone[random.nextInt(10)], LocalDate.now(),
+                                RandomEmployeeStorage.birthDate[random.nextInt(10)],
+                                departmentArrayList.get(random.nextInt(departmentArrayList.size())),
+                                RandomEmployeeStorage.baseSalary[random.nextInt(10)],
+                                RandomEmployeeStorage.commissionRate[random.nextInt(10)],
+                                RandomEmployeeStorage.numberOfSales[random.nextInt(10)]
+                        );
+                        departmentWriteToFile();
+                        commissionBaseSalariedArrayList.add(commissionBaseSalariedEmp);
+                        employeeCommissionBaseSalariedArrayList.add(commissionBaseSalariedEmp);
+                        employeeCommissionBaseSalariedEmployeeObservableList = employeeCommissionBaseTable.getItems();
+                        employeeCommissionBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(employeeCommissionBaseSalariedArrayList);
+                        employeeCommissionBaseTable.setItems(employeeCommissionBaseSalariedEmployeeObservableList);
+                        commissionBaseSalaryWriteToFile();
+
+                        break;
+                }
+            }
+        }
+    }
+
+    @FXML
     void onBackButton(ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation");
@@ -396,6 +489,7 @@ public class AddEmployeeSceneController implements Initializable {
             scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
             stage.setResizable(false);
+            stage.centerOnScreen();
             stage.show();
         }
     }

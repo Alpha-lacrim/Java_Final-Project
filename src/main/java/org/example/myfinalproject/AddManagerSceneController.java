@@ -427,6 +427,7 @@ public class AddManagerSceneController implements Initializable {
             scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
             stage.setResizable(false);
+            stage.centerOnScreen();
             stage.show();
         }
     }
@@ -947,7 +948,7 @@ public class AddManagerSceneController implements Initializable {
                 departmentWriteToFile();
                 departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                 DepartmentCombo.setItems(departmentObservableList);
-
+                managerBaseSalaryTable.getItems().remove(emp);
                 break;
 
             case "base-commission salaried":

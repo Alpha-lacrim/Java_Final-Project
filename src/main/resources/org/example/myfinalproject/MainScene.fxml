@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.myfinalproject.MainSceneController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1400.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.myfinalproject.MainSceneController">
     <children>
-        <AnchorPane layoutY="15.2" prefHeight="678.0" prefWidth="195.0" style="-fx-background-color: #fdcb6e;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="795.0" AnchorPane.topAnchor="15.0">
+        <AnchorPane layoutY="15.2" prefHeight="678.0" prefWidth="198.0" style="-fx-background-color: #fdcb6e;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="1192.0" AnchorPane.topAnchor="15.0">
             <children>
                 <Label alignment="CENTER" layoutX="13.0" layoutY="61.0" prefHeight="71.0" prefWidth="173.0" text="Welcome Admin" textFill="#2c3e50">
                     <font>
@@ -43,14 +43,14 @@
                 </Button>
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="addDepartmentPane" layoutX="211.0" layoutY="15.0" prefHeight="578.0" prefWidth="678.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="15.0">
+        <AnchorPane fx:id="addDepartmentPane" layoutX="218.4" layoutY="15.0" prefHeight="678.0" prefWidth="1171.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="218.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="15.0">
          <children>
-            <TableView fx:id="departmentTable" layoutX="386.0" layoutY="1.0" prefHeight="678.0" prefWidth="281.0" style="-fx-background-color: #fdcb6e;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+            <TableView fx:id="departmentTable" layoutX="625.0" layoutY="7.2" prefHeight="662.0" prefWidth="530.0" style="-fx-background-color: #fdcb6e;" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="7.0">
               <columns>
-                <TableColumn fx:id="numberOfEmployeesColumn" prefWidth="79.0" text="Number of Employees" />
-                  <TableColumn prefWidth="82.0" text="Has Manager" visible="false" />
-                  <TableColumn fx:id="sinceColumn" prefWidth="140.0" text="Creation Date" />
-                <TableColumn fx:id="departmentColumn" prefWidth="158.0" text="Department" />
+                <TableColumn fx:id="numberOfEmployeesColumn" prefWidth="139.20000916719437" text="Number of Employees" />
+                  <TableColumn prefWidth="89.5999755859375" text="Has Manager" />
+                  <TableColumn fx:id="sinceColumn" prefWidth="131.99989318847656" text="Creation Date" />
+                <TableColumn fx:id="departmentColumn" prefWidth="168.00003662109373" text="Department" />
               </columns>
                <effect>
                   <Blend />
@@ -62,12 +62,12 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <BarChart fx:id="departmentEmployeesBarChart" layoutX="-15.0" layoutY="213.0" prefHeight="454.0" prefWidth="509.0" title="Department Employees">
+            <BarChart fx:id="departmentEmployeesBarChart" layoutX="14.0" layoutY="209.0" prefHeight="454.0" prefWidth="590.0" title="Department Employees">
               <xAxis>
-                <CategoryAxis side="BOTTOM" />
+                <CategoryAxis label="Departments" side="BOTTOM" />
               </xAxis>
               <yAxis>
-                <NumberAxis side="LEFT" />
+                <NumberAxis label="Number Of Active Employees" side="LEFT" />
               </yAxis>
             </BarChart>
          </children>
