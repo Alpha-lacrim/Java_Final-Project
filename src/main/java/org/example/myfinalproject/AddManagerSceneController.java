@@ -578,7 +578,6 @@ public class AddManagerSceneController implements Initializable {
     @FXML
     void onApplyButton(ActionEvent event) throws IOException {
         if(managerRadioButton.isSelected()){
-
             Employee emp = null;
             if(managerHourlySalaryTable.getSelectionModel().getSelectedIndex() == -1){
                   emp = managerBaseSalaryTable.getSelectionModel().getSelectedItem();
@@ -594,9 +593,12 @@ public class AddManagerSceneController implements Initializable {
             }
 
             var type = (String) managerPickTypeCombo.getSelectionModel().getSelectedItem();
-            boolean isDone = false;
+            boolean isAcceptable = false;
+
             try {
                 var department = (Department) DepartmentCombo.getSelectionModel().getSelectedItem();
+
+                // This block of code is for creating another object with the new info
                 switch (type) {
                     case "base-salaried":
                         if (!department.isHasManager()) {
@@ -610,7 +612,7 @@ public class AddManagerSceneController implements Initializable {
                             managerBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(managerBaseSalariedArrayList);
                             managerBaseSalaryTable.setItems(managerBaseSalariedEmployeeObservableList);
                             baseSalaryWriteToFile();
-                            isDone = true;
+                            isAcceptable = true;
                             //reset value of text boxes.
                             nameField.setText("");
                             familyField.setText("");
@@ -626,6 +628,7 @@ public class AddManagerSceneController implements Initializable {
                             alert.showAndWait();
                         }
                         break;
+
                     case "hourly-salaried":
                         if (!department.isHasManager()) {
                             var hourlySalariedEmp = new HourlySalariedEmployee(nameField.getText(),familyField.getText(),
@@ -639,7 +642,7 @@ public class AddManagerSceneController implements Initializable {
                             managerHourlySalariedEmployeeObservableList = FXCollections.observableArrayList(managerHourlySalariedArrayList);
                             managerHourlySalaryTable.setItems(managerHourlySalariedEmployeeObservableList);
                             hourlySalaryWriteToFile();
-                            isDone = true;
+                            isAcceptable = true;
                             //reset value of text boxes.
                             nameField.setText("");
                             familyField.setText("");
@@ -656,6 +659,7 @@ public class AddManagerSceneController implements Initializable {
                             alert.showAndWait();
                         }
                         break;
+
                     case "commission-salaried":
                         if (!department.isHasManager()) {
                             var commissionSalariedEmp = new CommissionSalariedEmployee(nameField.getText(),familyField.getText(),
@@ -669,7 +673,7 @@ public class AddManagerSceneController implements Initializable {
                             managerCommissionSalariedEmployeeObservableList = FXCollections.observableArrayList(managerCommissionSalariedArrayList);
                             managerCommissionSalaryTable.setItems(managerCommissionSalariedEmployeeObservableList);
                             commissionSalaryWriteToFile();
-                            isDone = true;
+                            isAcceptable = true;
                             //reset value of text boxes.
                             nameField.setText("");
                             familyField.setText("");
@@ -686,6 +690,7 @@ public class AddManagerSceneController implements Initializable {
                             alert.showAndWait();
                         }
                         break;
+
                     case "base-commission salaried":
                         if (!department.isHasManager()) {
                             var commissionBaseSalariedEmp = new CommissionBaseSalariedEmployee(nameField.getText(),familyField.getText(),
@@ -700,7 +705,7 @@ public class AddManagerSceneController implements Initializable {
                             managerCommissionBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(managerCommissionBaseSalariedArrayList);
                             managerCommissionBaseTable.setItems(managerCommissionBaseSalariedEmployeeObservableList);
                             commissionBaseSalaryWriteToFile();
-                            isDone = true;
+                            isAcceptable = true;
                             //reset value of text boxes.
                             nameField.setText("");
                             familyField.setText("");
@@ -727,7 +732,8 @@ public class AddManagerSceneController implements Initializable {
                 alert.showAndWait();
             }
 
-            if(isDone) {
+            // This block of code is for archiving the previous info
+            if (isAcceptable) {
                 int index = 0;
                 String departmentName;
                 if (emp instanceof BaseSalariedEmployee) {
@@ -738,6 +744,7 @@ public class AddManagerSceneController implements Initializable {
                             index = departmentArrayList.indexOf(department);
                         }
                     }
+
                     emp.setActive(false);
                     emp.setEndDate(LocalDate.now().toString());
                     emp.setStatus(Status.HAS_CHANGED);
@@ -748,6 +755,7 @@ public class AddManagerSceneController implements Initializable {
                     baseSalaryWriteToFile();
                     departmentWriteToFile();
                     managerBaseSalaryTable.getItems().remove(emp);
+                    managerBaseSalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
 
@@ -769,6 +777,7 @@ public class AddManagerSceneController implements Initializable {
                     commissionBaseSalaryWriteToFile();
                     departmentWriteToFile();
                     managerCommissionBaseTable.getItems().remove(emp);
+                    managerCommissionBaseSalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
 
@@ -790,6 +799,7 @@ public class AddManagerSceneController implements Initializable {
                     hourlySalaryWriteToFile();
                     departmentWriteToFile();
                     managerHourlySalaryTable.getItems().remove(emp);
+                    managerHourlySalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
 
@@ -811,9 +821,9 @@ public class AddManagerSceneController implements Initializable {
                     commissionSalaryWriteToFile();
                     departmentWriteToFile();
                     managerCommissionSalaryTable.getItems().remove(emp);
+                    managerCommissionSalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
-
                 }
 
                 statusCombo.setVisible(false);
