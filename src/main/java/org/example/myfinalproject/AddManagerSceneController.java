@@ -579,6 +579,14 @@ public class AddManagerSceneController implements Initializable {
 
     @FXML
     void onApplyButton(ActionEvent event) throws IOException {
+        if (!managerRadioButton.isSelected() && !employeeRadioButton.isSelected()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Employee or Manager ?");
+            alert.setTitle("ERROR !");
+            alert.setContentText("You must select the new role of your selection.");
+            alert.showAndWait();
+        }
+
         if(managerRadioButton.isSelected()){
             Employee emp = null;
             if(managerHourlySalaryTable.getSelectionModel().getSelectedIndex() == -1){
