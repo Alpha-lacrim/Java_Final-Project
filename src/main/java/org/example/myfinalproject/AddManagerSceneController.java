@@ -439,6 +439,8 @@ public class AddManagerSceneController implements Initializable {
             cancelButton.setVisible(true);
             employeeRadioButton.setVisible(true);
             managerRadioButton.setVisible(true);
+            employeeRadioButton.setDisable(true);
+            managerRadioButton.setSelected(true);
 
 
             switch (managerPickTypeCombo.getValue()) {
