@@ -925,7 +925,7 @@ public class AddManagerSceneController implements Initializable {
 
     @FXML
     void onApplyButton2(ActionEvent event) {
-        int index=0;
+        int index = 0;
         String departmentName;
         switch (managerPickTypeCombo.getValue()) {
             case "base-salaried":
@@ -949,6 +949,7 @@ public class AddManagerSceneController implements Initializable {
                 departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                 DepartmentCombo.setItems(departmentObservableList);
                 managerBaseSalaryTable.getItems().remove(emp);
+                managerBaseSalariedArrayList.remove(emp);
                 break;
 
             case "base-commission salaried":
@@ -960,6 +961,7 @@ public class AddManagerSceneController implements Initializable {
                         index = departmentArrayList.indexOf(department1);
                     }
                 }
+
                 emp1.setActive(false);
                 emp1.setEndDate(LocalDate.now().toString());
                 emp1.setStatus(statusCombo.getValue());
@@ -970,6 +972,7 @@ public class AddManagerSceneController implements Initializable {
                 commissionBaseSalaryWriteToFile();
                 departmentWriteToFile();
                 managerCommissionBaseTable.getItems().remove(emp1);
+                managerCommissionBaseSalariedArrayList.remove(emp1);
                 departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                 DepartmentCombo.setItems(departmentObservableList);
                 break;
@@ -993,6 +996,7 @@ public class AddManagerSceneController implements Initializable {
                 hourlySalaryWriteToFile();
                 departmentWriteToFile();
                 managerHourlySalaryTable.getItems().remove(emp2);
+                managerHourlySalariedArrayList.remove(emp2);
                 departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                 DepartmentCombo.setItems(departmentObservableList);
                 break;
@@ -1016,6 +1020,7 @@ public class AddManagerSceneController implements Initializable {
                 commissionSalaryWriteToFile();
                 departmentWriteToFile();
                 managerCommissionSalaryTable.getItems().remove(emp3);
+                managerCommissionSalariedArrayList.remove(emp3);
                 departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                 DepartmentCombo.setItems(departmentObservableList);
                 break;
