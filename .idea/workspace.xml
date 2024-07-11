@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="06f7b8ee-6d22-4e3a-9c60-ea09d3c81bb0" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Record" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Mahyar Hemati &lt;mahyarhemati84@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2hsSoDcEgyJuwklp11BG7pVVSTX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.StartApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/JavaFX SDK/fontawesome-free-6.5.2-desktop&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.24827586&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Java_Final-Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Java_Final-Project" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="06f7b8ee-6d22-4e3a-9c60-ea09d3c81bb0" name="Changes" comment="" />
+      <created>1718381464749</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718381464749</updated>
+      <workItem from="1718381465750" duration="1162000" />
+      <workItem from="1718430109861" duration="5160000" />
+      <workItem from="1718437731023" duration="1750000" />
+      <workItem from="1718451145068" duration="3466000" />
+      <workItem from="1718464115342" duration="5549000" />
+      <workItem from="1718475531368" duration="6646000" />
+      <workItem from="1718520919923" duration="1972000" />
+      <workItem from="1718523417451" duration="1055000" />
+      <workItem from="1718652908692" duration="30000" />
+      <workItem from="1718789331139" duration="1068000" />
+      <workItem from="1718891744593" duration="189000" />
+      <workItem from="1718891934614" duration="1764000" />
+      <workItem from="1718895217297" duration="1543000" />
+      <workItem from="1718955636540" duration="5781000" />
+      <workItem from="1718961450192" duration="693000" />
+      <workItem from="1718970268788" duration="357000" />
+      <workItem from="1719089997287" duration="1964000" />
+      <workItem from="1719093721755" duration="5033000" />
+      <workItem from="1719142842484" duration="31000" />
+      <workItem from="1719179325376" duration="444000" />
+      <workItem from="1719179780198" duration="4730000" />
+      <workItem from="1719309749158" duration="424000" />
+      <workItem from="1719409945315" duration="298000" />
+      <workItem from="1719410399861" duration="321000" />
+      <workItem from="1719410728016" duration="1359000" />
+      <workItem from="1720532735035" duration="2059000" />
+      <workItem from="1720561204574" duration="6986000" />
+      <workItem from="1720572852452" duration="1810000" />
+      <workItem from="1720614600162" duration="6120000" />
+      <workItem from="1720638616578" duration="222000" />
+      <workItem from="1720638874075" duration="12154000" />
+      <workItem from="1720653937173" duration="35000" />
+      <workItem from="1720653981102" duration="276000" />
+      <workItem from="1720693551860" duration="2369000" />
+      <workItem from="1720698304680" duration="5473000" />
+      <workItem from="1720704156455" duration="89000" />
+      <workItem from="1720728425787" duration="6763000" />
+    </task>
+    <task id="LOCAL-00001" summary="changing comissionBaseSalaried inheritance and adding Salary interface">
+      <option name="closed" value="true" />
+      <created>1718431153298</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718431153298</updated>
+    </task>
+    <task id="LOCAL-00002" summary="changing comissionBaseSalaried inheritance and adding interfaces, separating manager Arraylist from the employee Arraylist">
+      <option name="closed" value="true" />
+      <created>1718452325797</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718452325797</updated>
+    </task>
+    <task id="LOCAL-00003" summary="changing comissionBaseSalaried inheritance and adding interfaces, separating manager Arraylist from the employee Arraylist">
+      <option name="closed" value="true" />
+      <created>1718452612699</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718452612699</updated>
+    </task>
+    <task id="LOCAL-00004" summary="changing comissionBaseSalaried inheritance and adding interfaces, separating manager Arraylist from the employee Arraylist">
+      <option name="closed" value="true" />
+      <created>1718452642006</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718452642006</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fixing departmentButton">
+      <option name="closed" value="true" />
+      <created>1718453729215</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718453729215</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixing some errors, adding baseCommission, making comboBox a little more interactive, some grammatical mistakes have been fixed">
+      <option name="closed" value="true" />
+      <created>1718482271935</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718482271935</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Employee Scene Controller Added">
+      <option name="closed" value="true" />
+      <created>1718961516763</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718961516763</updated>
+    </task>
+    <task id="LOCAL-00008" summary="status comboBox added - not Complete">
+      <created>1719098534194</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719098534194</updated>
+    </task>
+    <task id="LOCAL-00009" summary="RadioButton and some Buttons added to Employee Scene&#10;Manager Scene has been updated&#10;AwesomeFontIcon removed from the project">
+      <created>1719184835780</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719184835780</updated>
+    </task>
+    <task id="LOCAL-00010" summary="keeping emp up to date + adding barchart">
+      <created>1720616518530</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720616518530</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix deactivate manager&#10;&#10;(cherry picked from commit 97bab9ec6df01e1126a3119508aed6e6a6709c73)">
+      <created>1720619595768</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720619595768</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix deactivate manager&#10;&#10;(cherry picked from commit 97bab9ec6df01e1126a3119508aed6e6a6709c73)">
+      <created>1720620337913</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1720620337913</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fixing add manager deactivation duplicate">
+      <created>1720645655173</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1720645655173</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixing manager editing">
+      <created>1720647019782</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1720647019782</updated>
+    </task>
+    <task id="LOCAL-00015" summary="adding employee edit + syncing with manager scene">
+      <created>1720653668884</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1720653668884</updated>
+    </task>
+    <task id="LOCAL-00016" summary="radiobutton error handling">
+      <created>1720654211969</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1720654211969</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fixing employee deactivation button">
+      <created>1720699620217</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1720699620217</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fixing employee deactivation button">
+      <created>1720700112627</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1720700112627</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fixing manager editing">
+      <created>1720703417424</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1720703417424</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fixing employee editing">
+      <created>1720703783550</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1720703783550</updated>
+    </task>
+    <task id="LOCAL-00021" summary="employee and manager can now change their role directly while editing&#10;fixing some bugs in radio buttons">
+      <created>1720735646453</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1720735646453</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changing comissionBaseSalaried inheritance and adding Salary interface" />
+    <MESSAGE value="changing comissionBaseSalaried inheritance and adding interfaces, separating manager Arraylist from the employee Arraylist" />
+    <MESSAGE value="fixing departmentButton" />
+    <MESSAGE value="fixing some errors, adding baseCommission, making comboBox a little more interactive, some grammatical mistakes have been fixed" />
+    <MESSAGE value="Employee Scene Controller Added" />
+    <MESSAGE value="status comboBox added - not Complete" />
+    <MESSAGE value="RadioButton and some Buttons added to Employee Scene&#10;Manager Scene has been updated&#10;AwesomeFontIcon removed from the project" />
+    <MESSAGE value="keeping emp up to date + adding barchart" />
+    <MESSAGE value="fix deactivate manager&#10;&#10;(cherry picked from commit 97bab9ec6df01e1126a3119508aed6e6a6709c73)" />
+    <MESSAGE value="fixing add manager deactivation duplicate" />
+    <MESSAGE value="adding employee edit + syncing with manager scene" />
+    <MESSAGE value="radiobutton error handling" />
+    <MESSAGE value="fixing employee deactivation button" />
+    <MESSAGE value="fixing manager editing" />
+    <MESSAGE value="fixing employee editing" />
+    <MESSAGE value="employee and manager can now change their role directly while editing&#10;fixing some bugs in radio buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="employee and manager can now change their role directly while editing&#10;fixing some bugs in radio buttons" />
+  </component>
+</project>
