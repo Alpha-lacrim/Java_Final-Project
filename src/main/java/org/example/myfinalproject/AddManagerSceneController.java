@@ -590,16 +590,16 @@ public class AddManagerSceneController implements Initializable {
 
         if(managerRadioButton.isSelected()){
             Employee emp = null;
-            if(managerBaseSalaryTable.getSelectionModel().isSelected(managerBaseSalaryTable.getSelectionModel().getSelectedIndex())){
+            if(managerBaseSalaryTable.getSelectionModel().getSelectedItem() instanceof BaseSalariedEmployee){
                 emp = managerBaseSalaryTable.getSelectionModel().getSelectedItem();
             }
-            else if (managerCommissionBaseTable.getSelectionModel().getSelectedIndex() == -1) {
+            else if (managerCommissionBaseTable.getSelectionModel().getSelectedItem() instanceof CommissionBaseSalariedEmployee) {
                 emp = managerCommissionBaseTable.getSelectionModel().getSelectedItem();
             }
-            else if(managerCommissionSalaryTable.getSelectionModel().getSelectedIndex() == -1){
+            else if(managerCommissionSalaryTable.getSelectionModel().getSelectedItem() instanceof CommissionSalariedEmployee){
                 emp = managerCommissionSalaryTable.getSelectionModel().getSelectedItem();
             }
-            else if(managerHourlySalaryTable.getSelectionModel().isSelected(managerHourlySalaryTable.getSelectionModel().getSelectedIndex())){
+            else if(managerHourlySalaryTable.getSelectionModel().getSelectedItem() instanceof HourlySalariedEmployee){
                 emp = managerHourlySalaryTable.getSelectionModel().getSelectedItem();
             }
 
