@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.myfinalproject.HistorySceneController">
+   <children>
+      <TableView fx:id="employeeBaseSalaryTable" layoutX="17.0" layoutY="12.0" prefHeight="390.0" prefWidth="1177.0" visible="false" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <columns>
+            <TableColumn fx:id="employeeBaseSalaryIdColumn" prefWidth="43.200013637542725" text="ID" />
+            <TableColumn fx:id="employeeBaseSalaryNameColumn" prefWidth="72.80001831054688" text="Name" />
+            <TableColumn fx:id="employeeBaseSalaryFamilyColumn" prefWidth="89.59998321533203" text="Family Name" />
+            <TableColumn fx:id="employeeBaseSalaryNationalColumn" prefWidth="121.59999084472656" text="National-ID" />
+            <TableColumn fx:id="employeeBaseSalaryPhoneColumn" prefWidth="101.60003662109375" text="Phone" />
+            <TableColumn fx:id="employeeBaseSalaryBirthColumn" minWidth="8.0" prefWidth="120.79989624023438" text="Birth Date" />
+            <TableColumn fx:id="employeeBaseSalaryStartDateColumn" prefWidth="97.5999755859375" text="Start Date" />
+            <TableColumn fx:id="employeeBaseSalaryEndDateColumn" prefWidth="110.4000244140625" text="End Date" />
+            <TableColumn fx:id="employeeBaseSalaryStatusColumn" prefWidth="128.00006103515625" text="Status" />
+            <TableColumn fx:id="employeeBaseSalaryDepartmentColumn" prefWidth="144.79998779296875" text="Department" />
+            <TableColumn fx:id="employeeBaseSalaryColumn" prefWidth="111.2000732421875" text="Base" />
+            <TableColumn fx:id="employeeBaseSalaryEarningColumn" prefWidth="146.39990234375" text="Total Earning" />
+         </columns>
+      </TableView>
+      <TableView fx:id="employeeHourlySalaryTable" layoutX="13.0" layoutY="16.0" prefHeight="423.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <columns>
+            <TableColumn fx:id="employeeHourlySalaryIdColumn" prefWidth="44.0" text="ID" />
+            <TableColumn fx:id="employeeHourlySalaryNameColumn" prefWidth="58.0" text="Name" />
+            <TableColumn fx:id="employeeHourlySalaryFamilyColumn" prefWidth="107.0" text="Family Name" />
+            <TableColumn fx:id="employeeHourlySalaryNationalColumn" prefWidth="100.00003051757812" text="National-ID" />
+            <TableColumn fx:id="employeeHourlySalaryPhoneColumn" prefWidth="112.0" text="Phone" />
+            <TableColumn fx:id="employeeHourlySalaryBirthColumn" prefWidth="95.0" text="Birth Date" />
+            <TableColumn fx:id="employeeHourlySalaryStartDateColumn" prefWidth="94.39990234375" text="Start Date" />
+            <TableColumn fx:id="employeeHourlySalaryEndDateColumn" prefWidth="95.2000732421875" text="End Date" />
+            <TableColumn fx:id="employeeHourlySalaryStatusColumn" prefWidth="127.20001220703125" text="Status" />
+            <TableColumn fx:id="employeeHourlySalaryDepartmentColumn" prefWidth="132.0" text="Department" />
+            <TableColumn fx:id="employeeHourlySalaryPayColumn" prefWidth="99.199951171875" text="Hourly Rate" />
+            <TableColumn fx:id="employeeHourlySalaryAmountOfHoursColumn" minWidth="0.0" prefWidth="110.4000244140625" text="Amount of Hours" />
+            <TableColumn fx:id="employeeHourlySalaryEarningColumn" minWidth="8.0" prefWidth="113.60009765625" text="Total Earning" />
+         </columns>
+      </TableView>
+      <TableView fx:id="employeeCommissionSalaryTable" layoutX="23.0" layoutY="26.0" prefHeight="423.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <columns>
+            <TableColumn fx:id="employeeCommissionSalaryIdColumn" prefWidth="38.39999455213547" text="ID" />
+            <TableColumn fx:id="employeeCommissionSalaryNameColumn" prefWidth="56.0" text="Name" />
+            <TableColumn fx:id="employeeCommissionSalaryFamilyColumn" prefWidth="106.0" text="Family Name" />
+            <TableColumn fx:id="employeeCommissionSalaryNationalColumn" prefWidth="102.40005493164062" text="National-ID" />
+            <TableColumn fx:id="employeeCommissionSalaryPhoneColumn" prefWidth="95.199951171875" text="Phone" />
+            <TableColumn fx:id="employeeCommissionSalaryBirthColumn" prefWidth="97.60000610351562" text="Birth Date" />
+            <TableColumn fx:id="employeeCommissionSalaryStartDateColumn" prefWidth="86.40005493164062" text="Start Date" />
+            <TableColumn fx:id="employeeCommissionSalaryEndDateColumn" prefWidth="81.59991455078125" text="End Date" />
+            <TableColumn fx:id="employeeCommissionSalaryStatusColumn" prefWidth="110.4000244140625" text="Status" />
+            <TableColumn fx:id="employeeCommissionSalaryDepartmentColumn" prefWidth="156.7999267578125" text="Department" />
+            <TableColumn fx:id="employeeCommissionSalaryRateColumn" prefWidth="109.5999755859375" text="Commission Rate" />
+            <TableColumn fx:id="employeeCommissionSalarySalesColumn" prefWidth="134.40008544921875" text="Number of Sales" />
+            <TableColumn fx:id="employeeCommissionSalaryEarningColumn" prefWidth="116.0" text="Total Earning" />
+         </columns>
+      </TableView>
+      <TableView fx:id="employeeCommissionBaseTable" layoutX="23.0" layoutY="26.0" prefHeight="423.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <columns>
+            <TableColumn fx:id="employeeCommissionBaseIdColumn" prefWidth="38.0" text="ID" />
+            <TableColumn fx:id="employeeCommissionBaseNameColumn" minWidth="5.0" prefWidth="59.0" text="Name" />
+            <TableColumn fx:id="employeeCommissionBaseFamilyColumn" prefWidth="89.60000610351562" text="Family Name" />
+            <TableColumn fx:id="employeeCommissionBaseNationalColumn" prefWidth="99.20001220703125" text="National-ID" />
+            <TableColumn fx:id="employeeCommissionBasePhoneColumn" prefWidth="90.4000244140625" text="Phone" />
+            <TableColumn fx:id="employeeCommissionBaseBirthColumn" minWidth="8.0" prefWidth="99.0" text="Birth Date" />
+            <TableColumn fx:id="employeeCommissionBaseStartDateColumn" prefWidth="75.0" text="Start Date" />
+            <TableColumn fx:id="employeeCommissionBaseEndDateColumn" prefWidth="75.0" text="End Date" />
+            <TableColumn fx:id="employeeCommissionBaseStatusColumn" prefWidth="111.99993896484375" text="Status" />
+            <TableColumn fx:id="employeeCommissionBaseDepartmentColumn" prefWidth="108.00006103515625" text="Department" />
+            <TableColumn fx:id="employeeCommissionBaseSalaryColumn" minWidth="4.80010986328125" prefWidth="91.199951171875" text="Base" />
+            <TableColumn fx:id="employeeCommissionBaseRateColumn" minWidth="0.0" prefWidth="132.79986572265625" text="Commission Rate" />
+            <TableColumn fx:id="employeeCommissionBaseNumberOfSalesColumn" prefWidth="112.800048828125" text="Number of Sales" />
+            <TableColumn fx:id="employeeCommissionBaseEarningColumn" prefWidth="102.40000000000009" text="Total Earning" />
+         </columns>
+      </TableView>
+      <TableView fx:id="managerBaseSalaryTable" layoutX="17.0" layoutY="12.0" prefHeight="421.0" prefWidth="994.0" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <columns>
+            <TableColumn fx:id="managerBaseSalaryIdColumn" prefWidth="43.200013637542725" text="ID" />
+            <TableColumn fx:id="managerBaseSalaryNameColumn" prefWidth="72.80001831054688" text="Name" />
+            <TableColumn fx:id="managerBaseSalaryFamilyColumn" prefWidth="107.0" text="Family Name" />
+            <TableColumn fx:id="managerBaseSalaryNationalColumn" prefWidth="104.0" text="National-ID" />
+            <TableColumn fx:id="managerBaseSalaryPhoneColumn" prefWidth="112.0" text="Phone" />
+            <TableColumn fx:id="managerBaseSalaryBirthColumn" minWidth="8.0" prefWidth="104.0" text="Birth Date" />
+            <TableColumn fx:id="managerBaseSalaryStartDateColumn" prefWidth="103.199951171875" text="Start Date" />
+            <TableColumn fx:id="managerBaseSalaryEndDateColumn" prefWidth="97.60003662109375" text="End Date" />
+            <TableColumn fx:id="managerBaseSalaryStatusColumn" prefWidth="118.4000244140625" text="Status" />
+            <TableColumn fx:id="managerBaseSalaryDepartmentColumn" prefWidth="148.79998779296875" text="Department" />
+            <TableColumn fx:id="managerBaseSalaryBonusColumn" prefWidth="101.60009765625" text="Manager Bonus" />
+            <TableColumn fx:id="managerBaseSalaryColumn" text="Base" />
+            <TableColumn fx:id="managerBaseSalaryEarningColumn" prefWidth="92.80002441406259" text="Total Earning" />
+         </columns>
+      </TableView>
+      <TableView fx:id="managerHourlySalaryTable" layoutX="13.0" layoutY="16.0" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <columns>
+            <TableColumn fx:id="managerHourlySalaryIdColumn" prefWidth="44.0" text="ID" />
+            <TableColumn fx:id="managerHourlySalaryNameColumn" prefWidth="58.0" text="Name" />
+            <TableColumn fx:id="managerHourlySalaryFamilyColumn" prefWidth="90.0" text="Family Name" />
+            <TableColumn fx:id="managerHourlySalaryNationalColumn" prefWidth="92.0" text="National-ID" />
+            <TableColumn fx:id="managerHourlySalaryPhoneColumn" prefWidth="85.60003662109375" text="Phone" />
+            <TableColumn fx:id="managerHourlySalaryBirthColumn" prefWidth="96.00006103515625" text="Birth Date" />
+            <TableColumn fx:id="managerHourlySalaryStartDateColumn" prefWidth="77.60003662109375" text="Start Date" />
+            <TableColumn fx:id="managerHourlySalaryEndDateColumn" prefWidth="80.800048828125" text="End Date" />
+            <TableColumn fx:id="managerHourlySalaryStatusColumn" prefWidth="117.60003662109375" text="Status" />
+            <TableColumn fx:id="managerHourlySalaryDepartmentColumn" prefWidth="122.39996337890625" text="Department" />
+            <TableColumn fx:id="managerHourlySalaryBonusColumn" prefWidth="116.0" text="Manager Bonus" />
+            <TableColumn fx:id="managerHourlySalaryPayColumn" prefWidth="92.79998779296875" text="Hourly Rate" />
+            <TableColumn fx:id="managerHourlySalaryAmountOfHoursColumn" minWidth="0.0" prefWidth="122.4000244140625" text="Amount of Hours" />
+            <TableColumn fx:id="managerHourlySalaryEarningColumn" minWidth="8.0" prefWidth="88.80002441406259" text="Total Earning" />
+         </columns>
+      </TableView>
+      <TableView fx:id="managerCommissionSalaryTable" layoutX="23.0" layoutY="26.0" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <columns>
+            <TableColumn fx:id="managerCommissionSalaryIdColumn" prefWidth="38.39999455213547" text="ID" />
+            <TableColumn fx:id="managerCommissionSalaryNameColumn" prefWidth="56.0" text="Name" />
+            <TableColumn fx:id="managerCommissionSalaryFamilyColumn" prefWidth="81.0" text="Family Name" />
+            <TableColumn fx:id="managerCommissionSalaryNationalColumn" prefWidth="99.20001220703125" text="National-ID" />
+            <TableColumn fx:id="managerCommissionSalaryPhoneColumn" prefWidth="95.20001220703125" text="Phone" />
+            <TableColumn fx:id="managerCommissionSalaryBirthColumn" prefWidth="97.60003662109375" text="Birth Date" />
+            <TableColumn fx:id="managerCommissionSalaryStartDateColumn" prefWidth="82.39996337890625" text="Start Date" />
+            <TableColumn fx:id="managerCommissionSalaryEndDateColumn" prefWidth="86.4000244140625" text="End Date" />
+            <TableColumn fx:id="managerCommissionSalaryStatusColumn" prefWidth="109.59991455078125" text="Status" />
+            <TableColumn fx:id="managerCommissionSalaryDepartmentColumn" prefWidth="121.60009765625" text="Department" />
+            <TableColumn fx:id="managerCommissionSalaryBonusColumn" prefWidth="99.20001220703125" text="Manager Bonus" />
+            <TableColumn fx:id="managerCommissionSalaryRateColumn" prefWidth="107.199951171875" text="Commission Rate" />
+            <TableColumn fx:id="managerCommissionSalarySalesColumn" prefWidth="119.2000732421875" text="Number of Sales" />
+            <TableColumn fx:id="managerCommissionSalaryEarningColumn" prefWidth="101.59995117187509" text="Total Earning" />
+         </columns>
+      </TableView>
+      <TableView fx:id="managerCommissionBaseTable" layoutX="23.0" layoutY="26.0" prefHeight="445.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <columns>
+            <TableColumn fx:id="managerCommissionBaseIdColumn" prefWidth="43.200013637542725" text="ID" />
+            <TableColumn fx:id="managerCommissionBaseNameColumn" prefWidth="53.0" text="Name" />
+            <TableColumn fx:id="managerCommissionBaseFamilyColumn" prefWidth="81.0" text="Family Name" />
+            <TableColumn fx:id="managerCommissionBaseNationalColumn" prefWidth="84.0" text="National-ID" />
+            <TableColumn fx:id="managerCommissionBasePhoneColumn" prefWidth="75.0" text="Phone" />
+            <TableColumn fx:id="managerCommissionBaseBirthColumn" minWidth="8.0" prefWidth="89.0" text="Birth Date" />
+            <TableColumn fx:id="managerCommissionBaseStartDateColumn" prefWidth="81.59991455078125" text="Start Date" />
+            <TableColumn fx:id="managerCommissionBaseEndDateColumn" prefWidth="79.2000732421875" text="End Date" />
+            <TableColumn fx:id="managerCommissionBaseStatusColumn" prefWidth="122.4000244140625" text="Status" />
+            <TableColumn fx:id="managerCommissionBaseDepartmentColumn" prefWidth="112.79998779296875" text="Department" />
+            <TableColumn fx:id="managerCommissionBaseBonusColumn" prefWidth="102.4000244140625" text="Manager Bonus" />
+            <TableColumn fx:id="managerCommissionBaseSalaryColumn" minWidth="4.80010986328125" prefWidth="56.79998779296875" text="Base" />
+            <TableColumn fx:id="managerCommissionBaseRateColumn" minWidth="0.0" prefWidth="112.00006103515625" text="Commission Rate" />
+            <TableColumn fx:id="managerCommissionBaseNumberOfSalesColumn" prefWidth="108.79998779296875" text="Number of Sales" />
+            <TableColumn fx:id="managerCommissionBaseEarningColumn" prefWidth="82.40000000000009" text="Total Earning" />
+         </columns>
+      </TableView>
+      <Button layoutX="1215.0" layoutY="560.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="71.0" text="Back" />
+   </children>
+</AnchorPane>
