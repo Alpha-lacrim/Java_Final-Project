@@ -976,6 +976,7 @@ public class AddManagerSceneController implements Initializable {
                 DepartmentCombo.setItems(departmentObservableList);
                 managerBaseSalaryTable.getItems().remove(emp);
                 managerBaseSalariedArrayList.remove(emp);
+                baseSalariedArrayList.remove(emp);
                 break;
 
             case "base-commission salaried":
@@ -1001,6 +1002,7 @@ public class AddManagerSceneController implements Initializable {
                 DepartmentCombo.setItems(departmentObservableList);
                 managerCommissionBaseTable.getItems().remove(emp1);
                 managerCommissionBaseSalariedArrayList.remove(emp1);
+                commissionBaseSalariedArrayList.remove(emp1);
                 break;
 
             case "hourly-salaried":
@@ -1025,6 +1027,7 @@ public class AddManagerSceneController implements Initializable {
                 DepartmentCombo.setItems(departmentObservableList);
                 managerHourlySalaryTable.getItems().remove(emp2);
                 managerHourlySalariedArrayList.remove(emp2);
+                hourlySalariedArrayList.remove(emp2);
                 break;
 
             case "commission-salaried":
@@ -1049,6 +1052,7 @@ public class AddManagerSceneController implements Initializable {
                 DepartmentCombo.setItems(departmentObservableList);
                 managerCommissionSalaryTable.getItems().remove(emp3);
                 managerCommissionSalariedArrayList.remove(emp3);
+                commissionBaseSalariedArrayList.remove(emp3);
                 break;
         }
         addManagerButton.setDisable(false);
