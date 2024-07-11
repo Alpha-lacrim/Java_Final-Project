@@ -32,6 +32,7 @@
         <ComboBox fx:id="employeePickTypeCombo" layoutX="13.0" layoutY="461.0" onAction="#onEmployeePickTypeCombo" prefHeight="26.0" prefWidth="130.0" promptText="Pick a type" />
         <ComboBox fx:id="DepartmentCombo" layoutX="160.0" layoutY="550.0" prefHeight="26.0" prefWidth="158.0" promptText="Select a Department" />
         <TextField fx:id="baseSalaryField" layoutX="340.0" layoutY="507.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter base" />
+      <TextField fx:id="managerBonusField" layoutX="337.0" layoutY="548.0" promptText="Enter manager bonus" visible="false" />
         <DatePicker fx:id="birthDatePicker" editable="false" layoutX="160.0" layoutY="507.0" prefHeight="26.0" prefWidth="158.0" promptText="Select the birth date" />
         <Button fx:id="addEmployeeButton" layoutX="724.0" layoutY="451.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="51.0" prefWidth="264.0" text="Add Employee" textAlignment="CENTER">
             <font>
@@ -69,6 +70,7 @@
         </TableView>
         <TextField fx:id="commissionRateField" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter commission rate" visible="false" />
         <TextField fx:id="numberOfSalesField" layoutX="340.0" layoutY="507.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter number of sales" visible="false" />
+      <TextField fx:id="managerBonusField1" layoutX="501.0" layoutY="462.0" promptText="Enter manager bonus" visible="false" />
         <TableView fx:id="employeeCommissionBaseTable" layoutX="13.0" layoutY="16.0" onMouseClicked="#employeeCommissionBaseSalaryTableGetItem" prefHeight="423.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="208.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
             <columns>
                 <TableColumn fx:id="employeeCommissionBaseIdColumn" prefWidth="38.0" text="ID" />
@@ -86,6 +88,7 @@
         </TableView>
         <TextField fx:id="commissionRateField2" layoutX="504.0" layoutY="461.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter commission rate" visible="false" />
         <TextField fx:id="numberOfSalesField2" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter number of sales" visible="false" />
+      <TextField fx:id="managerBonusField2" layoutX="504.0" layoutY="508.0" promptText="Enter manager bonus" visible="false" />
       <ComboBox fx:id="statusCombo" layoutX="500.0" layoutY="560.0" minWidth="53.0" prefHeight="25.0" prefWidth="191.0" promptText="End Reason" visible="false" />
       <Button layoutX="-161.0" layoutY="2.0" mnemonicParsing="false" text="Button" />
         <Button fx:id="cancelButton" layoutX="785.0" layoutY="560.0" minWidth="56.0" mnemonicParsing="false" onAction="#onCancelButton" prefHeight="25.0" prefWidth="61.0" text="Cancel" visible="false" />
