@@ -4,7 +4,6 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -23,24 +22,21 @@
                         <Font name="System Bold" size="20.0" />
                     </font>
                 </Label>
-                <Button layoutX="19.0" layoutY="214.0" mnemonicParsing="false" onAction="#onAddManagerButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="Add manager" textAlignment="CENTER" textFill="WHITE">
+                <Button layoutX="20.0" layoutY="193.0" mnemonicParsing="false" onAction="#onAddManagerButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="Add manager" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>
                 </Button>
-                <Button layoutX="19.0" layoutY="272.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="Add employee" textFill="WHITE">
+                <Button layoutX="20.0" layoutY="247.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="Add employee" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>
                 </Button>
-                <Button layoutX="19.0" layoutY="158.0" mnemonicParsing="false" onAction="#onAddDepartmentButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="Add department" textAlignment="CENTER" textFill="WHITE">
-                    <font>
-                        <Font name="System Bold" size="17.0" />
-                    </font>
-                    <effect>
-                  <Blend />
-                    </effect>
-                </Button>
+            <Button layoutX="19.0" layoutY="301.0" mnemonicParsing="false" onAction="#onHistoryButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #2c3e50;" text="Salary History" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
         <AnchorPane fx:id="addDepartmentPane" layoutX="218.4" layoutY="15.0" prefHeight="678.0" prefWidth="1171.0" style="-fx-background-color: #ecf0f1;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="218.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="15.0">
@@ -71,59 +67,6 @@
               </yAxis>
             </BarChart>
          </children>
-        </AnchorPane>
-        <AnchorPane fx:id="addManagerPane" layoutX="211.0" layoutY="14.0" prefHeight="578.0" prefWidth="678.0" style="-fx-background-color: #ecf0f1;" visible="false" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="14.0">
-         <children>
-            <TextField fx:id="managerNameField" layoutX="33.0" layoutY="491.0" promptText="Enter Name" />
-            <TextField fx:id="managerBonusField" layoutX="209.0" layoutY="452.0" promptText="Enter Manger-Bonus" />
-            <TextField fx:id="managerPhoneField" layoutX="33.0" layoutY="617.0" promptText="Enter Phone-Number" />
-            <TextField fx:id="managerNationalIdField" layoutX="33.0" layoutY="575.0" promptText="Enter National-ID" />
-            <TextField fx:id="managerFamilyNameField" layoutX="33.0" layoutY="530.0" promptText="Enter Family Name" />
-            <DatePicker fx:id="managerBirthDatePicker" layoutX="209.0" layoutY="490.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter Birth-Date" />
-            <TableView fx:id="managerBaseSalaryTable" layoutX="7.0" layoutY="5.0" prefHeight="334.0" prefWidth="765.0">
-              <columns>
-                <TableColumn fx:id="managerBaseSalariedIDColumn" prefWidth="52.000014305114746" text="ID" />
-                <TableColumn fx:id="managerBaseSalariedNameColumn" prefWidth="73.59997940063477" text="Name" />
-                  <TableColumn fx:id="managerBaseSalariedFamilyColumn" prefWidth="95.199951171875" text="Family name" />
-                  <TableColumn fx:id="managerBaseSalariedNationalColumn" prefWidth="105.59996032714844" text="National ID" />
-                  <TableColumn fx:id="managerBaseSalariedPhoneColumn" prefWidth="73.59991455078125" text="Phone" />
-                  <TableColumn fx:id="managerBaseSalariedBonusColumn" prefWidth="92.79998779296875" text="Manager bonus" />
-                  <TableColumn fx:id="managerBaseSalariedBirthDateColumn" prefWidth="72.0" text="Birthdate" />
-                  <TableColumn fx:id="managerBaseSalariedDepartmentColumn" prefWidth="81.5999755859375" text="Department" />
-                  <TableColumn fx:id="managerBaseSalariedBaseColumn" prefWidth="118.4000244140625" text="Base" />
-              </columns>
-            </TableView>
-            <ComboBox fx:id="managerPickDepartmentCombo" layoutX="208.0" layoutY="530.0" prefWidth="150.0" promptText="Pick Department" />
-            <ComboBox fx:id="managerPickTypeCombo" layoutX="32.0" layoutY="452.0" onAction="#onManagerComboBox" prefWidth="150.0" promptText="Pick Type" />
-            <TextField fx:id="managerBaseSalaryField" layoutX="389.0" layoutY="452.0" promptText="Enter Base-Salary" />
-            <Button layoutX="389.0" layoutY="500.0" mnemonicParsing="false" onAction="#onAddManagerButton2" prefHeight="61.0" prefWidth="149.0" text="Add Manger" />
-            <TextField fx:id="managerCommissionRateField" layoutX="210.0" layoutY="575.0" promptText="Enter Commission Rate" />
-            <TextField fx:id="managerNumberOfSalesField" layoutX="210.0" layoutY="617.0" promptText="Enter Number of Sales" />
-            <TableView fx:id="managerCommissionBaseTable" layoutX="8.0" layoutY="4.0" prefHeight="334.0" prefWidth="765.0" visible="false">
-              <columns>
-                <TableColumn fx:id="managerCommissionBaseIDColumn" prefWidth="29.0" text="ID" />
-                <TableColumn fx:id="managerCommissionBaseNameColumn" prefWidth="40.0" text="Name" />
-                  <TableColumn fx:id="managerCommissionBaseFamilyColumn" prefWidth="86.0" text="Family name" />
-                  <TableColumn fx:id="managerCommissionBaseNationalColumn" prefWidth="70.0" text="National ID" />
-                  <TableColumn fx:id="managerCommissionBasePhoneColumn" prefWidth="56.0" text="Phone" />
-                  <TableColumn fx:id="managerCommissionBaseBonusColumn" prefWidth="98.0" text="Manager bonus" />
-                  <TableColumn fx:id="managerCommissionBaseBirthDateColumn" prefWidth="64.0" text="Birthdate" />
-                  <TableColumn fx:id="managerCommissionBaseDepartmentColumn" prefWidth="78.0" text="Department" />
-                  <TableColumn fx:id="managerBaseCommissionBaseColumn" minWidth="0.0" prefWidth="44.0" text="Base" />
-                  <TableColumn fx:id="managerCommissionBaseCommissionRateColumn" prefWidth="101.0" text="Commission rate" />
-                  <TableColumn fx:id="managerCommissionBaseNumberOfSalesColumn" prefWidth="97.0" text="Number of sales" />
-              </columns>
-            </TableView>
-         </children>
-        </AnchorPane>
-        <AnchorPane fx:id="addEmployeePane" layoutX="211.0" layoutY="14.0" prefHeight="578.0" prefWidth="678.0" style="-fx-background-color: #ecf0f1;" visible="false" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="14.0">
-            <children>
-                <Label layoutX="249.0" layoutY="139.0" prefHeight="30.0" prefWidth="180.0" text="addEmployeePane">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Label>
-            </children>
         </AnchorPane>
     </children>
 </AnchorPane>
