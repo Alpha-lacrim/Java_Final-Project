@@ -502,7 +502,7 @@ public class AddEmployeeSceneController implements Initializable {
 
     @FXML
     void onEditButton(ActionEvent event) throws IOException {
-        statusCombo.setVisible(true);
+        statusCombo.setVisible(false);
         applyButton.setVisible(true);
         cancelButton.setVisible(true);
         employeeRadioButton.setVisible(true);
@@ -801,7 +801,6 @@ public class AddEmployeeSceneController implements Initializable {
                     emp.setEndDate(LocalDate.now().toString());
                     emp.setStatus(Status.HAS_CHANGED);
                     Department department = emp.getDepartment();
-                    department.setHasManager(false);
                     department.setNumberOfActiveEmployees(department.getNumberOfActiveEmployees() - 1);
                     departmentArrayList.set(index, department);
                     baseSalaryWriteToFile();
@@ -823,7 +822,6 @@ public class AddEmployeeSceneController implements Initializable {
                     emp.setEndDate(LocalDate.now().toString());
                     emp.setStatus(Status.HAS_CHANGED);
                     Department department1 = emp.getDepartment();
-                    department1.setHasManager(false);
                     department1.setNumberOfActiveEmployees(department1.getNumberOfActiveEmployees() - 1);
                     departmentArrayList.set(index, department1);
                     commissionBaseSalaryWriteToFile();
@@ -845,7 +843,6 @@ public class AddEmployeeSceneController implements Initializable {
                     emp.setEndDate(LocalDate.now().toString());
                     emp.setStatus(Status.HAS_CHANGED);
                     Department department2 = emp.getDepartment();
-                    department2.setHasManager(false);
                     department2.setNumberOfActiveEmployees(department2.getNumberOfActiveEmployees() - 1);
                     departmentArrayList.set(index, department2);
                     hourlySalaryWriteToFile();
@@ -867,7 +864,6 @@ public class AddEmployeeSceneController implements Initializable {
                     emp.setEndDate(LocalDate.now().toString());
                     emp.setStatus(Status.HAS_CHANGED);
                     Department department3 = emp.getDepartment();
-                    department3.setHasManager(false);
                     department3.setNumberOfActiveEmployees(department3.getNumberOfActiveEmployees() - 1);
                     departmentArrayList.set(index, department3);
                     commissionSalaryWriteToFile();
@@ -877,7 +873,7 @@ public class AddEmployeeSceneController implements Initializable {
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
                 }
-
+                addEmployeeButton.setDisable(false);
                 statusCombo.setVisible(false);
                 applyButton2.setVisible(false);
                 cancelButton2.setVisible(false);
@@ -1020,7 +1016,10 @@ public class AddEmployeeSceneController implements Initializable {
                 departmentArrayList.set(index,department);
                 baseSalaryWriteToFile();
                 departmentWriteToFile();
+                departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
+                DepartmentCombo.setItems(departmentObservableList);
                 employeeBaseSalaryTable.getItems().remove(emp);
+                baseSalariedArrayList.remove(emp);
                 break;
 
             case "base-commission salaried":
@@ -1041,7 +1040,10 @@ public class AddEmployeeSceneController implements Initializable {
                 departmentArrayList.set(index,department1);
                 commissionBaseSalaryWriteToFile();
                 departmentWriteToFile();
+                departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
+                DepartmentCombo.setItems(departmentObservableList);
                 employeeCommissionBaseTable.getItems().remove(emp1);
+                commissionBaseSalariedArrayList.remove(emp1);
                 break;
 
             case "hourly-salaried":
@@ -1062,7 +1064,10 @@ public class AddEmployeeSceneController implements Initializable {
                 departmentArrayList.set(index,department2);
                 hourlySalaryWriteToFile();
                 departmentWriteToFile();
+                departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
+                DepartmentCombo.setItems(departmentObservableList);
                 employeeHourlySalaryTable.getItems().remove(emp2);
+                hourlySalariedArrayList.remove(emp2);
                 break;
 
             case "commission-salaried":
@@ -1083,9 +1088,13 @@ public class AddEmployeeSceneController implements Initializable {
                 departmentArrayList.set(index,department3);
                 commissionSalaryWriteToFile();
                 departmentWriteToFile();
+                departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
+                DepartmentCombo.setItems(departmentObservableList);
                 employeeCommissionSalaryTable.getItems().remove(emp3);
+                commissionSalariedArrayList.remove(emp3);
                 break;
         }
+        addEmployeeButton.setDisable(false);
         statusCombo.setVisible(false);
         applyButton2.setVisible(false);
         cancelButton2.setVisible(false);

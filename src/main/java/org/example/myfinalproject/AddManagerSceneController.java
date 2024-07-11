@@ -587,20 +587,22 @@ public class AddManagerSceneController implements Initializable {
             alert.showAndWait();
         }
 
+
         if(managerRadioButton.isSelected()){
             Employee emp = null;
-            if(managerHourlySalaryTable.getSelectionModel().getSelectedIndex() == -1){
-                  emp = managerBaseSalaryTable.getSelectionModel().getSelectedItem();
+            if(managerHourlySalaryTable.isFocused()){
+                emp = managerBaseSalaryTable.getSelectionModel().getSelectedItem();
             }
-            else if (managerCommissionBaseTable.getSelectionModel().getSelectedIndex() == -1) {
-                 emp = managerCommissionBaseTable.getSelectionModel().getSelectedItem();
+            else if (managerCommissionBaseTable.isFocused()) {
+                emp = managerCommissionBaseTable.getSelectionModel().getSelectedItem();
             }
-            else if(managerCommissionSalaryTable.getSelectionModel().getSelectedIndex() == -1){
+            else if(managerCommissionSalaryTable.isFocused()){
                 emp = managerCommissionSalaryTable.getSelectionModel().getSelectedItem();
             }
-            else if(managerHourlySalaryTable.getSelectionModel().getSelectedIndex() == -1){
+            else if(managerHourlySalaryTable.isFocused()){
                 emp = managerHourlySalaryTable.getSelectionModel().getSelectedItem();
             }
+
 
             var type = (String) managerPickTypeCombo.getSelectionModel().getSelectedItem();
             boolean isAcceptable = false;
@@ -835,7 +837,7 @@ public class AddManagerSceneController implements Initializable {
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
                 }
-
+                addManagerButton.setDisable(false);
                 statusCombo.setVisible(false);
                 applyButton2.setVisible(false);
                 cancelButton2.setVisible(false);
@@ -991,10 +993,10 @@ public class AddManagerSceneController implements Initializable {
                 departmentArrayList.set(index,department1);
                 commissionBaseSalaryWriteToFile();
                 departmentWriteToFile();
-                managerCommissionBaseTable.getItems().remove(emp1);
-                managerCommissionBaseSalariedArrayList.remove(emp1);
                 departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                 DepartmentCombo.setItems(departmentObservableList);
+                managerCommissionBaseTable.getItems().remove(emp1);
+                managerCommissionBaseSalariedArrayList.remove(emp1);
                 break;
 
             case "hourly-salaried":
@@ -1015,10 +1017,10 @@ public class AddManagerSceneController implements Initializable {
                 departmentArrayList.set(index,department2);
                 hourlySalaryWriteToFile();
                 departmentWriteToFile();
-                managerHourlySalaryTable.getItems().remove(emp2);
-                managerHourlySalariedArrayList.remove(emp2);
                 departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                 DepartmentCombo.setItems(departmentObservableList);
+                managerHourlySalaryTable.getItems().remove(emp2);
+                managerHourlySalariedArrayList.remove(emp2);
                 break;
 
             case "commission-salaried":
@@ -1039,13 +1041,13 @@ public class AddManagerSceneController implements Initializable {
                 departmentArrayList.set(index,department3);
                 commissionSalaryWriteToFile();
                 departmentWriteToFile();
-                managerCommissionSalaryTable.getItems().remove(emp3);
-                managerCommissionSalariedArrayList.remove(emp3);
                 departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                 DepartmentCombo.setItems(departmentObservableList);
+                managerCommissionSalaryTable.getItems().remove(emp3);
+                managerCommissionSalariedArrayList.remove(emp3);
                 break;
         }
-
+        addManagerButton.setDisable(false);
         statusCombo.setVisible(false);
         applyButton2.setVisible(false);
         cancelButton2.setVisible(false);
