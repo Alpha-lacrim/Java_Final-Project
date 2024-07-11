@@ -807,6 +807,7 @@ public class AddEmployeeSceneController implements Initializable {
                     departmentWriteToFile();
                     employeeBaseSalaryTable.getItems().remove(emp);
                     employeeBaseSalariedArrayList.remove(emp);
+                    baseSalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
 
@@ -828,6 +829,7 @@ public class AddEmployeeSceneController implements Initializable {
                     departmentWriteToFile();
                     employeeCommissionBaseTable.getItems().remove(emp);
                     employeeCommissionBaseSalariedArrayList.remove(emp);
+                    commissionBaseSalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
 
@@ -849,6 +851,7 @@ public class AddEmployeeSceneController implements Initializable {
                     departmentWriteToFile();
                     employeeHourlySalaryTable.getItems().remove(emp);
                     employeeHourlySalariedArrayList.remove(emp);
+                    hourlySalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
 
@@ -870,6 +873,7 @@ public class AddEmployeeSceneController implements Initializable {
                     departmentWriteToFile();
                     employeeCommissionSalaryTable.getItems().remove(emp);
                     employeeCommissionSalariedArrayList.remove(emp);
+                    commissionSalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
                 }
