@@ -649,16 +649,16 @@ public class AddEmployeeSceneController implements Initializable {
         if(employeeRadioButton.isSelected()){
             Employee emp = null;
 
-            if(employeeHourlySalaryTable.getSelectionModel().getSelectedIndex() == -1){
+            if(employeeBaseSalaryTable.getSelectionModel().getSelectedItem() instanceof BaseSalariedEmployee){
                 emp = employeeBaseSalaryTable.getSelectionModel().getSelectedItem();
             }
-            else if (employeeCommissionBaseTable.getSelectionModel().getSelectedIndex() == -1) {
+            else if (employeeCommissionBaseTable.getSelectionModel().getSelectedItem() instanceof CommissionBaseSalariedEmployee) {
                 emp = employeeCommissionBaseTable.getSelectionModel().getSelectedItem();
             }
-            else if(employeeCommissionSalaryTable.getSelectionModel().getSelectedIndex() == -1){
+            else if(employeeCommissionSalaryTable.getSelectionModel().getSelectedItem() instanceof CommissionSalariedEmployee){
                 emp = employeeCommissionSalaryTable.getSelectionModel().getSelectedItem();
             }
-            else if(employeeHourlySalaryTable.getSelectionModel().getSelectedIndex() == -1){
+            else if(employeeHourlySalaryTable.getSelectionModel().getSelectedItem() instanceof HourlySalariedEmployee){
                 emp = employeeHourlySalaryTable.getSelectionModel().getSelectedItem();
             }
 
