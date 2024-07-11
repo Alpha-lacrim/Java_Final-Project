@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06f7b8ee-6d22-4e3a-9c60-ea09d3c81bb0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/BaseSalaried.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommissionBaseSalaried.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommissionSalaried.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Department.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HourlySalaried.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddEmployeeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddEmployeeSceneController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +129,7 @@
       <workItem from="1720698304680" duration="5473000" />
       <workItem from="1720704156455" duration="89000" />
       <workItem from="1720728425787" duration="6763000" />
-      <workItem from="1720735921068" duration="566000" />
+      <workItem from="1720735921068" duration="897000" />
     </task>
     <task id="LOCAL-00001" summary="changing comissionBaseSalaried inheritance and adding Salary interface">
       <option name="closed" value="true" />
@@ -297,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720736038748</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="handling an error in add random employee">
+      <created>1720736625815</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1720736625815</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,6 +334,7 @@
     <MESSAGE value="fixing employee editing" />
     <MESSAGE value="employee and manager can now change their role directly while editing&#10;fixing some bugs in radio buttons" />
     <MESSAGE value="merged changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged changes" />
+    <MESSAGE value="handling an error in add random employee" />
+    <option name="LAST_COMMIT_MESSAGE" value="handling an error in add random employee" />
   </component>
 </project>

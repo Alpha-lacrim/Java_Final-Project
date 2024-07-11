@@ -525,6 +525,7 @@ public class AddEmployeeSceneController implements Initializable {
         managerRadioButton.setDisable(true);
         managerRadioButton.setSelected(false);
         employeeRadioButton.setSelected(true);
+        employeeRadioButton.setDisable(false);
 
         switch (employeePickTypeCombo.getValue()) {
             case "base-salaried":
@@ -1410,6 +1411,11 @@ public class AddEmployeeSceneController implements Initializable {
                         numberOfSalesField.setText("");
                         break;
                 }
+
+                managerRadioButton.setSelected(false);
+                employeeRadioButton.setSelected(true);
+                managerRadioButton.setDisable(true);
+                employeeRadioButton.setDisable(false);
             }
         }
     }

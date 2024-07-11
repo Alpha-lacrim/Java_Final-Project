@@ -434,14 +434,15 @@ public class AddManagerSceneController implements Initializable {
 
     @FXML
     void onEditButton(ActionEvent event) throws IOException {
-            statusCombo.setVisible(false);
-            applyButton.setVisible(true);
-            cancelButton.setVisible(true);
-            employeeRadioButton.setVisible(true);
-            managerRadioButton.setVisible(true);
-            employeeRadioButton.setDisable(true);
-            employeeRadioButton.setSelected(false);
-            managerRadioButton.setSelected(true);
+        statusCombo.setVisible(false);
+        applyButton.setVisible(true);
+        cancelButton.setVisible(true);
+        employeeRadioButton.setVisible(true);
+        managerRadioButton.setVisible(true);
+        employeeRadioButton.setDisable(true);
+        employeeRadioButton.setSelected(false);
+        managerRadioButton.setSelected(true);
+        managerRadioButton.setDisable(false);
 
 
             switch (managerPickTypeCombo.getValue()) {
