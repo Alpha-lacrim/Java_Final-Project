@@ -710,7 +710,7 @@ public class AddEmployeeSceneController implements Initializable {
                         employeeHourlySalaryTable.setItems(employeeHourlySalariedEmployeeObservableList);
                         hourlySalaryWriteToFile();
                         isAcceptable = true;
-                        //reset value of text boxes.
+                        // reset value of text boxes.
                         nameField.setText("");
                         familyField.setText("");
                         nationalIdField.setText("");
@@ -1024,6 +1024,7 @@ public class AddEmployeeSceneController implements Initializable {
                 DepartmentCombo.setItems(departmentObservableList);
                 employeeBaseSalaryTable.getItems().remove(emp);
                 baseSalariedArrayList.remove(emp);
+                employeeBaseSalariedArrayList.remove(emp);
                 break;
 
             case "base-commission salaried":
@@ -1048,6 +1049,7 @@ public class AddEmployeeSceneController implements Initializable {
                 DepartmentCombo.setItems(departmentObservableList);
                 employeeCommissionBaseTable.getItems().remove(emp1);
                 commissionBaseSalariedArrayList.remove(emp1);
+                employeeCommissionBaseSalariedArrayList.remove(emp1);
                 break;
 
             case "hourly-salaried":
@@ -1072,6 +1074,7 @@ public class AddEmployeeSceneController implements Initializable {
                 DepartmentCombo.setItems(departmentObservableList);
                 employeeHourlySalaryTable.getItems().remove(emp2);
                 hourlySalariedArrayList.remove(emp2);
+                employeeHourlySalariedArrayList.remove(emp2);
                 break;
 
             case "commission-salaried":
@@ -1096,8 +1099,10 @@ public class AddEmployeeSceneController implements Initializable {
                 DepartmentCombo.setItems(departmentObservableList);
                 employeeCommissionSalaryTable.getItems().remove(emp3);
                 commissionSalariedArrayList.remove(emp3);
+                employeeCommissionSalariedArrayList.remove(emp3);
                 break;
         }
+
         addEmployeeButton.setDisable(false);
         statusCombo.setVisible(false);
         applyButton2.setVisible(false);
