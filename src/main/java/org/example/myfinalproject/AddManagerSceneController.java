@@ -1488,6 +1488,11 @@ public class AddManagerSceneController implements Initializable {
                 numberOfSalesField.setText("");
                 break;
         }
+
+        managerRadioButton.setSelected(true);
+        employeeRadioButton.setSelected(false);
+        managerRadioButton.setDisable(false);
+        employeeRadioButton.setDisable(true);
     }
 
     @FXML

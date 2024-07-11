@@ -1101,8 +1101,6 @@ public class AddEmployeeSceneController implements Initializable {
                             baseSalaryField.setText("");
                             managerBonusField.setText("");
                             managerBonusField.setVisible(false);
-
-                            break;
                         }
                         else {
                             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -1110,6 +1108,7 @@ public class AddEmployeeSceneController implements Initializable {
                             alert.setContentText("This Department already has a manager");
                             alert.showAndWait();
                         }
+                        break;
 
                     case "hourly-salaried":
                         if (!department.isHasManager()) {
@@ -1135,8 +1134,6 @@ public class AddEmployeeSceneController implements Initializable {
                             amountOfHoursField.setText("");
                             managerBonusField1.setText("");
                             managerBonusField1.setVisible(false);
-
-                            break;
                         }
                         else {
                             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -1144,6 +1141,7 @@ public class AddEmployeeSceneController implements Initializable {
                             alert.setContentText("This Department already has a manager");
                             alert.showAndWait();
                         }
+                        break;
 
                     case "commission-salaried":
                         if (!department.isHasManager()) {
@@ -1169,8 +1167,6 @@ public class AddEmployeeSceneController implements Initializable {
                             numberOfSalesField.setText("");
                             managerBonusField1.setText("");
                             managerBonusField1.setVisible(false);
-
-                            break;
                         }
                         else {
                             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -1178,6 +1174,7 @@ public class AddEmployeeSceneController implements Initializable {
                             alert.setContentText("This Department already has a manager");
                             alert.showAndWait();
                         }
+                        break;
 
                     case "base-commission salaried":
                         if (!department.isHasManager()) {
@@ -1205,8 +1202,6 @@ public class AddEmployeeSceneController implements Initializable {
                             numberOfSalesField2.setText("");
                             managerBonusField2.setText("");
                             managerBonusField2.setVisible(false);
-
-                            break;
                         }
                         else {
                             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -1214,6 +1209,7 @@ public class AddEmployeeSceneController implements Initializable {
                             alert.setContentText("This Department already has a manager");
                             alert.showAndWait();
                         }
+                        break;
                 }
             }
             catch (Exception e) {
@@ -1416,6 +1412,15 @@ public class AddEmployeeSceneController implements Initializable {
                 employeeRadioButton.setSelected(true);
                 managerRadioButton.setDisable(true);
                 employeeRadioButton.setDisable(false);
+
+                employeeRadioButton.setVisible(false);
+                managerRadioButton.setVisible(false);
+                managerBonusField.setVisible(false);
+                managerBonusField1.setVisible(false);
+                managerBonusField2.setVisible(false);
+                deactiveButton.setVisible(false);
+                cancelButton.setVisible(false);
+                applyButton.setVisible(false);
             }
         }
     }
