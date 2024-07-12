@@ -409,6 +409,9 @@ public class AddEmployeeSceneController implements Initializable {
                         alert.showAndWait();
                 }
             }
+            else {
+                throwAlert("Check your inputs !", "ERROR!", "Please check your inputs and try again");
+            }
         }
         catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
