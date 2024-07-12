@@ -2302,4 +2302,63 @@ public class AddEmployeeSceneController implements Initializable {
         commissionRateField.setText("");
         numberOfSalesField.setText("");
     }
+
+    public boolean isNumeric(String inputStr) {
+        if (inputStr == null) {
+            return false;
+        }
+
+        try {
+            double num = Double.parseDouble(inputStr);
+        }
+
+        catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean isChar(String inputStr) {
+        if (inputStr == null) {
+            return false;
+        }
+
+        if (inputStr.matches("^[a-zA-Z_]+$")) {
+            return true;
+        }
+
+        else {
+            return false;
+        }
+    }
+
+    public boolean charOnlyTextFieldsChecker() {
+        if (isChar(nameField.getText()) && isChar(familyField.getText())) {
+            return true;
+        }
+
+        else {
+            return false;
+        }
+    }
+
+    public boolean numericOnlyManagerTextFieldsChecker() {
+        if (isNumeric(phoneField.getText()) && isNumeric(nationalIdField.getText()) && isNumeric(managerBonusField.getText())) {
+            return true;
+        }
+
+        else {
+            return false;
+        }
+    }
+
+    public boolean numericOnlyEmployeeTextFieldsChecker() {
+        if (isNumeric(phoneField.getText()) && isNumeric(nationalIdField.getText())) {
+            return true;
+        }
+
+        else {
+            return false;
+        }
+    }
 }
