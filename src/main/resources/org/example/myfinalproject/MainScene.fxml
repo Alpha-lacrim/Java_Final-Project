@@ -45,7 +45,7 @@
               <columns>
                 <TableColumn fx:id="numberOfEmployeesColumn" prefWidth="170.0" text="Number of Employees" />
                   <TableColumn fx:id="sinceColumn" minWidth="0.0" prefWidth="154.0" text="Creation Date" />
-                <TableColumn fx:id="departmentColumn" minWidth="0.0" prefWidth="205.0" text="Department" />
+                <TableColumn fx:id="departmentColumn" minWidth="0.0" prefWidth="161.59999389648436" text="Department" />
               </columns>
                <effect>
                   <Blend />

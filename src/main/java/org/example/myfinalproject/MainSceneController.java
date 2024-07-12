@@ -90,17 +90,25 @@ public class MainSceneController implements Initializable {
 
     @FXML
     void onAddDepartmentButton2(ActionEvent event) {
-        departmentReadFromFile();
+        try {
+            departmentReadFromFile();
 
-        var department = new Department(nameOfDepartmentField.getText(), departmentDatePicker.getValue());
-        departmentArrayList.add(department);
-        departmentObservableList = departmentTable.getItems();
-        departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
-        departmentTable.setItems(departmentObservableList);
-        nameOfDepartmentField.setText("");
-        departmentDatePicker.setValue(null);
-        departmentWriteToFile();
-        refreshBarChart();
+            var department = new Department(nameOfDepartmentField.getText(), departmentDatePicker.getValue());
+            departmentArrayList.add(department);
+            departmentObservableList = departmentTable.getItems();
+            departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
+            departmentTable.setItems(departmentObservableList);
+            nameOfDepartmentField.setText("");
+            departmentDatePicker.setValue(null);
+            departmentWriteToFile();
+            refreshBarChart();
+        }
+        catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setContentText("Please check your inputs");
+            alert.showAndWait();
+        }
     }
 
 
