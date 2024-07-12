@@ -1114,6 +1114,7 @@ public class AddManagerSceneController implements Initializable {
                 phoneField.setEditable(true);
                 birthDatePicker.setEditable(false);
                 birthDatePicker.setDisable(false);
+                baseSalaryField.setEditable(true);
                 managerBonusField.setEditable(true);
                 managerBonusField.setDisable(false);
                 DepartmentCombo.setDisable(false);
@@ -1270,6 +1271,7 @@ public class AddManagerSceneController implements Initializable {
         phoneField.setEditable(true);
         birthDatePicker.setEditable(false);
         birthDatePicker.setDisable(false);
+        baseSalaryField.setEditable(true);
         managerBonusField.setEditable(true);
         managerBonusField.setDisable(false);
         DepartmentCombo.setDisable(false);
