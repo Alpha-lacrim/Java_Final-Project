@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06f7b8ee-6d22-4e3a-9c60-ea09d3c81bb0" name="Changes" comment="add history search button">
+    <list default="true" id="06f7b8ee-6d22-4e3a-9c60-ea09d3c81bb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/HistorySceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/HistorySceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/AddEmployeeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/AddEmployeeScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/AddManagerScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/AddManagerScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/History.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/History.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/MainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/MainScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddEmployeeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddEmployeeSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddManagerSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddManagerSceneController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,13 +86,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -335,15 +325,21 @@
       <option name="project" value="LOCAL" />
       <updated>1720764734659</updated>
     </task>
-    <task id="LOCAL-00027" summary="add history search button">
-      <option name="closed" value="true" />
-      <created>1720775233451</created>
+    <task id="LOCAL-00027" summary="fixing text fields issues in employee scene&#10;adding check box and date pickers in history scene">
+      <created>1720793530674</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1720775233451</updated>
+      <updated>1720793530674</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="adding a null data line chart&#10;adding check boxes and fixing some errors">
+      <created>1720795028589</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1720795028589</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +377,8 @@
     <MESSAGE value="handling an error in add random employee" />
     <MESSAGE value="fixing radio buttons bug" />
     <MESSAGE value="edit reset value in AddManagerSceneController" />
-    <MESSAGE value="add history search button" />
-    <option name="LAST_COMMIT_MESSAGE" value="add history search button" />
+    <MESSAGE value="fixing text fields issues in employee scene&#10;adding check box and date pickers in history scene" />
+    <MESSAGE value="adding a null data line chart&#10;adding check boxes and fixing some errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding a null data line chart&#10;adding check boxes and fixing some errors" />
   </component>
 </project>
