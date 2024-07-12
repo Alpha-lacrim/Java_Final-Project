@@ -19,6 +19,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -33,17 +34,15 @@ public class HistorySceneController implements Initializable {
     ArrayList<BaseSalariedEmployee> nonFilteredManagerBaseSalariedArraylist = new ArrayList<>();
     ArrayList<BaseSalariedEmployee> nonFilteredEmployeeBaseSalariedArraylist = new ArrayList<>();
 
+    ArrayList<BaseSalariedEmployee> dateFilteredManagerBaseSalariedArraylist = new ArrayList<>();
+    ArrayList<BaseSalariedEmployee> dateFilteredEmployeeBaseSalariedArraylist = new ArrayList<>();
+
+    ArrayList<BaseSalariedEmployee> departmentFilteredManagerBaseSalariedArraylist = new ArrayList<>();
+    ArrayList<BaseSalariedEmployee> departmentFilteredEmployeeBaseSalariedArraylist = new ArrayList<>();
+
     ObservableList<BaseSalariedEmployee> managerBaseSalariedObservableList;
     ObservableList<BaseSalariedEmployee> employeeBaseSalariedObservableList;
 
-    @FXML
-    private DatePicker inputStartDatePicker;
-
-    @FXML
-    private DatePicker inputEndDatePicker;
-
-    @FXML
-    private CheckBox dateFilterCheckBox;
 
     @FXML
     private TableView<BaseSalariedEmployee> employeeBaseSalaryTable;
@@ -138,6 +137,12 @@ public class HistorySceneController implements Initializable {
 
     ArrayList<HourlySalariedEmployee> nonFilteredManagerHourlySalariedArraylist = new ArrayList<>();
     ArrayList<HourlySalariedEmployee> nonFilteredEmployeeHourlySalariedArraylist = new ArrayList<>();
+
+    ArrayList<HourlySalariedEmployee> dateFilteredManagerHourlySalariedArraylist = new ArrayList<>();
+    ArrayList<HourlySalariedEmployee> dateFilteredEmployeeHourlySalariedArraylist = new ArrayList<>();
+
+    ArrayList<HourlySalariedEmployee> departmentFilteredManagerHourlySalariedArraylist = new ArrayList<>();
+    ArrayList<HourlySalariedEmployee> departmentFilteredEmployeeHourlySalariedArraylist = new ArrayList<>();
 
     ObservableList<HourlySalariedEmployee> managerHourlySalariedObservableList;
     ObservableList<HourlySalariedEmployee> employeeHourlySalariedObservableList;
@@ -240,6 +245,12 @@ public class HistorySceneController implements Initializable {
     ArrayList<CommissionSalariedEmployee> nonFilteredManagerCommissionSalariedArrayList = new ArrayList<>();
     ArrayList<CommissionSalariedEmployee> nonFilteredEmployeeCommissionSalariedArrayList = new ArrayList<>();
 
+    ArrayList<CommissionSalariedEmployee> dateFilteredManagerCommissionSalariedArrayList = new ArrayList<>();
+    ArrayList<CommissionSalariedEmployee> dateFilteredEmployeeCommissionSalariedArrayList = new ArrayList<>();
+
+    ArrayList<CommissionSalariedEmployee> departmentFilteredManagerCommissionSalariedArrayList = new ArrayList<>();
+    ArrayList<CommissionSalariedEmployee> departmentFilteredEmployeeCommissionSalariedArrayList = new ArrayList<>();
+
     ObservableList<CommissionSalariedEmployee> managerCommissionSalariedObservableList;
     ObservableList<CommissionSalariedEmployee> employeeCommissionSalariedObservableList;
 
@@ -337,8 +348,16 @@ public class HistorySceneController implements Initializable {
     ArrayList<CommissionBaseSalariedEmployee> commissionBaseSalariedArrayList = new ArrayList<>();
     ArrayList<CommissionBaseSalariedEmployee> employeeCommissionBaseSalariedArrayList = new ArrayList<>();
     ArrayList<CommissionBaseSalariedEmployee> managerCommissionBaseSalariedArraylist = new ArrayList<>();
+
     ArrayList<CommissionBaseSalariedEmployee> nonFilteredEmployeeCommissionBaseSalariedArrayList = new ArrayList<>();
     ArrayList<CommissionBaseSalariedEmployee> nonFilteredManagerCommissionBaseSalariedArrayList = new ArrayList<>();
+
+    ArrayList<CommissionBaseSalariedEmployee> dateFilteredEmployeeCommissionBaseSalariedArrayList = new ArrayList<>();
+    ArrayList<CommissionBaseSalariedEmployee> dateFilteredManagerCommissionBaseSalariedArrayList = new ArrayList<>();
+
+    ArrayList<CommissionBaseSalariedEmployee> departmentFilteredEmployeeCommissionBaseSalariedArrayList = new ArrayList<>();
+    ArrayList<CommissionBaseSalariedEmployee> departmentFilteredManagerCommissionBaseSalariedArrayList = new ArrayList<>();
+
     ObservableList<CommissionBaseSalariedEmployee> managerCommissionBaseSalariedObservableList;
     ObservableList<CommissionBaseSalariedEmployee> employeeCommissionBaseSalariedObservableList;
 
@@ -446,6 +465,21 @@ public class HistorySceneController implements Initializable {
 
     @FXML
     private TextField nationalIdField;
+
+    @FXML
+    private DatePicker inputStartDatePicker;
+
+    @FXML
+    private DatePicker inputEndDatePicker;
+
+    @FXML
+    private CheckBox dateFilterCheckBox;
+
+    @FXML
+    private CheckBox departmentFilterCheckBox;
+
+    @FXML
+    private TextField departmentNameField;
 
     @FXML
     private ComboBox<String> pickTypeCombo;
@@ -595,17 +629,31 @@ public class HistorySceneController implements Initializable {
     @FXML
     void onDateFilterCheckBox(ActionEvent event) throws IOException {
         if (dateFilterCheckBox.isSelected()) {
+            departmentFilterCheckBox.setDisable(true);
             inputEndDatePicker.setVisible(true);
             inputStartDatePicker.setVisible(true);
-
             inputEndDatePicker.setValue(null);
             inputStartDatePicker.setValue(null);
         }
-
         else {
             inputEndDatePicker.setVisible(false);
             inputStartDatePicker.setVisible(false);
+            departmentFilterCheckBox.setDisable(false);
+        }
+    }
 
+    @FXML
+    void onDepartmentFilterCheckBox(ActionEvent event) {
+        if (departmentFilterCheckBox.isSelected()) {
+            dateFilterCheckBox.setDisable(true);
+            inputEndDatePicker.setVisible(false);
+            inputStartDatePicker.setVisible(false);
+            departmentNameField.setVisible(true);
+        }
+        else {
+            dateFilterCheckBox.setDisable(false);
+            departmentNameField.setVisible(false);
+            departmentNameField.setText("");
         }
     }
 
@@ -750,101 +798,339 @@ public class HistorySceneController implements Initializable {
         nonFilteredEmployeeCommissionBaseSalariedArrayList.clear();
         nonFilteredManagerCommissionBaseSalariedArrayList.clear();
 
+        dateFilteredEmployeeBaseSalariedArraylist.clear();
+        dateFilteredManagerBaseSalariedArraylist.clear();
+        dateFilteredEmployeeHourlySalariedArraylist.clear();
+        dateFilteredManagerHourlySalariedArraylist.clear();
+        dateFilteredEmployeeCommissionSalariedArrayList.clear();
+        dateFilteredManagerCommissionSalariedArrayList.clear();
+        dateFilteredEmployeeCommissionBaseSalariedArrayList.clear();
+        dateFilteredManagerCommissionBaseSalariedArrayList.clear();
+
+        departmentFilteredEmployeeBaseSalariedArraylist.clear();
+        departmentFilteredManagerBaseSalariedArraylist.clear();
+        departmentFilteredEmployeeHourlySalariedArraylist.clear();
+        departmentFilteredManagerHourlySalariedArraylist.clear();
+        departmentFilteredEmployeeCommissionSalariedArrayList.clear();
+        departmentFilteredManagerCommissionSalariedArrayList.clear();
+        departmentFilteredEmployeeCommissionBaseSalariedArrayList.clear();
+        departmentFilteredManagerCommissionBaseSalariedArrayList.clear();
+
         // initialize table views.
-        if(baseSalariedFile.isFile()){
-            for(BaseSalariedEmployee emp : employeeBaseSalariedArrayList){
-                if(emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
-                   && emp.getNationalID().matches(nationalIdField.getText())) {
-                    nonFilteredEmployeeBaseSalariedArraylist.add(emp);
+        if(!dateFilterCheckBox.isSelected() && !departmentFilterCheckBox.isSelected()) {
+            if (baseSalariedFile.isFile()) {
+                for (BaseSalariedEmployee emp : employeeBaseSalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())) {
+                        nonFilteredEmployeeBaseSalariedArraylist.add(emp);
+                    }
                 }
-            }
-            for(BaseSalariedEmployee emp : managerBaseSalariedArraylist){
-                if(emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
-                   && emp.getNationalID().matches(nationalIdField.getText())){
-                    nonFilteredManagerBaseSalariedArraylist.add(emp);
+                for (BaseSalariedEmployee emp : managerBaseSalariedArraylist) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())) {
+                        nonFilteredManagerBaseSalariedArraylist.add(emp);
+                    }
                 }
+                managerBaseSalariedObservableList = managerBaseSalaryTable.getItems();
+                employeeBaseSalariedObservableList = employeeBaseSalaryTable.getItems();
+
+                managerBaseSalariedObservableList = FXCollections.observableArrayList(nonFilteredManagerBaseSalariedArraylist);
+                employeeBaseSalariedObservableList = FXCollections.observableArrayList(nonFilteredEmployeeBaseSalariedArraylist);
+
+                managerBaseSalaryTable.setItems(managerBaseSalariedObservableList);
+                employeeBaseSalaryTable.setItems(employeeBaseSalariedObservableList);
             }
-            managerBaseSalariedObservableList = managerBaseSalaryTable.getItems();
-            employeeBaseSalariedObservableList = employeeBaseSalaryTable.getItems();
 
-            managerBaseSalariedObservableList = FXCollections.observableArrayList(nonFilteredManagerBaseSalariedArraylist);
-            employeeBaseSalariedObservableList = FXCollections.observableArrayList(nonFilteredEmployeeBaseSalariedArraylist);
+            if (hourlySalaryFile.isFile()) {
+                for (HourlySalariedEmployee emp : employeeHourlySalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())) {
+                        nonFilteredEmployeeHourlySalariedArraylist.add(emp);
+                    }
+                }
+                for (HourlySalariedEmployee emp : managerHourlySalariedArraylist) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())) {
+                        nonFilteredManagerHourlySalariedArraylist.add(emp);
+                    }
+                }
 
-            managerBaseSalaryTable.setItems(managerBaseSalariedObservableList);
-            employeeBaseSalaryTable.setItems(employeeBaseSalariedObservableList);
+                managerHourlySalariedObservableList = managerHourlySalaryTable.getItems();
+                employeeHourlySalariedObservableList = employeeHourlySalaryTable.getItems();
+
+                managerHourlySalariedObservableList = FXCollections.observableArrayList(nonFilteredManagerHourlySalariedArraylist);
+                employeeHourlySalariedObservableList = FXCollections.observableArrayList(nonFilteredEmployeeHourlySalariedArraylist);
+
+                managerHourlySalaryTable.setItems(managerHourlySalariedObservableList);
+                employeeHourlySalaryTable.setItems(employeeHourlySalariedObservableList);
+            }
+
+            if (commissionSalaryFile.isFile()) {
+                for (CommissionSalariedEmployee emp : employeeCommissionSalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())) {
+                        nonFilteredEmployeeCommissionSalariedArrayList.add(emp);
+                    }
+                }
+                for (CommissionSalariedEmployee emp : managerCommissionSalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())) {
+                        nonFilteredManagerCommissionSalariedArrayList.add(emp);
+                    }
+                }
+
+                managerCommissionSalariedObservableList = managerCommissionSalaryTable.getItems();
+                employeeCommissionSalariedObservableList = employeeCommissionSalaryTable.getItems();
+
+                managerCommissionSalariedObservableList = FXCollections.observableArrayList(nonFilteredManagerCommissionSalariedArrayList);
+                managerCommissionSalaryTable.setItems(managerCommissionSalariedObservableList);
+
+                employeeCommissionSalariedObservableList = FXCollections.observableArrayList(nonFilteredEmployeeCommissionSalariedArrayList);
+                employeeCommissionSalaryTable.setItems(employeeCommissionSalariedObservableList);
+
+            }
+
+            if (commissionBaseSalaryFile.isFile()) {
+                for (CommissionBaseSalariedEmployee emp : employeeCommissionBaseSalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())) {
+                        nonFilteredEmployeeCommissionBaseSalariedArrayList.add(emp);
+                    }
+                }
+                for (CommissionBaseSalariedEmployee emp : managerCommissionBaseSalariedArraylist) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())) {
+                        nonFilteredManagerCommissionBaseSalariedArrayList.add(emp);
+                    }
+                }
+
+                managerCommissionBaseSalariedObservableList = managerCommissionBaseTable.getItems();
+                employeeCommissionBaseSalariedObservableList = employeeCommissionBaseTable.getItems();
+
+                managerCommissionBaseSalariedObservableList = FXCollections.observableArrayList(nonFilteredManagerCommissionBaseSalariedArrayList);
+                employeeCommissionBaseSalariedObservableList = FXCollections.observableArrayList(nonFilteredEmployeeCommissionBaseSalariedArrayList);
+
+                managerCommissionBaseTable.setItems(managerCommissionBaseSalariedObservableList);
+                employeeCommissionBaseTable.setItems(employeeCommissionBaseSalariedObservableList);
+            }
         }
-
-        if(hourlySalaryFile.isFile()){
-            for(HourlySalariedEmployee emp : employeeHourlySalariedArrayList){
-                if(emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
-                        && emp.getNationalID().matches(nationalIdField.getText())) {
-                    nonFilteredEmployeeHourlySalariedArraylist.add(emp);
+        else if (dateFilterCheckBox.isSelected()) {
+            if (baseSalariedFile.isFile()) {
+                for (BaseSalariedEmployee emp : employeeBaseSalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        && emp.getNationalID().matches(nationalIdField.getText())
+                        && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
+                        && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
+                        dateFilteredEmployeeBaseSalariedArraylist.add(emp);
+                    }
                 }
-            }
-            for(HourlySalariedEmployee emp : managerHourlySalariedArraylist){
-                if(emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
-                        && emp.getNationalID().matches(nationalIdField.getText())) {
-                    nonFilteredManagerHourlySalariedArraylist.add(emp);
+                for (BaseSalariedEmployee emp : managerBaseSalariedArraylist) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        && emp.getNationalID().matches(nationalIdField.getText())
+                        && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
+                        && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
+                        dateFilteredManagerBaseSalariedArraylist.add(emp);
+                    }
                 }
+                managerBaseSalariedObservableList = managerBaseSalaryTable.getItems();
+                employeeBaseSalariedObservableList = employeeBaseSalaryTable.getItems();
+
+                managerBaseSalariedObservableList = FXCollections.observableArrayList(dateFilteredManagerBaseSalariedArraylist);
+                employeeBaseSalariedObservableList = FXCollections.observableArrayList(dateFilteredEmployeeBaseSalariedArraylist);
+
+                managerBaseSalaryTable.setItems(managerBaseSalariedObservableList);
+                employeeBaseSalaryTable.setItems(employeeBaseSalariedObservableList);
             }
 
-            managerHourlySalariedObservableList = managerHourlySalaryTable.getItems();
-            employeeHourlySalariedObservableList = employeeHourlySalaryTable.getItems();
+            if (hourlySalaryFile.isFile()) {
+                for (HourlySalariedEmployee emp : employeeHourlySalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())
+                            && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
+                            && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
+                        dateFilteredEmployeeHourlySalariedArraylist.add(emp);
+                    }
+                }
+                for (HourlySalariedEmployee emp : managerHourlySalariedArraylist) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())
+                            && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
+                            && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
+                        dateFilteredManagerHourlySalariedArraylist.add(emp);
+                    }
+                }
 
-            managerHourlySalariedObservableList = FXCollections.observableArrayList(nonFilteredManagerHourlySalariedArraylist);
-            employeeHourlySalariedObservableList = FXCollections.observableArrayList(nonFilteredEmployeeHourlySalariedArraylist);
+                managerHourlySalariedObservableList = managerHourlySalaryTable.getItems();
+                employeeHourlySalariedObservableList = employeeHourlySalaryTable.getItems();
 
-            managerHourlySalaryTable.setItems(managerHourlySalariedObservableList);
-            employeeHourlySalaryTable.setItems(employeeHourlySalariedObservableList);
+                managerHourlySalariedObservableList = FXCollections.observableArrayList(dateFilteredManagerHourlySalariedArraylist);
+                employeeHourlySalariedObservableList = FXCollections.observableArrayList(dateFilteredEmployeeHourlySalariedArraylist);
+
+                managerHourlySalaryTable.setItems(managerHourlySalariedObservableList);
+                employeeHourlySalaryTable.setItems(employeeHourlySalariedObservableList);
+            }
+
+            if (commissionSalaryFile.isFile()) {
+                for (CommissionSalariedEmployee emp : employeeCommissionSalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())
+                            && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
+                            && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
+                        dateFilteredEmployeeCommissionSalariedArrayList.add(emp);
+                    }
+                }
+                for (CommissionSalariedEmployee emp : managerCommissionSalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())
+                            && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
+                            && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
+                        dateFilteredManagerCommissionSalariedArrayList.add(emp);
+                    }
+                }
+
+                managerCommissionSalariedObservableList = managerCommissionSalaryTable.getItems();
+                employeeCommissionSalariedObservableList = employeeCommissionSalaryTable.getItems();
+
+                managerCommissionSalariedObservableList = FXCollections.observableArrayList(dateFilteredManagerCommissionSalariedArrayList);
+                managerCommissionSalaryTable.setItems(managerCommissionSalariedObservableList);
+
+                employeeCommissionSalariedObservableList = FXCollections.observableArrayList(dateFilteredEmployeeCommissionSalariedArrayList);
+                employeeCommissionSalaryTable.setItems(employeeCommissionSalariedObservableList);
+
+            }
+
+            if (commissionBaseSalaryFile.isFile()) {
+                for (CommissionBaseSalariedEmployee emp : employeeCommissionBaseSalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())
+                            && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
+                            && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
+                        dateFilteredEmployeeCommissionBaseSalariedArrayList.add(emp);
+                    }
+                }
+                for (CommissionBaseSalariedEmployee emp : managerCommissionBaseSalariedArraylist) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())
+                            && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
+                            && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
+                        dateFilteredManagerCommissionBaseSalariedArrayList.add(emp);
+                    }
+                }
+
+                managerCommissionBaseSalariedObservableList = managerCommissionBaseTable.getItems();
+                employeeCommissionBaseSalariedObservableList = employeeCommissionBaseTable.getItems();
+
+                managerCommissionBaseSalariedObservableList = FXCollections.observableArrayList(dateFilteredManagerCommissionBaseSalariedArrayList);
+                employeeCommissionBaseSalariedObservableList = FXCollections.observableArrayList(dateFilteredEmployeeCommissionBaseSalariedArrayList);
+
+                managerCommissionBaseTable.setItems(managerCommissionBaseSalariedObservableList);
+                employeeCommissionBaseTable.setItems(employeeCommissionBaseSalariedObservableList);
+            }
         }
-
-        if(commissionSalaryFile.isFile()){
-            for(CommissionSalariedEmployee emp : employeeCommissionSalariedArrayList){
-                if(emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
-                        && emp.getNationalID().matches(nationalIdField.getText())) {
-                    nonFilteredEmployeeCommissionSalariedArrayList.add(emp);
+        else if (departmentFilterCheckBox.isSelected()) {
+            if (baseSalariedFile.isFile()) {
+                for (BaseSalariedEmployee emp : employeeBaseSalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        && emp.getNationalID().matches(nationalIdField.getText())
+                        && emp.getDepartment().getName().equals(departmentNameField.getText())) {
+                        departmentFilteredEmployeeBaseSalariedArraylist.add(emp);
+                    }
                 }
-            }
-            for(CommissionSalariedEmployee emp : managerCommissionSalariedArrayList){
-                if(emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
-                        && emp.getNationalID().matches(nationalIdField.getText())) {
-                    nonFilteredManagerCommissionSalariedArrayList.add(emp);
+                for (BaseSalariedEmployee emp : managerBaseSalariedArraylist) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())
+                            && emp.getDepartment().getName().equals(departmentNameField.getText()))  {
+                        departmentFilteredManagerBaseSalariedArraylist.add(emp);
+                    }
                 }
-            }
+                managerBaseSalariedObservableList = managerBaseSalaryTable.getItems();
+                employeeBaseSalariedObservableList = employeeBaseSalaryTable.getItems();
 
-            managerCommissionSalariedObservableList = managerCommissionSalaryTable.getItems();
-            employeeCommissionSalariedObservableList = employeeCommissionSalaryTable.getItems();
+                managerBaseSalariedObservableList = FXCollections.observableArrayList(departmentFilteredManagerBaseSalariedArraylist);
+                employeeBaseSalariedObservableList = FXCollections.observableArrayList(departmentFilteredEmployeeBaseSalariedArraylist);
 
-            managerCommissionSalariedObservableList = FXCollections.observableArrayList(nonFilteredManagerCommissionSalariedArrayList);
-            managerCommissionSalaryTable.setItems(managerCommissionSalariedObservableList);
-
-            employeeCommissionSalariedObservableList = FXCollections.observableArrayList(nonFilteredEmployeeCommissionSalariedArrayList);
-            employeeCommissionSalaryTable.setItems(employeeCommissionSalariedObservableList);
-
-        }
-
-        if(commissionBaseSalaryFile.isFile()){
-            for(CommissionBaseSalariedEmployee emp : employeeCommissionBaseSalariedArrayList){
-                if(emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
-                        && emp.getNationalID().matches(nationalIdField.getText())) {
-                    nonFilteredEmployeeCommissionBaseSalariedArrayList.add(emp);
-                }
-            }
-            for(CommissionBaseSalariedEmployee emp : managerCommissionBaseSalariedArraylist){
-                if(emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
-                        && emp.getNationalID().matches(nationalIdField.getText())) {
-                    nonFilteredManagerCommissionBaseSalariedArrayList.add(emp);
-                }
+                managerBaseSalaryTable.setItems(managerBaseSalariedObservableList);
+                employeeBaseSalaryTable.setItems(employeeBaseSalariedObservableList);
             }
 
-            managerCommissionBaseSalariedObservableList = managerCommissionBaseTable.getItems();
-            employeeCommissionBaseSalariedObservableList = employeeCommissionBaseTable.getItems();
+            if (hourlySalaryFile.isFile()) {
+                for (HourlySalariedEmployee emp : employeeHourlySalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())
+                            && emp.getDepartment().getName().equals(departmentNameField.getText()))  {
+                        departmentFilteredEmployeeHourlySalariedArraylist.add(emp);
+                    }
+                }
+                for (HourlySalariedEmployee emp : managerHourlySalariedArraylist) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())
+                            && emp.getDepartment().getName().equals(departmentNameField.getText()))  {
+                        departmentFilteredManagerHourlySalariedArraylist.add(emp);
+                    }
+                }
 
-            managerCommissionBaseSalariedObservableList = FXCollections.observableArrayList(nonFilteredManagerCommissionBaseSalariedArrayList);
-            employeeCommissionBaseSalariedObservableList = FXCollections.observableArrayList(nonFilteredEmployeeCommissionBaseSalariedArrayList);
+                managerHourlySalariedObservableList = managerHourlySalaryTable.getItems();
+                employeeHourlySalariedObservableList = employeeHourlySalaryTable.getItems();
 
-            managerCommissionBaseTable.setItems(managerCommissionBaseSalariedObservableList);
-            employeeCommissionBaseTable.setItems(employeeCommissionBaseSalariedObservableList);
+                managerHourlySalariedObservableList = FXCollections.observableArrayList(departmentFilteredManagerHourlySalariedArraylist);
+                employeeHourlySalariedObservableList = FXCollections.observableArrayList(departmentFilteredEmployeeHourlySalariedArraylist);
+
+                managerHourlySalaryTable.setItems(managerHourlySalariedObservableList);
+                employeeHourlySalaryTable.setItems(employeeHourlySalariedObservableList);
+            }
+
+            if (commissionSalaryFile.isFile()) {
+                for (CommissionSalariedEmployee emp : employeeCommissionSalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())
+                            && emp.getDepartment().getName().equals(departmentNameField.getText()))  {
+                        departmentFilteredEmployeeCommissionSalariedArrayList.add(emp);
+                    }
+                }
+                for (CommissionSalariedEmployee emp : managerCommissionSalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())
+                            && emp.getDepartment().getName().equals(departmentNameField.getText()))  {
+                        departmentFilteredManagerCommissionSalariedArrayList.add(emp);
+                    }
+                }
+
+                managerCommissionSalariedObservableList = managerCommissionSalaryTable.getItems();
+                employeeCommissionSalariedObservableList = employeeCommissionSalaryTable.getItems();
+
+                managerCommissionSalariedObservableList = FXCollections.observableArrayList(departmentFilteredManagerCommissionSalariedArrayList);
+                managerCommissionSalaryTable.setItems(managerCommissionSalariedObservableList);
+
+                employeeCommissionSalariedObservableList = FXCollections.observableArrayList(departmentFilteredEmployeeCommissionSalariedArrayList);
+                employeeCommissionSalaryTable.setItems(employeeCommissionSalariedObservableList);
+
+            }
+
+            if (commissionBaseSalaryFile.isFile()) {
+                for (CommissionBaseSalariedEmployee emp : employeeCommissionBaseSalariedArrayList) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())
+                            && emp.getDepartment().getName().equals(departmentNameField.getText()))  {
+                        departmentFilteredEmployeeCommissionBaseSalariedArrayList.add(emp);
+                    }
+                }
+                for (CommissionBaseSalariedEmployee emp : managerCommissionBaseSalariedArraylist) {
+                    if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                            && emp.getNationalID().matches(nationalIdField.getText())
+                            && emp.getDepartment().getName().equals(departmentNameField.getText()))  {
+                        departmentFilteredManagerCommissionBaseSalariedArrayList.add(emp);
+                    }
+                }
+
+                managerCommissionBaseSalariedObservableList = managerCommissionBaseTable.getItems();
+                employeeCommissionBaseSalariedObservableList = employeeCommissionBaseTable.getItems();
+
+                managerCommissionBaseSalariedObservableList = FXCollections.observableArrayList(departmentFilteredManagerCommissionBaseSalariedArrayList);
+                employeeCommissionBaseSalariedObservableList = FXCollections.observableArrayList(departmentFilteredEmployeeCommissionBaseSalariedArrayList);
+
+                managerCommissionBaseTable.setItems(managerCommissionBaseSalariedObservableList);
+                employeeCommissionBaseTable.setItems(employeeCommissionBaseSalariedObservableList);
+            }
         }
 
     }
