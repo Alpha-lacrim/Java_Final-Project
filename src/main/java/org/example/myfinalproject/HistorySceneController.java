@@ -46,12 +46,6 @@ public class HistorySceneController implements Initializable {
     private CheckBox dateFilterCheckBox;
 
     @FXML
-    private CheckBox salaryHistoryCheckBox;
-
-    @FXML
-    private LineChart<String, Double> salaryHistoryLineChart;
-
-    @FXML
     private TableView<BaseSalariedEmployee> employeeBaseSalaryTable;
 
     @FXML
@@ -472,7 +466,6 @@ public class HistorySceneController implements Initializable {
         pickTypeCombo.setItems(typeOfEmployee);
         inputEndDatePicker.setVisible(false);
         inputStartDatePicker.setVisible(false);
-        salaryHistoryLineChart.setVisible(false);
 
         //initialize manager base salary table.
         managerBaseSalaryColumn.setCellValueFactory(new PropertyValueFactory<>("baseSalary"));
@@ -616,20 +609,20 @@ public class HistorySceneController implements Initializable {
         }
     }
 
-    @FXML
-    void onSalaryHistoryCheckBox(ActionEvent event) throws IOException {
-        if (salaryHistoryCheckBox.isSelected()) {
-            salaryHistoryLineChart.setVisible(true);
-
-            if (salaryHistoryLineChart.getData() != null) {
-                salaryHistoryLineChart.getData().clear();
-            }
-        }
-
-        else {
-            salaryHistoryLineChart.setVisible(false);
-        }
-    }
+//    @FXML
+//    void onSalaryHistoryCheckBox(ActionEvent event) throws IOException {
+//        if (salaryHistoryCheckBox.isSelected()) {
+//            salaryHistoryLineChart.setVisible(true);
+//
+//            if (salaryHistoryLineChart.getData() != null) {
+//                salaryHistoryLineChart.getData().clear();
+//            }
+//        }
+//
+//        else {
+//            salaryHistoryLineChart.setVisible(false);
+//        }
+//    }
 
     @FXML
     void onBackButton(ActionEvent event) throws IOException {
@@ -951,17 +944,17 @@ public class HistorySceneController implements Initializable {
         }
     }
 
-    private void refreshLineChart() {
-        salaryHistoryLineChart.getData().clear();
-        salaryHistoryLineChart.setAnimated(false);
-
-        XYChart.Series<String, Integer> series1 = new XYChart.Series();
+//    private void refreshLineChart() {
+//        salaryHistoryLineChart.getData().clear();
+//        salaryHistoryLineChart.setAnimated(false);
+//
+//        XYChart.Series<String, Integer> series1 = new XYChart.Series();
 //
 //        for (int i = 0; i < arr.size(); i++) {
-//            series1.getData().add(new XYChart.Data(non.get(i).getName(), departmentArrayList.get(i).getNumberOfActiveEmployees()));
+//            series1.getData().add(new XYChart.Data(.get(i).getName(), departmentArrayList.get(i).getNumberOfActiveEmployees()));
 //        }
 //        series1.setName("Salaries");
 //
 //        salaryHistoryLineChart.getData().addAll(series1);
-    }
+//    }
 }
