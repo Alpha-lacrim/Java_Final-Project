@@ -693,6 +693,14 @@ public class HistorySceneController implements Initializable {
         employeeCommissionSalaryTable.getItems().clear();
         employeeCommissionBaseTable.getItems().clear();
 
+        nonFilteredEmployeeBaseSalariedArraylist.clear();
+        nonFilteredManagerBaseSalariedArraylist.clear();
+        nonFilteredEmployeeHourlySalariedArraylist.clear();
+        nonFilteredManagerHourlySalariedArraylist.clear();
+        nonFilteredEmployeeCommissionSalariedArrayList.clear();
+        nonFilteredManagerCommissionSalariedArrayList.clear();
+        nonFilteredEmployeeCommissionBaseSalariedArrayList.clear();
+        nonFilteredManagerCommissionBaseSalariedArrayList.clear();
 
         //initialize table views.
         if(baseSalariedFile.isFile()){

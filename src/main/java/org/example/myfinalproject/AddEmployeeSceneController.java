@@ -887,7 +887,6 @@ public class AddEmployeeSceneController implements Initializable {
                     departmentWriteToFile();
                     employeeBaseSalaryTable.getItems().remove(emp);
                     employeeBaseSalariedArrayList.remove(emp);
-                    baseSalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
 
@@ -909,7 +908,6 @@ public class AddEmployeeSceneController implements Initializable {
                     departmentWriteToFile();
                     employeeCommissionBaseTable.getItems().remove(emp);
                     employeeCommissionBaseSalariedArrayList.remove(emp);
-                    commissionBaseSalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
 
@@ -931,7 +929,6 @@ public class AddEmployeeSceneController implements Initializable {
                     departmentWriteToFile();
                     employeeHourlySalaryTable.getItems().remove(emp);
                     employeeHourlySalariedArrayList.remove(emp);
-                    hourlySalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
 
@@ -953,7 +950,6 @@ public class AddEmployeeSceneController implements Initializable {
                     departmentWriteToFile();
                     employeeCommissionSalaryTable.getItems().remove(emp);
                     employeeCommissionSalariedArrayList.remove(emp);
-                    commissionSalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
                 }
@@ -1242,7 +1238,6 @@ public class AddEmployeeSceneController implements Initializable {
                     departmentWriteToFile();
                     employeeBaseSalaryTable.getItems().remove(emp);
                     employeeBaseSalariedArrayList.remove(emp);
-                    baseSalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
 
@@ -1264,7 +1259,6 @@ public class AddEmployeeSceneController implements Initializable {
                     departmentWriteToFile();
                     employeeCommissionBaseTable.getItems().remove(emp);
                     employeeCommissionBaseSalariedArrayList.remove(emp);
-                    commissionBaseSalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
 
@@ -1286,7 +1280,6 @@ public class AddEmployeeSceneController implements Initializable {
                     departmentWriteToFile();
                     employeeHourlySalaryTable.getItems().remove(emp);
                     employeeHourlySalariedArrayList.remove(emp);
-                    hourlySalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
 
@@ -1308,7 +1301,6 @@ public class AddEmployeeSceneController implements Initializable {
                     departmentWriteToFile();
                     employeeCommissionSalaryTable.getItems().remove(emp);
                     employeeCommissionSalariedArrayList.remove(emp);
-                    commissionSalariedArrayList.remove(emp);
                     departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                     DepartmentCombo.setItems(departmentObservableList);
                 }
@@ -1451,7 +1443,6 @@ public class AddEmployeeSceneController implements Initializable {
                 departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                 DepartmentCombo.setItems(departmentObservableList);
                 employeeBaseSalaryTable.getItems().remove(emp);
-                baseSalariedArrayList.remove(emp);
                 employeeBaseSalariedArrayList.remove(emp);
                 break;
 
@@ -1476,7 +1467,6 @@ public class AddEmployeeSceneController implements Initializable {
                 departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                 DepartmentCombo.setItems(departmentObservableList);
                 employeeCommissionBaseTable.getItems().remove(emp1);
-                commissionBaseSalariedArrayList.remove(emp1);
                 employeeCommissionBaseSalariedArrayList.remove(emp1);
                 break;
 
@@ -1501,7 +1491,6 @@ public class AddEmployeeSceneController implements Initializable {
                 departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                 DepartmentCombo.setItems(departmentObservableList);
                 employeeHourlySalaryTable.getItems().remove(emp2);
-                hourlySalariedArrayList.remove(emp2);
                 employeeHourlySalariedArrayList.remove(emp2);
                 break;
 
@@ -1526,7 +1515,6 @@ public class AddEmployeeSceneController implements Initializable {
                 departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
                 DepartmentCombo.setItems(departmentObservableList);
                 employeeCommissionSalaryTable.getItems().remove(emp3);
-                commissionSalariedArrayList.remove(emp3);
                 employeeCommissionSalariedArrayList.remove(emp3);
                 break;
         }
