@@ -34,6 +34,15 @@ public class HistorySceneController implements Initializable {
     ObservableList<BaseSalariedEmployee> employeeBaseSalariedObservableList;
 
     @FXML
+    private DatePicker inputStartDatePicker;
+
+    @FXML
+    private DatePicker inputEndDatePicker;
+
+    @FXML
+    private CheckBox dateFilterCheckBox;
+
+    @FXML
     private TableView<BaseSalariedEmployee> employeeBaseSalaryTable;
 
     @FXML
@@ -114,6 +123,8 @@ public class HistorySceneController implements Initializable {
 
     @FXML
     private TableColumn<BaseSalariedEmployee,String> managerBaseSalaryPhoneColumn;
+
+
 
 
     //file and variables for hourly salaried.
@@ -217,7 +228,7 @@ public class HistorySceneController implements Initializable {
     @FXML
     private TableView<HourlySalariedEmployee> managerHourlySalaryTable;
 
-    //file and variables for commission salaried.
+    // file and variables for commission salaried.
     File commissionSalaryFile = new File("CommissionSalaried.txt");
     ArrayList<CommissionSalariedEmployee> commissionSalariedArrayList = new ArrayList<>();
     ArrayList<CommissionSalariedEmployee> employeeCommissionSalariedArrayList = new ArrayList<>();
@@ -450,6 +461,8 @@ public class HistorySceneController implements Initializable {
         commissionBaseSalaryReadFromFile();
 
         pickTypeCombo.setItems(typeOfEmployee);
+        inputEndDatePicker.setVisible(false);
+        inputStartDatePicker.setVisible(false);
 
         //initialize manager base salary table.
         managerBaseSalaryColumn.setCellValueFactory(new PropertyValueFactory<>("baseSalary"));
@@ -574,6 +587,19 @@ public class HistorySceneController implements Initializable {
         employeeCommissionBasePhoneColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         employeeCommissionBaseRateColumn.setCellValueFactory(new PropertyValueFactory<>("commissionRate"));
         employeeCommissionBaseSalaryColumn.setCellValueFactory(new PropertyValueFactory<>("baseSalary"));
+    }
+
+    @FXML
+    void onDateFilterCheckBox(ActionEvent event) throws IOException {
+        if (dateFilterCheckBox.isSelected()) {
+            inputEndDatePicker.setVisible(true);
+            inputStartDatePicker.setVisible(true);
+        }
+
+        else {
+            inputEndDatePicker.setVisible(false);
+            inputStartDatePicker.setVisible(false);
+        }
     }
 
     @FXML

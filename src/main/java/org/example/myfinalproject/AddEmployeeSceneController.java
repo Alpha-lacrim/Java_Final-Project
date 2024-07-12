@@ -713,6 +713,8 @@ public class AddEmployeeSceneController implements Initializable {
                 }
                 break;
         }
+
+        resetFields();
     }
 
     @FXML
@@ -1048,6 +1050,8 @@ public class AddEmployeeSceneController implements Initializable {
                         numberOfSalesField.setText("");
                         break;
                 }
+
+                resetFields();
             }
         }
 
@@ -1413,6 +1417,8 @@ public class AddEmployeeSceneController implements Initializable {
                 deactiveButton.setVisible(false);
                 cancelButton.setVisible(false);
                 applyButton.setVisible(false);
+
+                resetFields();
             }
         }
     }
@@ -1614,6 +1620,8 @@ public class AddEmployeeSceneController implements Initializable {
                 numberOfSalesField.setText("");
                 break;
         }
+
+        resetFields();
     }
 
     @FXML
@@ -1624,6 +1632,8 @@ public class AddEmployeeSceneController implements Initializable {
         managerBonusField.setVisible(false);
         managerBonusField1.setVisible(false);
         managerBonusField2.setVisible(false);
+
+        resetFields();
     }
     @FXML
     void onDeActiveButton(ActionEvent event) {
@@ -2243,5 +2253,53 @@ public class AddEmployeeSceneController implements Initializable {
         alert.setContentText(content);
         alert.setHeaderText(header);
         alert.showAndWait();
+    }
+
+    private void resetFields() {
+        addEmployeeButton.setDisable(false);
+        baseSalaryField.setDisable(false);
+        statusCombo.setVisible(false);
+        applyButton2.setVisible(false);
+        cancelButton2.setVisible(false);
+        deactiveButton.setVisible(false);
+        editButton.setVisible(false);
+        statusCombo.setVisible(false);
+        applyButton.setVisible(false);
+        cancelButton.setVisible(false);
+        employeeRadioButton.setVisible(false);
+        managerRadioButton.setVisible(false);
+
+        employeePickTypeCombo.setEditable(false);
+        nameField.setEditable(true);
+        familyField.setEditable(true);
+        nationalIdField.setEditable(true);
+        phoneField.setEditable(true);
+        birthDatePicker.setEditable(false);
+        birthDatePicker.setDisable(false);
+        baseSalaryField.setEditable(true);
+        managerBonusField.setEditable(true);
+        managerBonusField.setDisable(false);
+        DepartmentCombo.setDisable(false);
+        numberOfSalesField2.setEditable(true);
+        commissionRateField2.setEditable(true);
+        PayPerHourField.setEditable(true);
+        amountOfHoursField.setEditable(true);
+        numberOfSalesField.setEditable(true);
+        commissionRateField.setEditable(true);
+
+        nameField.setText("");
+        familyField.setText("");
+        nationalIdField.setText("");
+        phoneField.setText("");
+        managerBonusField.setText("");
+        birthDatePicker.setValue(null);
+        DepartmentCombo.setValue(null);
+        baseSalaryField.setText("");
+        commissionRateField2.setText("");
+        numberOfSalesField2.setText("");
+        PayPerHourField.setText("");
+        amountOfHoursField.setText("");
+        commissionRateField.setText("");
+        numberOfSalesField.setText("");
     }
 }

@@ -1229,7 +1229,7 @@ public class AddManagerSceneController implements Initializable {
                 Department department3 = emp3.getDepartment();
                 department3.setHasManager(false);
                 department3.setNumberOfActiveEmployees(department3.getNumberOfActiveEmployees()-1);
-                departmentArrayList.set(index,department3);
+                departmentArrayList.set(index, department3);
                 commissionSalaryWriteToFile();
                 departmentWriteToFile();
                 departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
