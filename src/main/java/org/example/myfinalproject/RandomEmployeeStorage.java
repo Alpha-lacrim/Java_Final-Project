@@ -3,8 +3,8 @@ package org.example.myfinalproject;
 import java.time.LocalDate;
 
 public class RandomEmployeeStorage {
-    public static String[] name = {"مهری","ملیکا","زهرا","مریم","ناهید","محمد","حمید","احسان","محسن","علی"};
-    public static String[] family = {"احمدی","محمدی","محمودی","همایونی","طاهری","مقدم","کریمی","رضایی","امینی","خشنود"};
+    public static String[] name = {"Ali","Mohsen","Mohammad","Arsham","Arash","Melika","Maryam","Mona","Zahra","Mehri"};
+    public static String[] family = {"Amini","Mahmudi","Khoshnood","Jahani","Hashemi","Mousavi","Rahmani","Rezaiee","Karimi","Barani"};
     public static String[] nationalId = {"4317890056","4326453212","5417654321","1995674312","4327895632","6785671234","6547894532","4311937856"
                                         ,"4322901867","5437823519"};
     public static String[] phone = {"09124814666","09300423674","09218763412","09330929203","09145643212","09907895610",
