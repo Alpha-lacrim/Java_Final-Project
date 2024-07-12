@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
@@ -18,6 +20,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class HistorySceneController implements Initializable {
@@ -41,6 +44,12 @@ public class HistorySceneController implements Initializable {
 
     @FXML
     private CheckBox dateFilterCheckBox;
+
+    @FXML
+    private CheckBox salaryHistoryCheckBox;
+
+    @FXML
+    private LineChart<String, Double> salaryHistoryLineChart;
 
     @FXML
     private TableView<BaseSalariedEmployee> employeeBaseSalaryTable;
@@ -463,6 +472,7 @@ public class HistorySceneController implements Initializable {
         pickTypeCombo.setItems(typeOfEmployee);
         inputEndDatePicker.setVisible(false);
         inputStartDatePicker.setVisible(false);
+        salaryHistoryLineChart.setVisible(false);
 
         //initialize manager base salary table.
         managerBaseSalaryColumn.setCellValueFactory(new PropertyValueFactory<>("baseSalary"));
@@ -594,11 +604,30 @@ public class HistorySceneController implements Initializable {
         if (dateFilterCheckBox.isSelected()) {
             inputEndDatePicker.setVisible(true);
             inputStartDatePicker.setVisible(true);
+
+            inputEndDatePicker.setValue(null);
+            inputStartDatePicker.setValue(null);
         }
 
         else {
             inputEndDatePicker.setVisible(false);
             inputStartDatePicker.setVisible(false);
+
+        }
+    }
+
+    @FXML
+    void onSalaryHistoryCheckBox(ActionEvent event) throws IOException {
+        if (salaryHistoryCheckBox.isSelected()) {
+            salaryHistoryLineChart.setVisible(true);
+
+            if (salaryHistoryLineChart.getData() != null) {
+                salaryHistoryLineChart.getData().clear();
+            }
+        }
+
+        else {
+            salaryHistoryLineChart.setVisible(false);
         }
     }
 
@@ -728,7 +757,7 @@ public class HistorySceneController implements Initializable {
         nonFilteredEmployeeCommissionBaseSalariedArrayList.clear();
         nonFilteredManagerCommissionBaseSalariedArrayList.clear();
 
-        //initialize table views.
+        // initialize table views.
         if(baseSalariedFile.isFile()){
             for(BaseSalariedEmployee emp : employeeBaseSalariedArrayList){
                 if(emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
@@ -824,6 +853,7 @@ public class HistorySceneController implements Initializable {
             managerCommissionBaseTable.setItems(managerCommissionBaseSalariedObservableList);
             employeeCommissionBaseTable.setItems(employeeCommissionBaseSalariedObservableList);
         }
+
     }
 
 
@@ -921,4 +951,17 @@ public class HistorySceneController implements Initializable {
         }
     }
 
+    private void refreshLineChart() {
+        salaryHistoryLineChart.getData().clear();
+        salaryHistoryLineChart.setAnimated(false);
+
+        XYChart.Series<String, Integer> series1 = new XYChart.Series();
+//
+//        for (int i = 0; i < arr.size(); i++) {
+//            series1.getData().add(new XYChart.Data(non.get(i).getName(), departmentArrayList.get(i).getNumberOfActiveEmployees()));
+//        }
+//        series1.setName("Salaries");
+//
+//        salaryHistoryLineChart.getData().addAll(series1);
+    }
 }
