@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#unlockFields" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.myfinalproject.AddEmployeeSceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#unlockFields" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #ADB8BB;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.myfinalproject.AddEmployeeSceneController">
     <children>
-        <TableView fx:id="employeeBaseSalaryTable" layoutX="7.0" layoutY="2.0" onMouseClicked="#employeeBaseSalaryTableGetItem" prefHeight="390.0" prefWidth="994.0" AnchorPane.bottomAnchor="208.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
+        <TableView fx:id="employeeBaseSalaryTable" layoutX="7.0" layoutY="2.0" onMouseClicked="#employeeBaseSalaryTableGetItem" prefHeight="390.0" prefWidth="994.0" style="-fx-background-color: #F9F8F7;" AnchorPane.bottomAnchor="208.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
             <columns>
                 <TableColumn fx:id="employeeBaseSalaryIdColumn" prefWidth="43.200013637542725" text="ID" />
                 <TableColumn fx:id="employeeBaseSalaryNameColumn" prefWidth="72.80001831054688" text="Name" />
@@ -25,16 +25,16 @@
                 <TableColumn fx:id="employeeBaseSalaryEarningColumn" prefWidth="150.0" text="Total Earning" />
             </columns>
         </TableView>
-        <TextField fx:id="nameField" layoutX="13.0" layoutY="507.0" prefHeight="26.0" prefWidth="130.0" promptText="Enter name" />
-        <TextField fx:id="familyField" layoutX="13.0" layoutY="550.0" prefHeight="26.0" prefWidth="130.0" promptText="Enter family name" />
-        <TextField fx:id="nationalIdField" layoutX="340.0" layoutY="461.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter national-ID" />
-        <TextField fx:id="phoneField" layoutX="160.0" layoutY="461.0" prefHeight="26.0" prefWidth="158.0" promptText="Enter phone number" />
-        <ComboBox fx:id="employeePickTypeCombo" layoutX="13.0" layoutY="461.0" onAction="#onEmployeePickTypeCombo" prefHeight="26.0" prefWidth="130.0" promptText="Pick a type" />
-        <ComboBox fx:id="DepartmentCombo" layoutX="160.0" layoutY="550.0" prefHeight="26.0" prefWidth="158.0" promptText="Select a Department" />
-        <TextField fx:id="baseSalaryField" layoutX="340.0" layoutY="507.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter base" />
-      <TextField fx:id="managerBonusField" layoutX="337.0" layoutY="548.0" promptText="Enter manager bonus" visible="false" />
-        <DatePicker fx:id="birthDatePicker" editable="false" layoutX="160.0" layoutY="507.0" prefHeight="26.0" prefWidth="158.0" promptText="Select the birth date" />
-        <Button fx:id="addEmployeeButton" layoutX="724.0" layoutY="451.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="51.0" prefWidth="264.0" text="Add Employee" textAlignment="CENTER">
+        <TextField fx:id="nameField" layoutX="13.0" layoutY="507.0" prefHeight="26.0" prefWidth="130.0" promptText="Enter name" style="-fx-border-color: #232A2F;" />
+        <TextField fx:id="familyField" layoutX="13.0" layoutY="550.0" prefHeight="26.0" prefWidth="130.0" promptText="Enter family name" style="-fx-border-color: #232A2F;" />
+        <TextField fx:id="nationalIdField" layoutX="340.0" layoutY="461.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter national-ID" style="-fx-border-color: #232A2F;" />
+        <TextField fx:id="phoneField" layoutX="160.0" layoutY="461.0" prefHeight="26.0" prefWidth="158.0" promptText="Enter phone number" style="-fx-border-color: #232A2F;" />
+        <ComboBox fx:id="employeePickTypeCombo" layoutX="13.0" layoutY="461.0" onAction="#onEmployeePickTypeCombo" prefHeight="26.0" prefWidth="130.0" promptText="Pick a type" style="-fx-border-color: #232A2F;" />
+        <ComboBox fx:id="DepartmentCombo" layoutX="160.0" layoutY="550.0" prefHeight="26.0" prefWidth="158.0" promptText="Select a Department" style="-fx-border-color: #232A2F;" />
+        <TextField fx:id="baseSalaryField" layoutX="340.0" layoutY="507.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter base" style="-fx-border-color: #232A2F;" />
+      <TextField fx:id="managerBonusField" layoutX="337.0" layoutY="548.0" promptText="Enter manager bonus" style="-fx-border-color: #232A2F;" visible="false" />
+        <DatePicker fx:id="birthDatePicker" editable="false" layoutX="160.0" layoutY="507.0" prefHeight="26.0" prefWidth="158.0" promptText="Select the birth date" style="-fx-border-color: #232A2F;" />
+        <Button fx:id="addEmployeeButton" layoutX="724.0" layoutY="451.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="51.0" prefWidth="264.0" style="-fx-background-color: #153147;" text="Add Employee" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font></Button>
@@ -52,8 +52,8 @@
                 <TableColumn fx:id="employeeHourlySalaryEarningColumn" minWidth="8.0" prefWidth="137.0" text="Total Earning" />
             </columns>
         </TableView>
-        <TextField fx:id="PayPerHourField" layoutX="340.0" layoutY="507.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter hourly rate" visible="false" />
-        <TextField fx:id="amountOfHoursField" layoutX="340.0" layoutY="550.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter amount of hours" visible="false" />
+        <TextField fx:id="PayPerHourField" layoutX="340.0" layoutY="507.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter hourly rate" style="-fx-border-color: #232A2F;" visible="false" />
+        <TextField fx:id="amountOfHoursField" layoutX="340.0" layoutY="550.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter amount of hours" style="-fx-border-color: #232A2F;" visible="false" />
         <TableView fx:id="employeeCommissionSalaryTable" layoutX="13.0" layoutY="16.0" onMouseClicked="#employeeCommissionSalaryTableGetItem" prefHeight="423.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="208.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
             <columns>
                 <TableColumn fx:id="employeeCommissionSalaryIdColumn" prefWidth="38.39999455213547" text="ID" />
@@ -68,9 +68,9 @@
                 <TableColumn fx:id="employeeCommissionSalaryEarningColumn" prefWidth="130.0" text="Total Earning" />
             </columns>
         </TableView>
-        <TextField fx:id="commissionRateField" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter commission rate" visible="false" />
-        <TextField fx:id="numberOfSalesField" layoutX="340.0" layoutY="507.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter number of sales" visible="false" />
-      <TextField fx:id="managerBonusField1" layoutX="501.0" layoutY="462.0" promptText="Enter manager bonus" visible="false" />
+        <TextField fx:id="commissionRateField" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter commission rate" style="-fx-border-color: #232A2F;" visible="false" />
+        <TextField fx:id="numberOfSalesField" layoutX="340.0" layoutY="507.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter number of sales" style="-fx-border-color: #232A2F;" visible="false" />
+      <TextField fx:id="managerBonusField1" layoutX="501.0" layoutY="462.0" promptText="Enter manager bonus" style="-fx-border-color: #232A2F;" visible="false" />
         <TableView fx:id="employeeCommissionBaseTable" layoutX="13.0" layoutY="16.0" onMouseClicked="#employeeCommissionBaseSalaryTableGetItem" prefHeight="423.0" prefWidth="994.0" visible="false" AnchorPane.bottomAnchor="208.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="6.0">
             <columns>
                 <TableColumn fx:id="employeeCommissionBaseIdColumn" prefWidth="38.0" text="ID" />
@@ -86,23 +86,43 @@
                 <TableColumn fx:id="employeeCommissionBaseEarningColumn" prefWidth="110.0" text="Total Earning" />
             </columns>
         </TableView>
-        <TextField fx:id="commissionRateField2" layoutX="504.0" layoutY="461.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter commission rate" visible="false" />
-        <TextField fx:id="numberOfSalesField2" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter number of sales" visible="false" />
-      <TextField fx:id="managerBonusField2" layoutX="504.0" layoutY="508.0" promptText="Enter manager bonus" visible="false" />
-      <ComboBox fx:id="statusCombo" layoutX="500.0" layoutY="560.0" minWidth="53.0" prefHeight="25.0" prefWidth="191.0" promptText="End Reason" visible="false" />
-      <Button layoutX="-161.0" layoutY="2.0" mnemonicParsing="false" text="Button" />
-        <Button fx:id="cancelButton" layoutX="785.0" layoutY="560.0" minWidth="56.0" mnemonicParsing="false" onAction="#onCancelButton" prefHeight="25.0" prefWidth="61.0" text="Cancel" visible="false" />
-      <Button fx:id="editButton" layoutX="856.0" layoutY="560.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" prefWidth="61.0" text="Edit" visible="false" />
-    <Button fx:id="applyButton" layoutX="715.0" layoutY="560.0" minWidth="61.0" mnemonicParsing="false" onAction="#onApplyButton" prefHeight="25.0" prefWidth="61.0" text="Apply" visible="false" />
-      <Button fx:id="backButton" layoutX="925.0" layoutY="560.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="25.0" prefWidth="61.0" text="Back" />
+        <TextField fx:id="commissionRateField2" layoutX="504.0" layoutY="461.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter commission rate" style="-fx-border-color: #232A2F;" visible="false" />
+        <TextField fx:id="numberOfSalesField2" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter number of sales" style="-fx-border-color: #232A2F;" visible="false" />
+      <TextField fx:id="managerBonusField2" layoutX="504.0" layoutY="508.0" promptText="Enter manager bonus" style="-fx-border-color: #232A2F;" visible="false" />
+      <ComboBox fx:id="statusCombo" layoutX="500.0" layoutY="560.0" minWidth="53.0" prefHeight="25.0" prefWidth="191.0" promptText="End Reason" style="-fx-border-color: #232A2F;" visible="false" />
+        <Button fx:id="cancelButton" layoutX="785.0" layoutY="560.0" minWidth="56.0" mnemonicParsing="false" onAction="#onCancelButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147;" text="Cancel" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="editButton" layoutX="856.0" layoutY="560.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147;" text="Edit" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+    <Button fx:id="applyButton" layoutX="715.0" layoutY="560.0" minWidth="61.0" mnemonicParsing="false" onAction="#onApplyButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147;" text="Apply" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="backButton" layoutX="925.0" layoutY="560.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <RadioButton fx:id="managerRadioButton" layoutX="13.0" layoutY="434.0" mnemonicParsing="false" onAction="#onManagerRadio" prefHeight="17.0" prefWidth="83.0" text="Manager" visible="false" />
       <RadioButton fx:id="employeeRadioButton" layoutX="96.0" layoutY="434.0" mnemonicParsing="false" onAction="#onEmployeeRadio" text="Employee" visible="false" />
-      <Button fx:id="cancelButton2" layoutX="785.0" layoutY="560.0" mnemonicParsing="false" onAction="#onCancelButton2" prefHeight="25.0" prefWidth="61.0" text="Cancel" visible="false" />
-      <Button fx:id="deactiveButton" layoutX="853.0" layoutY="521.0" mnemonicParsing="false" onAction="#onDeActiveButton" prefHeight="25.0" prefWidth="137.0" text="Deactivate" visible="false" />
-      <Button fx:id="applyButton2" layoutX="715.0" layoutY="560.0" mnemonicParsing="false" onAction="#onApplyButton2" prefHeight="25.0" prefWidth="61.0" text="Apply" visible="false" />
-      <Button layoutX="724.0" layoutY="400.0" mnemonicParsing="false" onAction="#onAddRandomEmployeeButton" prefHeight="17.0" prefWidth="264.0" text="Add Random Employee">
+      <Button fx:id="cancelButton2" layoutX="785.0" layoutY="560.0" mnemonicParsing="false" onAction="#onCancelButton2" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147;" text="Cancel" textFill="WHITE" visible="false">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="deactiveButton" layoutX="853.0" layoutY="521.0" mnemonicParsing="false" onAction="#onDeActiveButton" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #153147;" text="Deactivate" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="applyButton2" layoutX="715.0" layoutY="560.0" mnemonicParsing="false" onAction="#onApplyButton2" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147;" text="Apply" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="724.0" layoutY="400.0" mnemonicParsing="false" onAction="#onAddRandomEmployeeButton" prefHeight="17.0" prefWidth="264.0" style="-fx-background-color: #153147;" text="Add Random Employee" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
          </font>
       </Button>
     </children>

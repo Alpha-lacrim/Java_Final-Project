@@ -8,8 +8,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.myfinalproject.HistorySceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1300.0" style="-fx-background-color: #ADB8BB;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.myfinalproject.HistorySceneController">
    <children>
       <TableView fx:id="employeeBaseSalaryTable" layoutX="17.0" layoutY="12.0" prefHeight="390.0" prefWidth="1177.0" visible="false" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <columns>
@@ -151,16 +152,23 @@
             <TableColumn fx:id="managerCommissionBaseEarningColumn" prefWidth="82.40000000000009" text="Total Earning" />
          </columns>
       </TableView>
-      <Button layoutX="1215.0" layoutY="560.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="71.0" text="Back" />
-      <ComboBox fx:id="pickTypeCombo" layoutX="14.0" layoutY="380.0" onAction="#onPickTypeComboBox" prefHeight="26.0" prefWidth="216.0" promptText="Pick One Type" />
-      <TextField fx:id="nameField" layoutX="14.0" layoutY="426.0" prefHeight="26.0" prefWidth="216.0" promptText="Enter user name for searching" />
-      <TextField fx:id="familyNameField" layoutX="15.0" layoutY="468.0" prefHeight="26.0" prefWidth="216.0" promptText="Enter user family-name for searching" />
-      <TextField fx:id="nationalIdField" layoutX="16.0" layoutY="508.0" prefHeight="26.0" prefWidth="216.0" promptText="Enter user national-ID for searching" />
-      <Button layoutX="16.0" layoutY="548.0" mnemonicParsing="false" onAction="#onSearchButton" prefHeight="26.0" prefWidth="216.0" text="Search" />
-      <DatePicker fx:id="inputStartDatePicker" editable="false" layoutX="253.0" layoutY="426.0" prefHeight="26.0" prefWidth="257.0" promptText="Select the start date for searching" visible="false" />
-      <DatePicker fx:id="inputEndDatePicker" editable="false" layoutX="253.0" layoutY="468.0" prefHeight="26.0" prefWidth="257.0" promptText="Select the end date for searching" visible="false" />
-      <CheckBox fx:id="dateFilterCheckBox" layoutX="253.0" layoutY="385.0" mnemonicParsing="false" onAction="#onDateFilterCheckBox" prefHeight="17.0" prefWidth="183.0" text="Filter by date" />
-      <CheckBox fx:id="departmentFilterCheckBox" layoutX="363.0" layoutY="385.0" mnemonicParsing="false" onAction="#onDepartmentFilterCheckBox" text="Filter by department" />
-      <TextField fx:id="departmentNameField" layoutX="253.0" layoutY="427.0" prefHeight="26.0" prefWidth="258.0" promptText="Enter department name for searching" visible="false" />
+      <Button layoutX="1215.0" layoutY="560.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #153147;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ComboBox fx:id="pickTypeCombo" layoutX="14.0" layoutY="380.0" onAction="#onPickTypeComboBox" prefHeight="26.0" prefWidth="216.0" promptText="Pick One Type" style="-fx-border-color: #232A2F;" />
+      <TextField fx:id="nameField" layoutX="14.0" layoutY="426.0" prefHeight="26.0" prefWidth="216.0" promptText="Enter user name for searching" style="-fx-border-color: #232A2F;" />
+      <TextField fx:id="familyNameField" layoutX="15.0" layoutY="468.0" prefHeight="26.0" prefWidth="216.0" promptText="Enter user family-name for searching" style="-fx-border-color: #232A2F;" />
+      <TextField fx:id="nationalIdField" layoutX="16.0" layoutY="508.0" prefHeight="26.0" prefWidth="216.0" promptText="Enter user national-ID for searching" style="-fx-border-color: #232A2F;" />
+      <Button layoutX="16.0" layoutY="548.0" mnemonicParsing="false" onAction="#onSearchButton" prefHeight="26.0" prefWidth="216.0" style="-fx-background-color: #153147;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <DatePicker fx:id="inputStartDatePicker" editable="false" layoutX="253.0" layoutY="426.0" prefHeight="26.0" prefWidth="257.0" promptText="Select the start date for searching" style="-fx-border-color: #232A2F;" visible="false" />
+      <DatePicker fx:id="inputEndDatePicker" editable="false" layoutX="253.0" layoutY="468.0" prefHeight="26.0" prefWidth="257.0" promptText="Select the end date for searching" style="-fx-border-color: #232A2F;" visible="false" />
+      <CheckBox fx:id="dateFilterCheckBox" layoutX="490.0" layoutY="384.0" mnemonicParsing="false" onAction="#onDateFilterCheckBox" prefHeight="18.0" prefWidth="106.0" text="Filter by date" />
+      <CheckBox fx:id="departmentFilterCheckBox" layoutX="341.0" layoutY="385.0" mnemonicParsing="false" onAction="#onDepartmentFilterCheckBox" text="Filter by department" />
+      <TextField fx:id="departmentNameField" layoutX="253.0" layoutY="427.0" prefHeight="26.0" prefWidth="258.0" promptText="Enter department name for searching" style="-fx-border-color: #232A2F;" visible="false" />
+      <CheckBox fx:id="showAllFilterCheckBox" layoutX="253.0" layoutY="385.0" mnemonicParsing="false" onAction="#onShowAllFilterCheckBox" text="Show all" />
    </children>
 </AnchorPane>
