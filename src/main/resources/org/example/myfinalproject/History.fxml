@@ -160,7 +160,7 @@
       <DatePicker fx:id="inputStartDatePicker" editable="false" layoutX="253.0" layoutY="426.0" prefHeight="26.0" prefWidth="257.0" promptText="Select the start date for searching" visible="false" />
       <DatePicker fx:id="inputEndDatePicker" editable="false" layoutX="253.0" layoutY="468.0" prefHeight="26.0" prefWidth="257.0" promptText="Select the end date for searching" visible="false" />
       <CheckBox fx:id="dateFilterCheckBox" layoutX="253.0" layoutY="385.0" mnemonicParsing="false" onAction="#onDateFilterCheckBox" prefHeight="17.0" prefWidth="183.0" text="Filter by date" />
-      <CheckBox fx:id="departmentFilterCheckBox" layoutX="363.0" layoutY="385.0" mnemonicParsing="false" onAction="#onDepartmentFilterCheckBox" text="CheckBox" />
+      <CheckBox fx:id="departmentFilterCheckBox" layoutX="363.0" layoutY="385.0" mnemonicParsing="false" onAction="#onDepartmentFilterCheckBox" text="Filter by department" />
       <TextField fx:id="departmentNameField" layoutX="253.0" layoutY="427.0" prefHeight="26.0" prefWidth="258.0" promptText="Enter department name for searching" visible="false" />
    </children>
 </AnchorPane>

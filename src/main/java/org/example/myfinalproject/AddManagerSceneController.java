@@ -285,124 +285,130 @@ public class AddManagerSceneController implements Initializable {
         var type = (String) managerPickTypeCombo.getSelectionModel().getSelectedItem();
 
         try {
-            var department = (Department) DepartmentCombo.getSelectionModel().getSelectedItem();
-            switch (type) {
-                case "base-salaried":
-                    if (!department.isHasManager()) {
-                        var baseSalariedEmp = new BaseSalariedEmployee(nameField.getText(),familyField.getText(),
-                                nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
-                                LocalDate.now(),birthDatePicker.getValue(), department, Double.parseDouble(baseSalaryField.getText()));
-                        departmentWriteToFile();
-                        baseSalariedArrayList.add(baseSalariedEmp);
-                        managerBaseSalariedArrayList.add(baseSalariedEmp);
-                        managerBaseSalariedEmployeeObservableList = managerBaseSalaryTable.getItems();
-                        managerBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(managerBaseSalariedArrayList);
-                        managerBaseSalaryTable.setItems(managerBaseSalariedEmployeeObservableList);
-                        baseSalaryWriteToFile();
-                        //reset value of text boxes.
-                        nameField.setText("");
-                        familyField.setText("");
-                        nationalIdField.setText("");
-                        phoneField.setText("");
-                        managerBonusField.setText("");
-                        birthDatePicker.setValue(null);
-                        baseSalaryField.setText("");
-                    } else {
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("ERROR!");
-                        alert.setContentText("This Department already has a manager");
-                        alert.showAndWait();
-                    }
-                    break;
-                case "hourly-salaried":
-                    if (!department.isHasManager()) {
-                        var hourlySalariedEmp = new HourlySalariedEmployee(nameField.getText(),familyField.getText(),
-                                nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
-                                LocalDate.now(),birthDatePicker.getValue(), department, Double.parseDouble(PayPerHourField.getText())
-                                ,Double.parseDouble(amountOfHoursField.getText()));
-                        departmentWriteToFile();
-                        hourlySalariedArrayList.add(hourlySalariedEmp);
-                        managerHourlySalariedArrayList.add(hourlySalariedEmp);
-                        managerHourlySalariedEmployeeObservableList = managerHourlySalaryTable.getItems();
-                        managerHourlySalariedEmployeeObservableList = FXCollections.observableArrayList(managerHourlySalariedArrayList);
-                        managerHourlySalaryTable.setItems(managerHourlySalariedEmployeeObservableList);
-                        hourlySalaryWriteToFile();
-                        //reset value of text boxes.
-                        nameField.setText("");
-                        familyField.setText("");
-                        nationalIdField.setText("");
-                        phoneField.setText("");
-                        managerBonusField.setText("");
-                        birthDatePicker.setValue(null);
-                        PayPerHourField.setText("");
-                        amountOfHoursField.setText("");
-                    } else{
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("ERROR!");
-                        alert.setContentText("This Department already has a manager");
-                        alert.showAndWait();
-                    }
-                    break;
-                case "commission-salaried":
-                    if (!department.isHasManager()) {
-                        var commissionSalariedEmp = new CommissionSalariedEmployee(nameField.getText(),familyField.getText(),
-                                nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
-                                LocalDate.now(),birthDatePicker.getValue(), department, Double.parseDouble(commissionRateField.getText())
-                                ,Integer.parseInt(numberOfSalesField.getText()));
-                        departmentWriteToFile();
-                        commissionSalariedArrayList.add(commissionSalariedEmp);
-                        managerCommissionSalariedArrayList.add(commissionSalariedEmp);
-                        managerCommissionSalariedEmployeeObservableList = managerCommissionSalaryTable.getItems();
-                        managerCommissionSalariedEmployeeObservableList = FXCollections.observableArrayList(managerCommissionSalariedArrayList);
-                        managerCommissionSalaryTable.setItems(managerCommissionSalariedEmployeeObservableList);
-                        commissionSalaryWriteToFile();
-                        //reset value of text boxes.
-                        nameField.setText("");
-                        familyField.setText("");
-                        nationalIdField.setText("");
-                        phoneField.setText("");
-                        managerBonusField.setText("");
-                        birthDatePicker.setValue(null);
-                        commissionRateField.setText("");
-                        numberOfSalesField.setText("");
-                    } else {
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("ERROR!");
-                        alert.setContentText("This Department already has a manager");
-                        alert.showAndWait();
-                    }
-                    break;
-                case "base-commission salaried":
-                    if (!department.isHasManager()) {
-                        var commissionBaseSalariedEmp = new CommissionBaseSalariedEmployee(nameField.getText(),familyField.getText(),
-                                nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
-                                LocalDate.now(),birthDatePicker.getValue(), department,Double.parseDouble(baseSalaryField.getText())
-                                , Double.parseDouble(commissionRateField2.getText())
-                                ,Integer.parseInt(numberOfSalesField2.getText()));
-                        departmentWriteToFile();
-                        commissionBaseSalariedArrayList.add(commissionBaseSalariedEmp);
-                        managerCommissionBaseSalariedArrayList.add(commissionBaseSalariedEmp);
-                        managerCommissionBaseSalariedEmployeeObservableList = managerCommissionBaseTable.getItems();
-                        managerCommissionBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(managerCommissionBaseSalariedArrayList);
-                        managerCommissionBaseTable.setItems(managerCommissionBaseSalariedEmployeeObservableList);
-                        commissionBaseSalaryWriteToFile();
-                        //reset value of text boxes.
-                        nameField.setText("");
-                        familyField.setText("");
-                        nationalIdField.setText("");
-                        phoneField.setText("");
-                        managerBonusField.setText("");
-                        birthDatePicker.setValue(null);
-                        baseSalaryField.setText("");
-                        commissionRateField2.setText("");
-                        numberOfSalesField2.setText("");
-                    } else {
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("ERROR!");
-                        alert.setContentText("This Department already has a manager");
-                        alert.showAndWait();
-                    }
-                    break;
+            if (numericOnlyManagerTextFieldsChecker() && charOnlyTextFieldsChecker()) {
+
+                var department = (Department) DepartmentCombo.getSelectionModel().getSelectedItem();
+                switch (type) {
+                    case "base-salaried":
+                        if (!department.isHasManager()) {
+                            var baseSalariedEmp = new BaseSalariedEmployee(nameField.getText(), familyField.getText(),
+                                    nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
+                                    LocalDate.now(), birthDatePicker.getValue(), department, Double.parseDouble(baseSalaryField.getText()));
+                            departmentWriteToFile();
+                            baseSalariedArrayList.add(baseSalariedEmp);
+                            managerBaseSalariedArrayList.add(baseSalariedEmp);
+                            managerBaseSalariedEmployeeObservableList = managerBaseSalaryTable.getItems();
+                            managerBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(managerBaseSalariedArrayList);
+                            managerBaseSalaryTable.setItems(managerBaseSalariedEmployeeObservableList);
+                            baseSalaryWriteToFile();
+                            //reset value of text boxes.
+                            nameField.setText("");
+                            familyField.setText("");
+                            nationalIdField.setText("");
+                            phoneField.setText("");
+                            managerBonusField.setText("");
+                            birthDatePicker.setValue(null);
+                            baseSalaryField.setText("");
+                        } else {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setTitle("ERROR!");
+                            alert.setContentText("This Department already has a manager");
+                            alert.showAndWait();
+                        }
+                        break;
+                    case "hourly-salaried":
+                        if (!department.isHasManager()) {
+                            var hourlySalariedEmp = new HourlySalariedEmployee(nameField.getText(), familyField.getText(),
+                                    nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
+                                    LocalDate.now(), birthDatePicker.getValue(), department, Double.parseDouble(PayPerHourField.getText())
+                                    , Double.parseDouble(amountOfHoursField.getText()));
+                            departmentWriteToFile();
+                            hourlySalariedArrayList.add(hourlySalariedEmp);
+                            managerHourlySalariedArrayList.add(hourlySalariedEmp);
+                            managerHourlySalariedEmployeeObservableList = managerHourlySalaryTable.getItems();
+                            managerHourlySalariedEmployeeObservableList = FXCollections.observableArrayList(managerHourlySalariedArrayList);
+                            managerHourlySalaryTable.setItems(managerHourlySalariedEmployeeObservableList);
+                            hourlySalaryWriteToFile();
+                            //reset value of text boxes.
+                            nameField.setText("");
+                            familyField.setText("");
+                            nationalIdField.setText("");
+                            phoneField.setText("");
+                            managerBonusField.setText("");
+                            birthDatePicker.setValue(null);
+                            PayPerHourField.setText("");
+                            amountOfHoursField.setText("");
+                        } else {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setTitle("ERROR!");
+                            alert.setContentText("This Department already has a manager");
+                            alert.showAndWait();
+                        }
+                        break;
+                    case "commission-salaried":
+                        if (!department.isHasManager()) {
+                            var commissionSalariedEmp = new CommissionSalariedEmployee(nameField.getText(), familyField.getText(),
+                                    nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
+                                    LocalDate.now(), birthDatePicker.getValue(), department, Double.parseDouble(commissionRateField.getText())
+                                    , Integer.parseInt(numberOfSalesField.getText()));
+                            departmentWriteToFile();
+                            commissionSalariedArrayList.add(commissionSalariedEmp);
+                            managerCommissionSalariedArrayList.add(commissionSalariedEmp);
+                            managerCommissionSalariedEmployeeObservableList = managerCommissionSalaryTable.getItems();
+                            managerCommissionSalariedEmployeeObservableList = FXCollections.observableArrayList(managerCommissionSalariedArrayList);
+                            managerCommissionSalaryTable.setItems(managerCommissionSalariedEmployeeObservableList);
+                            commissionSalaryWriteToFile();
+                            //reset value of text boxes.
+                            nameField.setText("");
+                            familyField.setText("");
+                            nationalIdField.setText("");
+                            phoneField.setText("");
+                            managerBonusField.setText("");
+                            birthDatePicker.setValue(null);
+                            commissionRateField.setText("");
+                            numberOfSalesField.setText("");
+                        } else {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setTitle("ERROR!");
+                            alert.setContentText("This Department already has a manager");
+                            alert.showAndWait();
+                        }
+                        break;
+                    case "base-commission salaried":
+                        if (!department.isHasManager()) {
+                            var commissionBaseSalariedEmp = new CommissionBaseSalariedEmployee(nameField.getText(), familyField.getText(),
+                                    nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
+                                    LocalDate.now(), birthDatePicker.getValue(), department, Double.parseDouble(baseSalaryField.getText())
+                                    , Double.parseDouble(commissionRateField2.getText())
+                                    , Integer.parseInt(numberOfSalesField2.getText()));
+                            departmentWriteToFile();
+                            commissionBaseSalariedArrayList.add(commissionBaseSalariedEmp);
+                            managerCommissionBaseSalariedArrayList.add(commissionBaseSalariedEmp);
+                            managerCommissionBaseSalariedEmployeeObservableList = managerCommissionBaseTable.getItems();
+                            managerCommissionBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(managerCommissionBaseSalariedArrayList);
+                            managerCommissionBaseTable.setItems(managerCommissionBaseSalariedEmployeeObservableList);
+                            commissionBaseSalaryWriteToFile();
+                            //reset value of text boxes.
+                            nameField.setText("");
+                            familyField.setText("");
+                            nationalIdField.setText("");
+                            phoneField.setText("");
+                            managerBonusField.setText("");
+                            birthDatePicker.setValue(null);
+                            baseSalaryField.setText("");
+                            commissionRateField2.setText("");
+                            numberOfSalesField2.setText("");
+                        } else {
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setTitle("ERROR!");
+                            alert.setContentText("This Department already has a manager");
+                            alert.showAndWait();
+                        }
+                        break;
+                }
+            }
+            else {
+                throwAlert("Check your inputs !", "ERROR!", "Please check your inputs and try again");
             }
         }
         catch (Exception e) {
@@ -589,133 +595,140 @@ public class AddManagerSceneController implements Initializable {
             boolean isAcceptable = false;
 
             try {
-                var department = (Department) DepartmentCombo.getSelectionModel().getSelectedItem();
+                if (charOnlyTextFieldsChecker() && numericOnlyManagerTextFieldsChecker()) {
 
-                // This block of code is for creating another object with the new info
-                switch (type) {
-                    case "base-salaried":
-                        if (!department.isHasManager()) {
-                            var baseSalariedEmp = new BaseSalariedEmployee(nameField.getText(),familyField.getText(),
-                                    nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
-                                    LocalDate.now(),birthDatePicker.getValue(), department, Double.parseDouble(baseSalaryField.getText()));
-                            departmentWriteToFile();
-                            baseSalariedArrayList.add(baseSalariedEmp);
-                            managerBaseSalariedArrayList.add(baseSalariedEmp);
-                            managerBaseSalariedEmployeeObservableList = managerBaseSalaryTable.getItems();
-                            managerBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(managerBaseSalariedArrayList);
-                            managerBaseSalaryTable.setItems(managerBaseSalariedEmployeeObservableList);
-                            baseSalaryWriteToFile();
-                            isAcceptable = true;
-                            //reset value of text boxes.
-                            nameField.setText("");
-                            familyField.setText("");
-                            nationalIdField.setText("");
-                            phoneField.setText("");
-                            managerBonusField.setText("");
-                            birthDatePicker.setValue(null);
-                            baseSalaryField.setText("");
-                        } else {
-                            Alert alert = new Alert(Alert.AlertType.ERROR);
-                            alert.setTitle("ERROR!");
-                            alert.setContentText("This Department already has a manager");
-                            alert.showAndWait();
-                        }
-                        break;
+                    var department = (Department) DepartmentCombo.getSelectionModel().getSelectedItem();
 
-                    case "hourly-salaried":
-                        if (!department.isHasManager()) {
-                            var hourlySalariedEmp = new HourlySalariedEmployee(nameField.getText(),familyField.getText(),
-                                    nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
-                                    LocalDate.now(),birthDatePicker.getValue(), department, Double.parseDouble(PayPerHourField.getText())
-                                    ,Double.parseDouble(amountOfHoursField.getText()));
-                            departmentWriteToFile();
-                            hourlySalariedArrayList.add(hourlySalariedEmp);
-                            managerHourlySalariedArrayList.add(hourlySalariedEmp);
-                            managerHourlySalariedEmployeeObservableList = managerHourlySalaryTable.getItems();
-                            managerHourlySalariedEmployeeObservableList = FXCollections.observableArrayList(managerHourlySalariedArrayList);
-                            managerHourlySalaryTable.setItems(managerHourlySalariedEmployeeObservableList);
-                            hourlySalaryWriteToFile();
-                            isAcceptable = true;
-                            //reset value of text boxes.
-                            nameField.setText("");
-                            familyField.setText("");
-                            nationalIdField.setText("");
-                            phoneField.setText("");
-                            managerBonusField.setText("");
-                            birthDatePicker.setValue(null);
-                            PayPerHourField.setText("");
-                            amountOfHoursField.setText("");
-                        } else{
-                            Alert alert = new Alert(Alert.AlertType.ERROR);
-                            alert.setTitle("ERROR!");
-                            alert.setContentText("This Department already has a manager");
-                            alert.showAndWait();
-                        }
-                        break;
+                    // This block of code is for creating another object with the new info
+                    switch (type) {
+                        case "base-salaried":
+                            if (!department.isHasManager()) {
+                                var baseSalariedEmp = new BaseSalariedEmployee(nameField.getText(), familyField.getText(),
+                                        nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
+                                        LocalDate.now(), birthDatePicker.getValue(), department, Double.parseDouble(baseSalaryField.getText()));
+                                departmentWriteToFile();
+                                baseSalariedArrayList.add(baseSalariedEmp);
+                                managerBaseSalariedArrayList.add(baseSalariedEmp);
+                                managerBaseSalariedEmployeeObservableList = managerBaseSalaryTable.getItems();
+                                managerBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(managerBaseSalariedArrayList);
+                                managerBaseSalaryTable.setItems(managerBaseSalariedEmployeeObservableList);
+                                baseSalaryWriteToFile();
+                                isAcceptable = true;
+                                //reset value of text boxes.
+                                nameField.setText("");
+                                familyField.setText("");
+                                nationalIdField.setText("");
+                                phoneField.setText("");
+                                managerBonusField.setText("");
+                                birthDatePicker.setValue(null);
+                                baseSalaryField.setText("");
+                            } else {
+                                Alert alert = new Alert(Alert.AlertType.ERROR);
+                                alert.setTitle("ERROR!");
+                                alert.setContentText("This Department already has a manager");
+                                alert.showAndWait();
+                            }
+                            break;
 
-                    case "commission-salaried":
-                        if (!department.isHasManager()) {
-                            var commissionSalariedEmp = new CommissionSalariedEmployee(nameField.getText(),familyField.getText(),
-                                    nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
-                                    LocalDate.now(),birthDatePicker.getValue(), department, Double.parseDouble(commissionRateField.getText())
-                                    ,Integer.parseInt(numberOfSalesField.getText()));
-                            departmentWriteToFile();
-                            commissionSalariedArrayList.add(commissionSalariedEmp);
-                            managerCommissionSalariedArrayList.add(commissionSalariedEmp);
-                            managerCommissionSalariedEmployeeObservableList = managerCommissionSalaryTable.getItems();
-                            managerCommissionSalariedEmployeeObservableList = FXCollections.observableArrayList(managerCommissionSalariedArrayList);
-                            managerCommissionSalaryTable.setItems(managerCommissionSalariedEmployeeObservableList);
-                            commissionSalaryWriteToFile();
-                            isAcceptable = true;
-                            //reset value of text boxes.
-                            nameField.setText("");
-                            familyField.setText("");
-                            nationalIdField.setText("");
-                            phoneField.setText("");
-                            managerBonusField.setText("");
-                            birthDatePicker.setValue(null);
-                            commissionRateField.setText("");
-                            numberOfSalesField.setText("");
-                        } else {
-                            Alert alert = new Alert(Alert.AlertType.ERROR);
-                            alert.setTitle("ERROR!");
-                            alert.setContentText("This Department already has a manager");
-                            alert.showAndWait();
-                        }
-                        break;
+                        case "hourly-salaried":
+                            if (!department.isHasManager()) {
+                                var hourlySalariedEmp = new HourlySalariedEmployee(nameField.getText(), familyField.getText(),
+                                        nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
+                                        LocalDate.now(), birthDatePicker.getValue(), department, Double.parseDouble(PayPerHourField.getText())
+                                        , Double.parseDouble(amountOfHoursField.getText()));
+                                departmentWriteToFile();
+                                hourlySalariedArrayList.add(hourlySalariedEmp);
+                                managerHourlySalariedArrayList.add(hourlySalariedEmp);
+                                managerHourlySalariedEmployeeObservableList = managerHourlySalaryTable.getItems();
+                                managerHourlySalariedEmployeeObservableList = FXCollections.observableArrayList(managerHourlySalariedArrayList);
+                                managerHourlySalaryTable.setItems(managerHourlySalariedEmployeeObservableList);
+                                hourlySalaryWriteToFile();
+                                isAcceptable = true;
+                                //reset value of text boxes.
+                                nameField.setText("");
+                                familyField.setText("");
+                                nationalIdField.setText("");
+                                phoneField.setText("");
+                                managerBonusField.setText("");
+                                birthDatePicker.setValue(null);
+                                PayPerHourField.setText("");
+                                amountOfHoursField.setText("");
+                            } else {
+                                Alert alert = new Alert(Alert.AlertType.ERROR);
+                                alert.setTitle("ERROR!");
+                                alert.setContentText("This Department already has a manager");
+                                alert.showAndWait();
+                            }
+                            break;
 
-                    case "base-commission salaried":
-                        if (!department.isHasManager()) {
-                            var commissionBaseSalariedEmp = new CommissionBaseSalariedEmployee(nameField.getText(),familyField.getText(),
-                                    nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
-                                    LocalDate.now(),birthDatePicker.getValue(), department,Double.parseDouble(baseSalaryField.getText())
-                                    , Double.parseDouble(commissionRateField2.getText())
-                                    ,Integer.parseInt(numberOfSalesField2.getText()));
-                            departmentWriteToFile();
-                            commissionBaseSalariedArrayList.add(commissionBaseSalariedEmp);
-                            managerCommissionBaseSalariedArrayList.add(commissionBaseSalariedEmp);
-                            managerCommissionBaseSalariedEmployeeObservableList = managerCommissionBaseTable.getItems();
-                            managerCommissionBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(managerCommissionBaseSalariedArrayList);
-                            managerCommissionBaseTable.setItems(managerCommissionBaseSalariedEmployeeObservableList);
-                            commissionBaseSalaryWriteToFile();
-                            isAcceptable = true;
-                            //reset value of text boxes.
-                            nameField.setText("");
-                            familyField.setText("");
-                            nationalIdField.setText("");
-                            phoneField.setText("");
-                            managerBonusField.setText("");
-                            birthDatePicker.setValue(null);
-                            baseSalaryField.setText("");
-                            commissionRateField2.setText("");
-                            numberOfSalesField2.setText("");
-                        } else {
-                            Alert alert = new Alert(Alert.AlertType.ERROR);
-                            alert.setTitle("ERROR!");
-                            alert.setContentText("This Department already has a manager");
-                            alert.showAndWait();
-                        }
-                        break;
+                        case "commission-salaried":
+                            if (!department.isHasManager()) {
+                                var commissionSalariedEmp = new CommissionSalariedEmployee(nameField.getText(), familyField.getText(),
+                                        nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
+                                        LocalDate.now(), birthDatePicker.getValue(), department, Double.parseDouble(commissionRateField.getText())
+                                        , Integer.parseInt(numberOfSalesField.getText()));
+                                departmentWriteToFile();
+                                commissionSalariedArrayList.add(commissionSalariedEmp);
+                                managerCommissionSalariedArrayList.add(commissionSalariedEmp);
+                                managerCommissionSalariedEmployeeObservableList = managerCommissionSalaryTable.getItems();
+                                managerCommissionSalariedEmployeeObservableList = FXCollections.observableArrayList(managerCommissionSalariedArrayList);
+                                managerCommissionSalaryTable.setItems(managerCommissionSalariedEmployeeObservableList);
+                                commissionSalaryWriteToFile();
+                                isAcceptable = true;
+                                //reset value of text boxes.
+                                nameField.setText("");
+                                familyField.setText("");
+                                nationalIdField.setText("");
+                                phoneField.setText("");
+                                managerBonusField.setText("");
+                                birthDatePicker.setValue(null);
+                                commissionRateField.setText("");
+                                numberOfSalesField.setText("");
+                            } else {
+                                Alert alert = new Alert(Alert.AlertType.ERROR);
+                                alert.setTitle("ERROR!");
+                                alert.setContentText("This Department already has a manager");
+                                alert.showAndWait();
+                            }
+                            break;
+
+                        case "base-commission salaried":
+                            if (!department.isHasManager()) {
+                                var commissionBaseSalariedEmp = new CommissionBaseSalariedEmployee(nameField.getText(), familyField.getText(),
+                                        nationalIdField.getText(), phoneField.getText(), Double.parseDouble(managerBonusField.getText()),
+                                        LocalDate.now(), birthDatePicker.getValue(), department, Double.parseDouble(baseSalaryField.getText())
+                                        , Double.parseDouble(commissionRateField2.getText())
+                                        , Integer.parseInt(numberOfSalesField2.getText()));
+                                departmentWriteToFile();
+                                commissionBaseSalariedArrayList.add(commissionBaseSalariedEmp);
+                                managerCommissionBaseSalariedArrayList.add(commissionBaseSalariedEmp);
+                                managerCommissionBaseSalariedEmployeeObservableList = managerCommissionBaseTable.getItems();
+                                managerCommissionBaseSalariedEmployeeObservableList = FXCollections.observableArrayList(managerCommissionBaseSalariedArrayList);
+                                managerCommissionBaseTable.setItems(managerCommissionBaseSalariedEmployeeObservableList);
+                                commissionBaseSalaryWriteToFile();
+                                isAcceptable = true;
+                                //reset value of text boxes.
+                                nameField.setText("");
+                                familyField.setText("");
+                                nationalIdField.setText("");
+                                phoneField.setText("");
+                                managerBonusField.setText("");
+                                birthDatePicker.setValue(null);
+                                baseSalaryField.setText("");
+                                commissionRateField2.setText("");
+                                numberOfSalesField2.setText("");
+                            } else {
+                                Alert alert = new Alert(Alert.AlertType.ERROR);
+                                alert.setTitle("ERROR!");
+                                alert.setContentText("This Department already has a manager");
+                                alert.showAndWait();
+                            }
+                            break;
+                    }
+                }
+
+                else {
+                    throwAlert("Check your inputs !", "ERROR!", "Please check your inputs and try again");
                 }
             }
             catch (Exception e) {
@@ -888,82 +901,84 @@ public class AddManagerSceneController implements Initializable {
             boolean isAcceptable = false;
 
             try {
-                var department = (Department) DepartmentCombo.getSelectionModel().getSelectedItem();
+                if (charOnlyTextFieldsChecker() && numericOnlyEmployeeTextFieldsChecker()) {
 
-                // This block of code is for creating another object with the new info
-                switch (type) {
-                    case "base-salaried":
-                        var baseSalariedEmp = new BaseSalariedEmployee(
-                                nameField.getText(),familyField.getText(),
-                                nationalIdField.getText(), phoneField.getText(), LocalDate.now(),
-                                birthDatePicker.getValue(), department, Double.parseDouble(baseSalaryField.getText())
-                        );
-                        departmentWriteToFile();
-                        baseSalariedArrayList.add(baseSalariedEmp);
-                        managerHourlySalaryTable.setItems(managerHourlySalariedEmployeeObservableList);
-                        baseSalaryWriteToFile();
-                        isAcceptable = true;
-                        //reset value of text boxes.
-                        nameField.setText("");
-                        familyField.setText("");
-                        nationalIdField.setText("");
-                        phoneField.setText("");
-                        managerBonusField.setText("");
-                        birthDatePicker.setValue(null);
-                        baseSalaryField.setText("");
-                    break;
+                    var department = (Department) DepartmentCombo.getSelectionModel().getSelectedItem();
 
-                    case "hourly-salaried":
-                        var hourlySalariedEmp = new HourlySalariedEmployee(
-                                nameField.getText(),familyField.getText(),
-                                nationalIdField.getText(), phoneField.getText(), LocalDate.now(),
-                                birthDatePicker.getValue(), department, Double.parseDouble(PayPerHourField.getText()),
-                                Double.parseDouble(amountOfHoursField.getText())
-                        );
-                        departmentWriteToFile();
-                        hourlySalariedArrayList.add(hourlySalariedEmp);
-                        managerHourlySalaryTable.setItems(managerHourlySalariedEmployeeObservableList);
-                        hourlySalaryWriteToFile();
-                        isAcceptable = true;
-                        //reset value of text boxes.
-                        nameField.setText("");
-                        familyField.setText("");
-                        nationalIdField.setText("");
-                        phoneField.setText("");
-                        managerBonusField.setText("");
-                        birthDatePicker.setValue(null);
-                        PayPerHourField.setText("");
-                        amountOfHoursField.setText("");
-                    break;
+                    // This block of code is for creating another object with the new info
+                    switch (type) {
+                        case "base-salaried":
+                            var baseSalariedEmp = new BaseSalariedEmployee(
+                                    nameField.getText(), familyField.getText(),
+                                    nationalIdField.getText(), phoneField.getText(), LocalDate.now(),
+                                    birthDatePicker.getValue(), department, Double.parseDouble(baseSalaryField.getText())
+                            );
+                            departmentWriteToFile();
+                            baseSalariedArrayList.add(baseSalariedEmp);
+                            managerHourlySalaryTable.setItems(managerHourlySalariedEmployeeObservableList);
+                            baseSalaryWriteToFile();
+                            isAcceptable = true;
+                            //reset value of text boxes.
+                            nameField.setText("");
+                            familyField.setText("");
+                            nationalIdField.setText("");
+                            phoneField.setText("");
+                            managerBonusField.setText("");
+                            birthDatePicker.setValue(null);
+                            baseSalaryField.setText("");
+                            break;
 
-                    case "commission-salaried":
-                        var commissionSalariedEmp = new CommissionSalariedEmployee(
-                                nameField.getText(), familyField.getText(),
-                                nationalIdField.getText(), phoneField.getText(), LocalDate.now(),
-                                birthDatePicker.getValue(), department, Double.parseDouble(commissionRateField.getText()),
-                                Integer.parseInt(numberOfSalesField.getText())
-                        );
-                        departmentWriteToFile();
-                        commissionSalariedArrayList.add(commissionSalariedEmp);
-                        managerCommissionSalaryTable.setItems(managerCommissionSalariedEmployeeObservableList);
-                        commissionSalaryWriteToFile();
-                        isAcceptable = true;
-                        //reset value of text boxes.
-                        nameField.setText("");
-                        familyField.setText("");
-                        nationalIdField.setText("");
-                        phoneField.setText("");
-                        managerBonusField.setText("");
-                        birthDatePicker.setValue(null);
-                        commissionRateField.setText("");
-                        numberOfSalesField.setText("");
-                    break;
+                        case "hourly-salaried":
+                            var hourlySalariedEmp = new HourlySalariedEmployee(
+                                    nameField.getText(), familyField.getText(),
+                                    nationalIdField.getText(), phoneField.getText(), LocalDate.now(),
+                                    birthDatePicker.getValue(), department, Double.parseDouble(PayPerHourField.getText()),
+                                    Double.parseDouble(amountOfHoursField.getText())
+                            );
+                            departmentWriteToFile();
+                            hourlySalariedArrayList.add(hourlySalariedEmp);
+                            managerHourlySalaryTable.setItems(managerHourlySalariedEmployeeObservableList);
+                            hourlySalaryWriteToFile();
+                            isAcceptable = true;
+                            //reset value of text boxes.
+                            nameField.setText("");
+                            familyField.setText("");
+                            nationalIdField.setText("");
+                            phoneField.setText("");
+                            managerBonusField.setText("");
+                            birthDatePicker.setValue(null);
+                            PayPerHourField.setText("");
+                            amountOfHoursField.setText("");
+                            break;
 
-                    case "base-commission salaried":
+                        case "commission-salaried":
+                            var commissionSalariedEmp = new CommissionSalariedEmployee(
+                                    nameField.getText(), familyField.getText(),
+                                    nationalIdField.getText(), phoneField.getText(), LocalDate.now(),
+                                    birthDatePicker.getValue(), department, Double.parseDouble(commissionRateField.getText()),
+                                    Integer.parseInt(numberOfSalesField.getText())
+                            );
+                            departmentWriteToFile();
+                            commissionSalariedArrayList.add(commissionSalariedEmp);
+                            managerCommissionSalaryTable.setItems(managerCommissionSalariedEmployeeObservableList);
+                            commissionSalaryWriteToFile();
+                            isAcceptable = true;
+                            //reset value of text boxes.
+                            nameField.setText("");
+                            familyField.setText("");
+                            nationalIdField.setText("");
+                            phoneField.setText("");
+                            managerBonusField.setText("");
+                            birthDatePicker.setValue(null);
+                            commissionRateField.setText("");
+                            numberOfSalesField.setText("");
+                            break;
+
+                        case "base-commission salaried":
                             var commissionBaseSalariedEmp = new CommissionBaseSalariedEmployee(
                                     nameField.getText(), familyField.getText(),
                                     nationalIdField.getText(), phoneField.getText(), LocalDate.now(),
-                                    birthDatePicker.getValue(), department,Double.parseDouble(baseSalaryField.getText()),
+                                    birthDatePicker.getValue(), department, Double.parseDouble(baseSalaryField.getText()),
                                     Double.parseDouble(commissionRateField2.getText()), Integer.parseInt(numberOfSalesField2.getText())
                             );
                             departmentWriteToFile();
@@ -981,10 +996,14 @@ public class AddManagerSceneController implements Initializable {
                             baseSalaryField.setText("");
                             commissionRateField2.setText("");
                             numberOfSalesField2.setText("");
-                        break;
+                            break;
+                    }
+                }
+
+                else {
+                    throwAlert("Check your inputs !", "ERROR!", "Please check your inputs and try again");
                 }
             }
-
             catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("SELECTION ERROR!");
@@ -1963,5 +1982,72 @@ public class AddManagerSceneController implements Initializable {
             alert.setContentText("Something went wrong while trying to write in Commission Base Salary file ...");
             alert.showAndWait();
         }
+    }
+
+    public boolean isNumeric(String inputStr) {
+        if (inputStr == null) {
+            return false;
+        }
+
+        try {
+            double num = Double.parseDouble(inputStr);
+        }
+
+        catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean isChar(String inputStr) {
+        if (inputStr == null) {
+            return false;
+        }
+
+        if (inputStr.matches("^[a-zA-Z_]+$")) {
+            return true;
+        }
+
+        else {
+            return false;
+        }
+    }
+
+    public boolean charOnlyTextFieldsChecker() {
+        if (isChar(nameField.getText()) && isChar(familyField.getText())) {
+            return true;
+        }
+
+        else {
+            return false;
+        }
+    }
+
+    public boolean numericOnlyManagerTextFieldsChecker() {
+        if (isNumeric(phoneField.getText()) && isNumeric(nationalIdField.getText()) && isNumeric(managerBonusField.getText())) {
+            return true;
+        }
+
+        else {
+            return false;
+        }
+    }
+
+    public boolean numericOnlyEmployeeTextFieldsChecker() {
+        if (isNumeric(phoneField.getText()) && isNumeric(nationalIdField.getText())) {
+            return true;
+        }
+
+        else {
+            return false;
+        }
+    }
+
+    private void throwAlert(String header, String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.setHeaderText(header);
+        alert.showAndWait();
     }
 }
