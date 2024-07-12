@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06f7b8ee-6d22-4e3a-9c60-ea09d3c81bb0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddEmployeeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddEmployeeSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddManagerSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddManagerSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/MainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/MainScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +132,7 @@
       <workItem from="1720704156455" duration="89000" />
       <workItem from="1720728425787" duration="6763000" />
       <workItem from="1720735921068" duration="1864000" />
+      <workItem from="1720815620121" duration="345000" />
     </task>
     <task id="LOCAL-00001" summary="changing comissionBaseSalaried inheritance and adding Salary interface">
       <option name="closed" value="true" />
@@ -345,7 +346,21 @@
       <option name="project" value="LOCAL" />
       <updated>1720813114613</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="checking phone number + national id len">
+      <created>1720813546411</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1720813546411</updated>
+    </task>
+    <task id="LOCAL-00031" summary="throwing an alert while adding emp with wrong info">
+      <created>1720813651975</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1720813651975</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,6 +401,8 @@
     <MESSAGE value="fixing text fields issues in employee scene&#10;adding check box and date pickers in history scene" />
     <MESSAGE value="adding a null data line chart&#10;adding check boxes and fixing some errors" />
     <MESSAGE value="checking inputs in both employee and manager scene" />
-    <option name="LAST_COMMIT_MESSAGE" value="checking inputs in both employee and manager scene" />
+    <MESSAGE value="checking phone number + national id len" />
+    <MESSAGE value="throwing an alert while adding emp with wrong info" />
+    <option name="LAST_COMMIT_MESSAGE" value="throwing an alert while adding emp with wrong info" />
   </component>
 </project>

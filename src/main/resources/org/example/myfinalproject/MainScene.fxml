@@ -22,12 +22,12 @@
                         <Font name="System Bold" size="20.0" />
                     </font>
                 </Label>
-                <Button layoutX="20.0" layoutY="193.0" mnemonicParsing="false" onAction="#onAddManagerButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #153147;" text="Add manager" textAlignment="CENTER" textFill="WHITE">
+                <Button layoutX="20.0" layoutY="193.0" mnemonicParsing="false" onAction="#onAddManagerButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #153147;" text="Manager" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>
                 </Button>
-                <Button layoutX="20.0" layoutY="247.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #153147;" text="Add employee" textFill="WHITE">
+                <Button layoutX="20.0" layoutY="247.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #153147;" text="Employee" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>
@@ -41,12 +41,11 @@
         </AnchorPane>
         <AnchorPane fx:id="addDepartmentPane" layoutX="218.4" layoutY="15.0" prefHeight="678.0" prefWidth="1171.0" style="-fx-background-color: #ADB8BB;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="218.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="15.0">
          <children>
-            <TableView fx:id="departmentTable" layoutX="625.0" layoutY="7.2" prefHeight="662.0" prefWidth="530.0" style="-fx-background-color: #F9F8F7;" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="7.0">
+            <TableView fx:id="departmentTable" layoutX="683.0" layoutY="3.0" prefHeight="672.0" prefWidth="487.0" style="-fx-background-color: #F9F8F7;" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="3.0">
               <columns>
-                <TableColumn fx:id="numberOfEmployeesColumn" prefWidth="139.20000916719437" text="Number of Employees" />
-                  <TableColumn prefWidth="89.5999755859375" text="Has Manager" />
-                  <TableColumn fx:id="sinceColumn" prefWidth="140.79994201660156" text="Creation Date" />
-                <TableColumn fx:id="departmentColumn" prefWidth="159.19998779296873" text="Department" />
+                <TableColumn fx:id="numberOfEmployeesColumn" prefWidth="170.0" text="Number of Employees" />
+                  <TableColumn fx:id="sinceColumn" minWidth="0.0" prefWidth="154.0" text="Creation Date" />
+                <TableColumn fx:id="departmentColumn" minWidth="0.0" prefWidth="205.0" text="Department" />
               </columns>
                <effect>
                   <Blend />
@@ -58,7 +57,7 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <BarChart fx:id="departmentEmployeesBarChart" layoutX="14.0" layoutY="209.0" prefHeight="454.0" prefWidth="590.0" title="Department Employees">
+            <BarChart fx:id="departmentEmployeesBarChart" layoutX="2.0" layoutY="197.0" prefHeight="476.0" prefWidth="649.0" title="Department Employees">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
