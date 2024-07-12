@@ -2086,7 +2086,9 @@ public class AddManagerSceneController implements Initializable {
     }
 
     public boolean numericOnlyManagerTextFieldsChecker() {
-        if (isNumeric(phoneField.getText()) && isNumeric(nationalIdField.getText()) && isNumeric(managerBonusField.getText())) {
+        if (isNumeric(phoneField.getText()) && isNumeric(nationalIdField.getText()) && isNumeric(managerBonusField.getText()) &&
+                (phoneField.getText().length() <= 11 && phoneField.getText().length() >= 10) && (nationalIdField.getText().length() == 10))
+        {
             return true;
         }
 
@@ -2096,7 +2098,9 @@ public class AddManagerSceneController implements Initializable {
     }
 
     public boolean numericOnlyEmployeeTextFieldsChecker() {
-        if (isNumeric(phoneField.getText()) && isNumeric(nationalIdField.getText())) {
+        if (isNumeric(phoneField.getText()) && isNumeric(nationalIdField.getText()) && (phoneField.getText().length() <= 11 &&
+                phoneField.getText().length() >= 10) && (nationalIdField.getText().length() == 10))
+        {
             return true;
         }
 

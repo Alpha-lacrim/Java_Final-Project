@@ -2406,10 +2406,11 @@ public class AddEmployeeSceneController implements Initializable {
             return false;
         }
     }
-
     public boolean numericOnlyManagerTextFieldsChecker() {
-        if (isNumeric(phoneField.getText()) && isNumeric(nationalIdField.getText()) && isNumeric(managerBonusField.getText())) {
-            return true;
+        if (isNumeric(phoneField.getText()) && isNumeric(nationalIdField.getText()) && isNumeric(managerBonusField.getText()) &&
+            (phoneField.getText().length() <= 11 && phoneField.getText().length() >= 10) && (nationalIdField.getText().length() == 10))
+        {
+                return true;
         }
 
         else {
@@ -2418,7 +2419,9 @@ public class AddEmployeeSceneController implements Initializable {
     }
 
     public boolean numericOnlyEmployeeTextFieldsChecker() {
-        if (isNumeric(phoneField.getText()) && isNumeric(nationalIdField.getText())) {
+        if (isNumeric(phoneField.getText()) && isNumeric(nationalIdField.getText()) && (phoneField.getText().length() <= 11 &&
+                phoneField.getText().length() >= 10) && (nationalIdField.getText().length() == 10))
+        {
             return true;
         }
 
