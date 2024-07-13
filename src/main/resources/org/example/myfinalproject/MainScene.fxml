@@ -43,9 +43,10 @@
          <children>
             <TableView fx:id="departmentTable" layoutX="683.0" layoutY="3.0" prefHeight="672.0" prefWidth="487.0" style="-fx-background-color: #F9F8F7;" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="3.0">
               <columns>
-                <TableColumn fx:id="numberOfEmployeesColumn" prefWidth="170.0" text="Number of Employees" />
-                  <TableColumn fx:id="sinceColumn" minWidth="0.0" prefWidth="154.0" text="Creation Date" />
-                <TableColumn fx:id="departmentColumn" minWidth="0.0" prefWidth="161.59999389648436" text="Department" />
+                  <TableColumn fx:id="totalEmployeesColumn" prefWidth="103.99999845027924" text="Total Employees" />
+                <TableColumn fx:id="numberOfEmployeesColumn" prefWidth="149.59998321533203" text="Active Employees" />
+                  <TableColumn fx:id="sinceColumn" minWidth="0.0" prefWidth="120.0" text="Creation Date" />
+                <TableColumn fx:id="departmentColumn" minWidth="0.0" prefWidth="112.80006713867186" text="Department" />
               </columns>
                <effect>
                   <Blend />

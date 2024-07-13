@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06f7b8ee-6d22-4e3a-9c60-ea09d3c81bb0" name="Changes" comment="random emp change name and family">
+    <list default="true" id="06f7b8ee-6d22-4e3a-9c60-ea09d3c81bb0" name="Changes" comment="version 1.0.0 by cbum and deli">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddEmployeeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddEmployeeSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddManagerSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddManagerSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/HistorySceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/HistorySceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/MainSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/MainSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/MainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/MainScene.fxml" afterDir="false" />
     </list>
@@ -86,6 +89,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -354,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720816550395</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="version 1.0.0 by cbum and deli">
+      <option name="closed" value="true" />
+      <created>1720820292636</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1720820292636</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,6 +414,7 @@
     <MESSAGE value="adding a null data line chart&#10;adding check boxes and fixing some errors" />
     <MESSAGE value="checking inputs in both employee and manager scene" />
     <MESSAGE value="random emp change name and family" />
-    <option name="LAST_COMMIT_MESSAGE" value="random emp change name and family" />
+    <MESSAGE value="version 1.0.0 by cbum and deli" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.0.0 by cbum and deli" />
   </component>
 </project>

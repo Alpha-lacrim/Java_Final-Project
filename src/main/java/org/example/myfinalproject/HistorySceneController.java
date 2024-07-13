@@ -836,13 +836,13 @@ public class HistorySceneController implements Initializable {
             if (showAllFilterCheckBox.isSelected()) {
                 if (baseSalariedFile.isFile()) {
                     for (BaseSalariedEmployee emp : employeeBaseSalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())) {
                             nonFilteredEmployeeBaseSalariedArraylist.add(emp);
                         }
                     }
                     for (BaseSalariedEmployee emp : managerBaseSalariedArraylist) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())) {
                             nonFilteredManagerBaseSalariedArraylist.add(emp);
                         }
@@ -859,13 +859,13 @@ public class HistorySceneController implements Initializable {
 
                 if (hourlySalaryFile.isFile()) {
                     for (HourlySalariedEmployee emp : employeeHourlySalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())) {
                             nonFilteredEmployeeHourlySalariedArraylist.add(emp);
                         }
                     }
                     for (HourlySalariedEmployee emp : managerHourlySalariedArraylist) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())) {
                             nonFilteredManagerHourlySalariedArraylist.add(emp);
                         }
@@ -883,13 +883,13 @@ public class HistorySceneController implements Initializable {
 
                 if (commissionSalaryFile.isFile()) {
                     for (CommissionSalariedEmployee emp : employeeCommissionSalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())) {
                             nonFilteredEmployeeCommissionSalariedArrayList.add(emp);
                         }
                     }
                     for (CommissionSalariedEmployee emp : managerCommissionSalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())) {
                             nonFilteredManagerCommissionSalariedArrayList.add(emp);
                         }
@@ -908,13 +908,13 @@ public class HistorySceneController implements Initializable {
 
                 if (commissionBaseSalaryFile.isFile()) {
                     for (CommissionBaseSalariedEmployee emp : employeeCommissionBaseSalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())) {
                             nonFilteredEmployeeCommissionBaseSalariedArrayList.add(emp);
                         }
                     }
                     for (CommissionBaseSalariedEmployee emp : managerCommissionBaseSalariedArraylist) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())) {
                             nonFilteredManagerCommissionBaseSalariedArrayList.add(emp);
                         }
@@ -932,7 +932,7 @@ public class HistorySceneController implements Initializable {
             } else if (dateFilterCheckBox.isSelected()) {
                 if (baseSalariedFile.isFile()) {
                     for (BaseSalariedEmployee emp : employeeBaseSalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
                                 && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
                                 && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
@@ -940,7 +940,7 @@ public class HistorySceneController implements Initializable {
                         }
                     }
                     for (BaseSalariedEmployee emp : managerBaseSalariedArraylist) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
                                 && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
                                 && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
@@ -959,7 +959,7 @@ public class HistorySceneController implements Initializable {
 
                 if (hourlySalaryFile.isFile()) {
                     for (HourlySalariedEmployee emp : employeeHourlySalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
                                 && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
                                 && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
@@ -967,7 +967,7 @@ public class HistorySceneController implements Initializable {
                         }
                     }
                     for (HourlySalariedEmployee emp : managerHourlySalariedArraylist) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
                                 && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
                                 && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
@@ -987,7 +987,7 @@ public class HistorySceneController implements Initializable {
 
                 if (commissionSalaryFile.isFile()) {
                     for (CommissionSalariedEmployee emp : employeeCommissionSalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
                                 && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
                                 && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
@@ -995,7 +995,7 @@ public class HistorySceneController implements Initializable {
                         }
                     }
                     for (CommissionSalariedEmployee emp : managerCommissionSalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
                                 && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
                                 && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
@@ -1016,7 +1016,7 @@ public class HistorySceneController implements Initializable {
 
                 if (commissionBaseSalaryFile.isFile()) {
                     for (CommissionBaseSalariedEmployee emp : employeeCommissionBaseSalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
                                 && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
                                 && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
@@ -1024,7 +1024,7 @@ public class HistorySceneController implements Initializable {
                         }
                     }
                     for (CommissionBaseSalariedEmployee emp : managerCommissionBaseSalariedArraylist) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
                                 && LocalDate.parse(emp.getStartDate()).isAfter(inputStartDatePicker.getValue())
                                 && LocalDate.parse(emp.getEndDate()).isBefore(inputEndDatePicker.getValue())) {
@@ -1044,16 +1044,16 @@ public class HistorySceneController implements Initializable {
             } else if (departmentFilterCheckBox.isSelected()) {
                 if (baseSalariedFile.isFile()) {
                     for (BaseSalariedEmployee emp : employeeBaseSalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
-                                && emp.getDepartment().getName().equals(departmentNameField.getText())) {
+                                && emp.getDepartment().getName().toLowerCase().equals(departmentNameField.getText().toLowerCase())) {
                             departmentFilteredEmployeeBaseSalariedArraylist.add(emp);
                         }
                     }
                     for (BaseSalariedEmployee emp : managerBaseSalariedArraylist) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
-                                && emp.getDepartment().getName().equals(departmentNameField.getText())) {
+                                && emp.getDepartment().getName().toLowerCase().equals(departmentNameField.getText().toLowerCase())) {
                             departmentFilteredManagerBaseSalariedArraylist.add(emp);
                         }
                     }
@@ -1069,16 +1069,16 @@ public class HistorySceneController implements Initializable {
 
                 if (hourlySalaryFile.isFile()) {
                     for (HourlySalariedEmployee emp : employeeHourlySalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
-                                && emp.getDepartment().getName().equals(departmentNameField.getText())) {
+                                && emp.getDepartment().getName().toLowerCase().equals(departmentNameField.getText().toLowerCase())) {
                             departmentFilteredEmployeeHourlySalariedArraylist.add(emp);
                         }
                     }
                     for (HourlySalariedEmployee emp : managerHourlySalariedArraylist) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
-                                && emp.getDepartment().getName().equals(departmentNameField.getText())) {
+                                && emp.getDepartment().getName().toLowerCase().equals(departmentNameField.getText().toLowerCase())) {
                             departmentFilteredManagerHourlySalariedArraylist.add(emp);
                         }
                     }
@@ -1095,16 +1095,16 @@ public class HistorySceneController implements Initializable {
 
                 if (commissionSalaryFile.isFile()) {
                     for (CommissionSalariedEmployee emp : employeeCommissionSalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
-                                && emp.getDepartment().getName().equals(departmentNameField.getText())) {
+                                && emp.getDepartment().getName().toLowerCase().equals(departmentNameField.getText().toLowerCase())) {
                             departmentFilteredEmployeeCommissionSalariedArrayList.add(emp);
                         }
                     }
                     for (CommissionSalariedEmployee emp : managerCommissionSalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
-                                && emp.getDepartment().getName().equals(departmentNameField.getText())) {
+                                && emp.getDepartment().getName().toLowerCase().equals(departmentNameField.getText().toLowerCase())) {
                             departmentFilteredManagerCommissionSalariedArrayList.add(emp);
                         }
                     }
@@ -1122,16 +1122,16 @@ public class HistorySceneController implements Initializable {
 
                 if (commissionBaseSalaryFile.isFile()) {
                     for (CommissionBaseSalariedEmployee emp : employeeCommissionBaseSalariedArrayList) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
-                                && emp.getDepartment().getName().equals(departmentNameField.getText())) {
+                                && emp.getDepartment().getName().toLowerCase().equals(departmentNameField.getText().toLowerCase())) {
                             departmentFilteredEmployeeCommissionBaseSalariedArrayList.add(emp);
                         }
                     }
                     for (CommissionBaseSalariedEmployee emp : managerCommissionBaseSalariedArraylist) {
-                        if (emp.getFirstName().equals(nameField.getText()) && emp.getLastName().equals(familyNameField.getText())
+                        if (emp.getFirstName().toLowerCase().equals(nameField.getText().toLowerCase()) && emp.getLastName().toLowerCase().equals(familyNameField.getText().toLowerCase())
                                 && emp.getNationalID().matches(nationalIdField.getText())
-                                && emp.getDepartment().getName().equals(departmentNameField.getText())) {
+                                && emp.getDepartment().getName().toLowerCase().equals(departmentNameField.getText().toLowerCase())) {
                             departmentFilteredManagerCommissionBaseSalariedArrayList.add(emp);
                         }
                     }

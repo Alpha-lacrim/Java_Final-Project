@@ -36,6 +36,9 @@ public class MainSceneController implements Initializable {
     private TableColumn<Department, Integer> numberOfEmployeesColumn;
 
     @FXML
+    private TableColumn<Department, Integer> totalEmployeesColumn;
+
+    @FXML
     private TableColumn<Department, String> sinceColumn;
 
     @FXML
@@ -117,6 +120,7 @@ public class MainSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         departmentColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         numberOfEmployeesColumn.setCellValueFactory(new PropertyValueFactory<>("numberOfActiveEmployees"));
+        totalEmployeesColumn.setCellValueFactory(new PropertyValueFactory<>("numberOfEmployees"));
         sinceColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
 
         departmentReadFromFile();
