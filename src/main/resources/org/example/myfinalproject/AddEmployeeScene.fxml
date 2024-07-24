@@ -34,7 +34,7 @@
         <TextField fx:id="baseSalaryField" layoutX="340.0" layoutY="507.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter base" style="-fx-border-color: #232A2F;" />
       <TextField fx:id="managerBonusField" layoutX="337.0" layoutY="548.0" promptText="Enter manager bonus" style="-fx-border-color: #232A2F;" visible="false" />
         <DatePicker fx:id="birthDatePicker" editable="false" layoutX="160.0" layoutY="507.0" prefHeight="26.0" prefWidth="158.0" promptText="Select the birth date" style="-fx-border-color: #232A2F;" />
-        <Button fx:id="addEmployeeButton" layoutX="724.0" layoutY="451.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="51.0" prefWidth="264.0" style="-fx-background-color: #153147;" text="Add Employee" textAlignment="CENTER" textFill="WHITE">
+        <Button fx:id="addEmployeeButton" layoutX="724.0" layoutY="451.0" mnemonicParsing="false" onAction="#onAddEmployeeButton" prefHeight="51.0" prefWidth="264.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Add Employee" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font></Button>
@@ -90,37 +90,37 @@
         <TextField fx:id="numberOfSalesField2" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter number of sales" style="-fx-border-color: #232A2F;" visible="false" />
       <TextField fx:id="managerBonusField2" layoutX="504.0" layoutY="508.0" promptText="Enter manager bonus" style="-fx-border-color: #232A2F;" visible="false" />
       <ComboBox fx:id="statusCombo" layoutX="500.0" layoutY="560.0" minWidth="53.0" prefHeight="25.0" prefWidth="191.0" promptText="End Reason" style="-fx-border-color: #232A2F;" visible="false" />
-        <Button fx:id="cancelButton" layoutX="785.0" layoutY="560.0" minWidth="56.0" mnemonicParsing="false" onAction="#onCancelButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147;" text="Cancel" textFill="WHITE" visible="false">
+        <Button fx:id="cancelButton" layoutX="785.0" layoutY="560.0" minWidth="56.0" mnemonicParsing="false" onAction="#onCancelButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Cancel" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="editButton" layoutX="856.0" layoutY="560.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147;" text="Edit" textFill="WHITE" visible="false">
+      <Button fx:id="editButton" layoutX="856.0" layoutY="560.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Edit" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-    <Button fx:id="applyButton" layoutX="715.0" layoutY="560.0" minWidth="61.0" mnemonicParsing="false" onAction="#onApplyButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147;" text="Apply" textFill="WHITE" visible="false">
+    <Button fx:id="applyButton" layoutX="715.0" layoutY="560.0" minWidth="61.0" mnemonicParsing="false" onAction="#onApplyButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Apply" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="backButton" layoutX="925.0" layoutY="560.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147;" text="Back" textFill="WHITE">
+      <Button fx:id="backButton" layoutX="925.0" layoutY="560.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Back" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
       <RadioButton fx:id="managerRadioButton" layoutX="13.0" layoutY="434.0" mnemonicParsing="false" onAction="#onManagerRadio" prefHeight="17.0" prefWidth="83.0" text="Manager" visible="false" />
       <RadioButton fx:id="employeeRadioButton" layoutX="96.0" layoutY="434.0" mnemonicParsing="false" onAction="#onEmployeeRadio" text="Employee" visible="false" />
-      <Button fx:id="cancelButton2" layoutX="785.0" layoutY="560.0" mnemonicParsing="false" onAction="#onCancelButton2" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147;" text="Cancel" textFill="WHITE" visible="false">
+      <Button fx:id="cancelButton2" layoutX="785.0" layoutY="560.0" mnemonicParsing="false" onAction="#onCancelButton2" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Cancel" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="deactiveButton" layoutX="853.0" layoutY="521.0" mnemonicParsing="false" onAction="#onDeActiveButton" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #153147;" text="Deactivate" textFill="WHITE" visible="false">
+      <Button fx:id="deactiveButton" layoutX="853.0" layoutY="521.0" mnemonicParsing="false" onAction="#onDeActiveButton" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Deactivate" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="applyButton2" layoutX="715.0" layoutY="560.0" mnemonicParsing="false" onAction="#onApplyButton2" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147;" text="Apply" textFill="WHITE" visible="false">
+      <Button fx:id="applyButton2" layoutX="715.0" layoutY="560.0" mnemonicParsing="false" onAction="#onApplyButton2" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Apply" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button layoutX="724.0" layoutY="400.0" mnemonicParsing="false" onAction="#onAddRandomEmployeeButton" prefHeight="17.0" prefWidth="264.0" style="-fx-background-color: #153147;" text="Add Random Employee" textFill="WHITE">
+      <Button layoutX="724.0" layoutY="400.0" mnemonicParsing="false" onAction="#onAddRandomEmployeeButton" prefHeight="17.0" prefWidth="264.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Add Random Employee" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>

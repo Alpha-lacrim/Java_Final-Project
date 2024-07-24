@@ -152,7 +152,7 @@
             <TableColumn fx:id="managerCommissionBaseEarningColumn" prefWidth="82.40000000000009" text="Total Earning" />
          </columns>
       </TableView>
-      <Button layoutX="1215.0" layoutY="560.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #153147;" text="Back" textFill="WHITE">
+      <Button layoutX="1215.0" layoutY="560.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Back" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
@@ -160,7 +160,7 @@
       <TextField fx:id="nameField" layoutX="14.0" layoutY="426.0" prefHeight="26.0" prefWidth="216.0" promptText="Enter user name for searching" style="-fx-border-color: #232A2F;" />
       <TextField fx:id="familyNameField" layoutX="15.0" layoutY="468.0" prefHeight="26.0" prefWidth="216.0" promptText="Enter user family-name for searching" style="-fx-border-color: #232A2F;" />
       <TextField fx:id="nationalIdField" layoutX="16.0" layoutY="508.0" prefHeight="26.0" prefWidth="216.0" promptText="Enter user national-ID for searching" style="-fx-border-color: #232A2F;" />
-      <Button layoutX="16.0" layoutY="548.0" mnemonicParsing="false" onAction="#onSearchButton" prefHeight="26.0" prefWidth="216.0" style="-fx-background-color: #153147;" text="Search" textFill="WHITE">
+      <Button layoutX="16.0" layoutY="548.0" mnemonicParsing="false" onAction="#onSearchButton" prefHeight="26.0" prefWidth="216.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>

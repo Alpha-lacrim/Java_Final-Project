@@ -35,11 +35,11 @@
       <ComboBox fx:id="DepartmentCombo" layoutX="160.0" layoutY="550.0" prefHeight="26.0" prefWidth="158.0" promptText="Select a Department" style="-fx-border-color: #232A2F;" />
       <TextField fx:id="baseSalaryField" layoutX="340.0" layoutY="551.0" prefHeight="26.0" prefWidth="130.0" promptText="Enter base" style="-fx-border-color: #232A2F;" />
       <DatePicker fx:id="birthDatePicker" editable="false" layoutX="160.0" layoutY="507.0" prefHeight="26.0" prefWidth="158.0" promptText="Select the birth date" style="-fx-border-color: #232A2F;" />
-      <Button fx:id="addManagerButton" layoutX="726.0" layoutY="461.0" mnemonicParsing="false" onAction="#onAddManagerButton" prefHeight="51.0" prefWidth="270.0" style="-fx-background-color: #153147;" text="Add Manager" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="addManagerButton" layoutX="726.0" layoutY="461.0" mnemonicParsing="false" onAction="#onAddManagerButton" prefHeight="51.0" prefWidth="270.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Add Manager" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Button fx:id="backButton" layoutX="933.0" layoutY="555.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="64.0" style="-fx-background-color: #153147;" text="Back" textFill="WHITE">
+      <Button fx:id="backButton" layoutX="933.0" layoutY="555.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="64.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Back" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
@@ -95,30 +95,30 @@
       </TableView>
       <TextField fx:id="commissionRateField2" layoutX="487.0" layoutY="507.0" prefHeight="26.0" prefWidth="147.0" promptText="Enter commission rate" style="-fx-border-color: #232A2F;" visible="false" />
       <TextField fx:id="numberOfSalesField2" layoutX="487.0" layoutY="461.0" prefHeight="26.0" prefWidth="147.0" promptText="Enter number of sales" style="-fx-border-color: #232A2F;" visible="false" />
-      <Button fx:id="editButton" layoutX="858.0" layoutY="556.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #153147;" text="Edit" textFill="WHITE" visible="false">
+      <Button fx:id="editButton" layoutX="858.0" layoutY="556.0" mnemonicParsing="false" onAction="#onEditButton" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Edit" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="cancelButton" layoutX="787.0" layoutY="555.0" mnemonicParsing="false" onAction="#onCancelButton" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #153147;" text="Cancel" textFill="WHITE" visible="false">
+      <Button fx:id="cancelButton" layoutX="787.0" layoutY="555.0" mnemonicParsing="false" onAction="#onCancelButton" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Cancel" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="applyButton" layoutX="712.0" layoutY="554.0" mnemonicParsing="false" onAction="#onApplyButton" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #153147;" text="Apply" textFill="WHITE" visible="false">
+      <Button fx:id="applyButton" layoutX="712.0" layoutY="554.0" mnemonicParsing="false" onAction="#onApplyButton" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Apply" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
       <RadioButton fx:id="managerRadioButton" layoutX="13.0" layoutY="433.0" mnemonicParsing="false" onAction="#onManagerRadio" text="Manager" visible="false" />
       <RadioButton fx:id="employeeRadioButton" layoutX="95.0" layoutY="433.0" mnemonicParsing="false" onAction="#onEmployeeRadio" text="Employee" visible="false" />
       <ComboBox fx:id="statusCombo" layoutX="485.0" layoutY="550.0" prefWidth="150.0" promptText="End Reason" style="-fx-border-color: #232A2F;" visible="false" />
-      <Button fx:id="deActiveButton" layoutX="859.0" layoutY="521.0" mnemonicParsing="false" onAction="#onDeActiveButton" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #153147;" text="Deactivate" textFill="WHITE" visible="false">
+      <Button fx:id="deActiveButton" layoutX="859.0" layoutY="521.0" mnemonicParsing="false" onAction="#onDeActiveButton" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Deactivate" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="applyButton2" layoutX="712.0" layoutY="555.0" mnemonicParsing="false" onAction="#onApplyButton2" prefHeight="26.0" prefWidth="64.0" style="-fx-background-color: #153147;" text="Apply" textFill="WHITE" visible="false">
+      <Button fx:id="applyButton2" layoutX="712.0" layoutY="555.0" mnemonicParsing="false" onAction="#onApplyButton2" prefHeight="26.0" prefWidth="64.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Apply" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="cancelButton2" layoutX="787.0" layoutY="556.0" mnemonicParsing="false" onAction="#onCancelButton2" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #153147;" text="Cancel" textFill="WHITE" visible="false">
+      <Button fx:id="cancelButton2" layoutX="787.0" layoutY="556.0" mnemonicParsing="false" onAction="#onCancelButton2" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #153147; -fx-background-radius: 20;" text="Cancel" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>

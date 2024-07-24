@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06f7b8ee-6d22-4e3a-9c60-ea09d3c81bb0" name="Changes" comment="version 1.0.0 by cbum and deli">
+    <list default="true" id="06f7b8ee-6d22-4e3a-9c60-ea09d3c81bb0" name="Changes" comment="version 1.1.0 by cbum and deli">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_10_2024_10_42_PM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_10_2024_4_52_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_10_2024_5_26_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_11_2024_4_16_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_9_2024_5_16_PM_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddEmployeeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddEmployeeSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddManagerSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/AddManagerSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/HistorySceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/HistorySceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/MainSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/myfinalproject/MainSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/AddManagerScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/AddManagerScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/MainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/myfinalproject/MainScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -372,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720820292636</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="version 1.1.0 by cbum and deli">
+      <option name="closed" value="true" />
+      <created>1720847477222</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1720847477222</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +401,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changing comissionBaseSalaried inheritance and adding Salary interface" />
     <MESSAGE value="changing comissionBaseSalaried inheritance and adding interfaces, separating manager Arraylist from the employee Arraylist" />
     <MESSAGE value="fixing departmentButton" />
     <MESSAGE value="fixing some errors, adding baseCommission, making comboBox a little more interactive, some grammatical mistakes have been fixed" />
@@ -415,6 +425,7 @@
     <MESSAGE value="checking inputs in both employee and manager scene" />
     <MESSAGE value="random emp change name and family" />
     <MESSAGE value="version 1.0.0 by cbum and deli" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1.0.0 by cbum and deli" />
+    <MESSAGE value="version 1.1.0 by cbum and deli" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.1.0 by cbum and deli" />
   </component>
 </project>

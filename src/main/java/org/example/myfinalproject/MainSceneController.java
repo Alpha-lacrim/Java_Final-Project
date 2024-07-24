@@ -12,6 +12,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -114,6 +115,51 @@ public class MainSceneController implements Initializable {
         }
     }
 
+    @FXML
+    void onEditDepartmentButton(ActionEvent event) {
+        boolean isAcceptable = false;
+        Department department1 = null;
+        department1 = departmentTable.getSelectionModel().getSelectedItem();
+
+        try {
+            //departmentReadFromFile();
+
+            var department = new Department(nameOfDepartmentField.getText(), departmentDatePicker.getValue());
+            departmentArrayList.add(department);
+            departmentObservableList = departmentTable.getItems();
+            departmentObservableList = FXCollections.observableArrayList(departmentArrayList);
+            departmentTable.setItems(departmentObservableList);
+            nameOfDepartmentField.setText("");
+            departmentDatePicker.setValue(null);
+            departmentWriteToFile();
+            isAcceptable = true;
+        }
+        catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setContentText("Please check your inputs");
+            alert.showAndWait();
+        }
+
+        if(isAcceptable){
+            departmentArrayList.remove(department1);
+            departmentTable.getItems().remove(department1);
+            departmentWriteToFile();
+            refreshBarChart();
+        }
+    }
+
+    @FXML
+    void departmentGetObject(MouseEvent event) {
+        int index = departmentTable.getSelectionModel().getSelectedIndex();
+
+        if(index <= -1){
+            return;
+        }
+
+        departmentDatePicker.setValue(LocalDate.parse(sinceColumn.getCellData(index)));
+        nameOfDepartmentField.setText(departmentColumn.getCellData(index));
+    }
 
 
     @Override
